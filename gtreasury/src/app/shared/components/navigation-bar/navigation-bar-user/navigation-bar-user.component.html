@@ -1,0 +1,15 @@
+<div>
+    <kendo-badge-container>
+        <button kendoButton fillMode="flat">
+            <clr-icon shape="bell" class="has-badge"></clr-icon>
+        </button>
+    </kendo-badge-container>
+
+    <div style="display: inline-block;">
+        <kendo-avatar *ngIf="user.iconSource" [imageSrc]="user.iconSource" shape="circle" width="26px" height="26px">
+        </kendo-avatar>
+        <kendo-avatar *ngIf="!user.iconSource" [initials]="user.initials" shape="circle" width="26px" height="26px">
+        </kendo-avatar>
+        <clr-icon shape="angle" dir="down"></clr-icon>
+    </div>
+</div>
