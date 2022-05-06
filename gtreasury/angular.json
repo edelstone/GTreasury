@@ -53,7 +53,7 @@
               "src/assets"
             ],
             "styles": [
-             "node_modules/@progress/kendo-theme-default/dist/all.css",
+              "node_modules/@progress/kendo-theme-default/dist/all.css",
               "src/styles/styles.scss",
               "node_modules/@clr/icons/clr-icons.min.css",
               "node_modules/@clr/ui/clr-ui.min.css"
@@ -135,9 +135,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "gtreasury"
+  "defaultProject": "gtreasury",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
