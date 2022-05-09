@@ -1,0 +1,56 @@
+<kendo-grid [kendoGridBinding]="(worksheet | async)!.rows" [group]="groups">
+    <kendo-grid-column-group title="Date" [headerClass]="{'no-background':true}">
+        <kendo-grid-column-group title="Data Type" [headerClass]="{'no-background':true}">
+            <kendo-grid-column title="Opening Ledger" field="rowName" [headerClass]="{'no-background':true}"
+                [class]="{'dark-blue-background':true}" [footerClass]="{'no-background':true}">
+                <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                    {{ dataItem.rowName }}
+                </ng-template>
+                <ng-template kendoGridFooterTemplate>
+                    Closing ledger
+                </ng-template>
+            </kendo-grid-column>
+        </kendo-grid-column-group>
+    </kendo-grid-column-group>
+    <ng-container *ngFor="let statement of (statements | async); let i = index;">
+        <kendo-grid-column-group [locked]="false" [headerClass]="{'no-background':true}">
+            <ng-template kendoGridHeaderTemplate>
+                {{ formatDate(statement.date) }}
+            </ng-template>
+            <kendo-grid-column-group title="Actual" [headerClass]="{'light-blue-background':true}">
+                <kendo-grid-column [headerClass]="{'no-background':true}" [class]="{'no-background':true}"
+                    [footerClass]="{'no-background':true}">
+                    <ng-template kendoGridHeaderTemplate>
+                        {{ statement.actual.openingLedger | number: '1.2-2' }}
+                    </ng-template>
+                    <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                        {{ dataItem.data[i] | number: '1.2-2' }}
+                    </ng-template>
+                    <ng-template kendoGridFooterTemplate>
+                        {{ statement.actual.closingLedger | number: '1.2-2' }}
+                    </ng-template>
+                </kendo-grid-column>
+            </kendo-grid-column-group>
+            <kendo-grid-column-group title="Estimate" [headerClass]="{'light-blue-background':true}">
+                <kendo-grid-column [headerClass]="{'no-background':true}" [class]="{'no-background':true}"
+                    [footerClass]="{'no-background':true}">
+                    <ng-template kendoGridHeaderTemplate>
+                        {{ statement.estimate.openingLedger | number: '1.2-2' }}
+                    </ng-template>
+                    <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+                        {{ dataItem.data[i] | number: '1.2-2' }}
+                    </ng-template>
+                    <ng-template kendoGridFooterTemplate>
+                        {{ statement.estimate.closingLedger | number: '1.2-2' }}
+                    </ng-template>
+                </kendo-grid-column>
+            </kendo-grid-column-group>
+        </kendo-grid-column-group>
+    </ng-container>
+    <kendo-grid-column field="worksheetGroup.name" [hidden]="true">
+        <ng-template kendoGridGroupHeaderTemplate let-value="value">
+            {{value}}
+        </ng-template>
+    </kendo-grid-column>
+
+</kendo-grid>
