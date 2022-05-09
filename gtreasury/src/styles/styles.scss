@@ -1,6 +1,6 @@
-@import "variables.scss";
-@import 'modern-css-reset/dist/reset.min.css';
 @import "@progress/kendo-theme-default/dist/all.scss";
+
+@import "variables.scss";
 @import '../assets/fonts/fonts.css';
 
 body {
@@ -65,8 +65,8 @@ body {
     .k-grouping-header {
       border: none;
     }
-  } // .k-grid
-} // .gt-grid
+  }
+}
 
 .no-background
 {
@@ -102,4 +102,13 @@ body {
 
 .core-blue-background {
   background-color: #00263E;
+}
+
+.display-flex {
+  display: flex;
+  
+}
+
+.flex-row {
+  flex-direction: row;
 }
