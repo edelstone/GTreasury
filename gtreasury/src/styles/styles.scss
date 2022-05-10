@@ -1,10 +1,9 @@
-@import "@progress/kendo-theme-default/dist/all.scss";
-
 @import "variables.scss";
 @import '../assets/fonts/fonts.css';
+@import "@progress/kendo-theme-default/dist/all.scss";
 
 body {
-  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .gt-dropdownlist {

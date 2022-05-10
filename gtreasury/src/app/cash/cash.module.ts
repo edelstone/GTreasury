@@ -12,6 +12,10 @@ import { WorksheetsHelperService } from '../core/services/worksheets-helper/work
 import { GridModule } from '@progress/kendo-angular-grid';
 import { WorksheetsToolbarComponent } from './components/worksheets-container/worksheets-toolbar/worksheets-toolbar.component';
 import { WorksheetsContainerComponent } from './components/worksheets-container/worksheets-container.component';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { ButtonsModule } from '@progress/kendo-angular-buttons';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 
 const routes = [
   {
@@ -38,7 +42,7 @@ const routes = [
     WorksheetsToolbarComponent,
     WorksheetsContainerComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), GridModule, ClarityModule],
+  imports: [CommonModule, RouterModule.forChild(routes), GridModule, DropDownsModule, ButtonsModule, InputsModule, DateInputsModule, ClarityModule],
   providers: [StatementService, WorksheetsHelperService, DatePipe],
 })
 export class CashModule {}
