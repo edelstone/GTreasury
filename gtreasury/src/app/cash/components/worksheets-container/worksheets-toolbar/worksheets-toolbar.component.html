@@ -1,0 +1,68 @@
+<div class="display-flex flex-row">
+    <div>
+        <kendo-dropdownlist [data]="worksheets" [defaultItem]="worksheetsDefaultOption"> </kendo-dropdownlist>
+    </div>
+    <div>
+        <kendo-buttongroup>
+            <button kendoButton>
+                <clr-icon shape="pencil"></clr-icon>
+            </button>
+            <button kendoButton>
+                <clr-icon shape="clone"></clr-icon>
+            </button>
+            <button kendoButton>
+                <clr-icon shape="trash"></clr-icon>
+            </button>
+            <button kendoButton>
+                <clr-icon shape="plus-circle"></clr-icon>
+            </button>
+            <button kendoButton>
+                <clr-icon shape="star"></clr-icon>
+            </button>
+            <button kendoButton>
+                <clr-icon shape="search"></clr-icon>
+            </button>
+        </kendo-buttongroup>
+    </div>
+    <div>
+        <kendo-buttongroup selection="single">
+            <button kendoButton [togglable]="true" [selected]="true">
+                Transaction Date
+            </button>
+            <button kendoButton [togglable]="true">
+                Value Date
+            </button>
+            <button kendoButton [togglable]="true">
+                Process Date
+            </button>
+        </kendo-buttongroup>
+    </div>
+</div>
+<div class="display-flex flex-row">
+    <div>
+        <kendo-textbox placeholder="Search all data...">
+
+        </kendo-textbox>
+    </div>
+    <div>
+        <kendo-daterange>
+            <kendo-dateinput kendoDateRangeStartInput [(value)]="startDate" format="dd MMM yyyy"></kendo-dateinput>
+            <kendo-dateinput kendoDateRangeEndInput [(value)]="endDate" format="dd MMM yyyy"></kendo-dateinput>
+            <kendo-daterange-popup [animate]="false"></kendo-daterange-popup>
+        </kendo-daterange>
+    </div>
+    <div>
+        <kendo-multiselect [data]="accountsAndGroups">
+        </kendo-multiselect>
+    </div>
+    <div>
+        <kendo-dropdownlist [data]="codeByDate"> </kendo-dropdownlist>
+    </div>
+    <div>
+        <kendo-multiselect [data]="ledgerType">
+        </kendo-multiselect>
+    </div>
+    <div>
+        Decimals: <kendo-switch></kendo-switch>
+    </div>
+</div>
