@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'gt-navigation-bar-support',
-  templateUrl: './navigation-bar-support.component.html',
-  styleUrls: ['./navigation-bar-support.component.scss']
+  selector: 'gt-header-support',
+  templateUrl: './header-support.component.html',
+  styleUrls: ['./header-support.component.scss']
 })
-export class NavigationBarSupportComponent implements OnInit {
+export class HeaderSupportComponent implements OnInit {
   readonly supportOptions = [
     {
       value: 1,

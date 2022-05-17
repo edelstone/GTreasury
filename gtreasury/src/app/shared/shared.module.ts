@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LeftNavigationComponent } from './components/left-navigation/left-navigation.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MenusModule } from '@progress/kendo-angular-menu';
 import { ClarityModule } from '@clr/angular';
 import { RouterModule } from '@angular/router';
-import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
+import { HeaderComponent } from './components/header/header.component';
 import { NavigationModule } from '@progress/kendo-angular-navigation';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
-import { NavigationBarTickerComponent } from './components/navigation-bar/navigation-bar-ticker/navigation-bar-ticker.component';
-import { NavigationBarSearchComponent } from './components/navigation-bar/navigation-bar-search/navigation-bar-search.component';
-import { NavigationBarQuickTasksComponent } from './components/navigation-bar/navigation-bar-quick-tasks/navigation-bar-quick-tasks.component';
-import { NavigationBarLanguageSelectorComponent } from './components/navigation-bar/navigation-bar-language-selector/navigation-bar-language-selector.component';
-import { NavigationBarUserComponent } from './components/navigation-bar/navigation-bar-user/navigation-bar-user.component';
-import { NavigationBarSupportComponent } from './components/navigation-bar/navigation-bar-support/navigation-bar-support.component';
+import { HeaderTickerComponent } from './components/header/header-ticker/header-ticker.component';
+import { HeaderSearchComponent } from './components/header/header-search/header-search.component';
+import { HeaderQuickTasksComponent } from './components/header/header-quick-tasks/header-quick-tasks.component';
+import { HeaderLanguageSelectorComponent } from './components/header/header-language-selector/header-language-selector.component';
+import { HeaderUserComponent } from './components/header/header-user/header-user.component';
+import { HeaderSupportComponent } from './components/header/header-support/header-support.component';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
@@ -22,14 +22,14 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 
 @NgModule({
   declarations: [
-    LeftNavigationComponent,
-    NavigationBarComponent,
-    NavigationBarTickerComponent,
-    NavigationBarSearchComponent,
-    NavigationBarQuickTasksComponent,
-    NavigationBarLanguageSelectorComponent,
-    NavigationBarUserComponent,
-    NavigationBarSupportComponent
+    SidebarComponent,
+    HeaderComponent,
+    HeaderTickerComponent,
+    HeaderSearchComponent,
+    HeaderQuickTasksComponent,
+    HeaderLanguageSelectorComponent,
+    HeaderUserComponent,
+    HeaderSupportComponent
   ],
   imports: [
     CommonModule,
@@ -45,8 +45,8 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
     ClarityModule
   ],
   exports: [
-    NavigationBarComponent,
-    LeftNavigationComponent
+    HeaderComponent,
+    SidebarComponent
   ]
 })
 export class SharedModule { }

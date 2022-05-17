@@ -1,6 +1,7 @@
 @import "variables.scss";
-@import '../assets/fonts/fonts.css';
+@import 'modern-css-reset/dist/reset.min.css';
 @import "@progress/kendo-theme-default/dist/all.scss";
+@import '../assets/fonts/fonts.css';
 
 body {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -92,7 +93,7 @@ body {
 // TODO:
 // Update classes properly.  An unqualified dev is making these classes.
 .core-gray-01-background {
-  background-color: #F4F4F4;
+  background-color: #FFFFFF;
 }
 
 .core-gray-02-background {

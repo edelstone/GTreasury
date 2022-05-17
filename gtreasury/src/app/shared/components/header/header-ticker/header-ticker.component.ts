@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { TickerDetails } from 'src/app/core/model/ticker-details';
 
 @Component({
-  selector: 'gt-navigation-bar-ticker',
-  templateUrl: './navigation-bar-ticker.component.html',
-  styleUrls: ['./navigation-bar-ticker.component.scss'],
+  selector: 'gt-header-ticker',
+  templateUrl: './header-ticker.component.html',
+  styleUrls: ['./header-ticker.component.scss'],
 })
-export class NavigationBarTickerComponent implements OnInit {
+export class HeaderTickerComponent implements OnInit {
   readonly tickerOptions = [
     {
       value: 2,

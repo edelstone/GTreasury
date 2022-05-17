@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'gt-navigation-bar-language-selector',
-  templateUrl: './navigation-bar-language-selector.component.html',
-  styleUrls: ['./navigation-bar-language-selector.component.scss']
+  selector: 'gt-header-language-selector',
+  templateUrl: './header-language-selector.component.html',
+  styleUrls: ['./header-language-selector.component.scss']
 })
-export class NavigationBarLanguageSelectorComponent implements OnInit {
+export class HeaderLanguageSelectorComponent implements OnInit {
 
   readonly languageOptions = [
     {
