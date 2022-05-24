@@ -1,81 +1,81 @@
-<div class="sidebar core-blue-background">
-    <kendo-menu [vertical]="true">
-        <kendo-menu-item>
+<div class="gt-sidebar">
+    <kendo-menu class="gt-sidebar-menu" [vertical]="true">
+        <kendo-menu-item cssClass="gt-sidebar-menuitem">
             <ng-template kendoMenuItemTemplate>
-                <a [routerLink]="['/','dashboard']" [routerLinkActive]="['active-background']">
+                <a class="gt-sidebar-link gt-sidebar-home" [routerLink]="['/','dashboard']" [routerLinkActive]="['active-dashboard', 'active']">
                     <div>
-                        <img class="gt-logo" src="./assets/images/gtreasury-logo.svg" alt="GTreasury logo" />
+                        <img class="gt-sidebar-logo" src="./assets/images/gtreasury-logo.svg" alt="GTreasury logo" />
                     </div>
                 </a>
             </ng-template>
         </kendo-menu-item>
-        <kendo-menu-item>
+        <kendo-menu-item cssClass="gt-sidebar-menuitem">
             <ng-template kendoMenuItemTemplate>
-                <a [routerLink]="['/','cash']" [routerLinkActive]="['active-background']">
+                <a class="gt-sidebar-link" [routerLink]="['/','cash']" [routerLinkActive]="['active-cash', 'active']">
                     <div>
-                        <clr-icon shape="dollar-bill" size="48" class="light-text"></clr-icon>
+                        <clr-icon shape="dollar-bill" size="30" class="gt-sidebar-icon"></clr-icon>
                     </div>
-                    <div class="light-text">
+                    <div class="gt-sidebar-text">
                         Cash
                     </div>
                 </a>
             </ng-template>
         </kendo-menu-item>
-        <kendo-menu-item>
+        <kendo-menu-item cssClass="gt-sidebar-menuitem">
             <ng-template kendoMenuItemTemplate>
-                <a [routerLink]="['/','financialInstruments']" [routerLinkActive]="['active-background']">
+                <a class="gt-sidebar-link" [routerLink]="['/','financialInstruments']" [routerLinkActive]="['active-financial-instruments', 'active']">
                     <div>
-                        <clr-icon shape="briefcase" size="48" class="light-text"></clr-icon>
+                        <clr-icon shape="briefcase" size="30" class="gt-sidebar-icon"></clr-icon>
                     </div>
-                    <div class="light-text">
+                    <div class="gt-sidebar-text">
                         Financial Instruments
                     </div>
                 </a>
             </ng-template>
         </kendo-menu-item>
-        <kendo-menu-item>
+        <kendo-menu-item cssClass="gt-sidebar-menuitem">
             <ng-template kendoMenuItemTemplate>
-                <a [routerLink]="['/','payments']" [routerLinkActive]="['active-background']">
+                <a class="gt-sidebar-link" [routerLink]="['/','payments']" [routerLinkActive]="['active-payments', 'active']">
                     <div>
-                        <clr-icon shape="wallet" size="48" class="light-text"></clr-icon>
+                        <clr-icon shape="wallet" size="30" class="gt-sidebar-icon"></clr-icon>
                     </div>
-                    <div class="light-text">
+                    <div class="gt-sidebar-text">
                         Payments
                     </div>
                 </a>
             </ng-template>
         </kendo-menu-item>
-        <kendo-menu-item>
+        <kendo-menu-item cssClass="gt-sidebar-menuitem">
             <ng-template kendoMenuItemTemplate>
-                <a [routerLink]="['/','reports']" [routerLinkActive]="['active-background']">
+                <a class="gt-sidebar-link" [routerLink]="['/','reports']" [routerLinkActive]="['active-reports', 'active']">
                     <div>
-                        <clr-icon shape="bar-chart" size="48" class="light-text"></clr-icon>
+                        <clr-icon shape="bar-chart" size="30" class="gt-sidebar-icon"></clr-icon>
                     </div>
-                    <div class="light-text">
+                    <div class="gt-sidebar-text">
                         Reports
                     </div>
                 </a>
             </ng-template>
         </kendo-menu-item>
-        <kendo-menu-item>
+        <kendo-menu-item cssClass="gt-sidebar-menuitem">
             <ng-template kendoMenuItemTemplate>
-                <a [routerLink]="['/','dataManagement']" [routerLinkActive]="['active-background']">
+                <a class="gt-sidebar-link" [routerLink]="['/','dataManagement']" [routerLinkActive]="['active-data-management', 'active']">
                     <div>
-                        <clr-icon shape="data-cluster" size="48" class="light-text"></clr-icon>
+                        <clr-icon shape="data-cluster" size="30" class="gt-sidebar-icon"></clr-icon>
                     </div>
-                    <div class="light-text">
+                    <div class="gt-sidebar-text">
                         Data Management
                     </div>
                 </a>
             </ng-template>
         </kendo-menu-item>
-        <kendo-menu-item>
+        <kendo-menu-item cssClass="gt-sidebar-menuitem">
             <ng-template kendoMenuItemTemplate>
-                <a [routerLink]="['/','administration']" [routerLinkActive]="['active-background']">
+                <a class="gt-sidebar-link" [routerLink]="['/','administration']" [routerLinkActive]="['active-admin', 'active']">
                     <div>
-                        <clr-icon shape="administrator" size="48" class="light-text"></clr-icon>
+                        <clr-icon shape="administrator" size="30" class="gt-sidebar-icon"></clr-icon>
                     </div>
-                    <div class="light-text">
+                    <div class="gt-sidebar-text">
                         Admin
                     </div>
                 </a>

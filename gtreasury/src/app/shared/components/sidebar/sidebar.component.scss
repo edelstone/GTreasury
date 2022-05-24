@@ -1,14 +1,106 @@
-.active-background {
-    background-color: rgba(255, 255, 255, 0.2);
+@import "../../../../styles/variables.scss";
+
+.gt-sidebar {
+    background: $core-blue-10;
+    height: 100%;
+    padding: 3rem 0;
+    overflow-y: scroll;
+    width: 7rem;
+
+    &-link {
+        text-decoration: none;
+        text-align: center;
+        width: 100%;
+        padding: 1rem 0.5rem;
+        margin-top: 1rem;
+        transition: background-color 100ms ease-out;
+
+        &:hover {
+            background-color: $transparent-light-12;
+        }
+
+        &:active {
+            background-color: $transparent-light-20;
+            transition: none;
+        }
+    }
+
+    &-home {
+        padding: 1.5rem 0.5rem;
+    }
+
+    &-icon {
+        color: $transparent-light-80;
+    }
+
+    &-text {
+        color: $transparent-light-80;
+        white-space: pre-wrap;
+        font-weight: bold;
+    }
+
+    &-logo {
+        max-width: 65px;
+        margin: auto;
+    }
 }
 
-.light-text {
-    color: rgba(255, 255, 255, 0.8);
+.active {
+    transition: none;
 }
 
-.left-navigation-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 100px 0px 24px;
+.active-dashboard {
+    background-color: $transparent-light-20;
+
+    &:hover, &:active {
+        background-color: $transparent-light-20
+    }
+}
+
+.active-cash {
+    background-color: $core-green-05;
+
+    &:hover, &:active {
+        background-color: $core-green-05;
+    }
+}
+
+.active-financial-instruments {
+    background-color: $extended-pink-06;
+
+    &:hover, &:active {
+        background-color: $extended-pink-06;
+    }
+}
+
+.active-payments {
+    background-color: $extended-indigo-05;
+    
+    &:hover, &:active {
+        background-color: $extended-indigo-05;
+    }
+}
+
+.active-reports {
+    background-color: $extended-cyan-07;
+
+    &:hover, &:active {
+        background-color: $extended-cyan-07;
+    }
+}
+
+.active-data-management {
+    background-color: $extended-flame-07;
+
+    &:hover, &:active {
+        background-color: $extended-flame-07;
+    }
+}
+
+.active-admin {
+    background-color: $extended-violet-06;
+
+    &:hover, &:active {
+        background-color: $extended-violet-06;
+    }
 }

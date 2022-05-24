@@ -7,6 +7,15 @@ body {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+// Overrides that, for some reason, cannot work on component-level files
+
+.gt-sidebar .k-menu-vertical > .k-menu-item > .k-menu-link {
+  padding: 0;
+}
+
+// Most of this CSS below was made in an earlier project and will be deprected or relocated to
+// the appropriate component CSS files
+
 .gt-dropdownlist {
   margin-bottom: 1rem;
   max-width: 20rem;
@@ -90,8 +99,6 @@ body {
   padding: 8px 12px; /* depends on theme */
 }
 
-// TODO:
-// Update classes properly.  An unqualified dev is making these classes.
 .core-gray-01-background {
   background-color: #FFFFFF;
 }
@@ -102,13 +109,4 @@ body {
 
 .core-blue-background {
   background-color: #00263E;
-}
-
-.display-flex {
-  display: flex;
-  
-}
-
-.flex-row {
-  flex-direction: row;
 }
