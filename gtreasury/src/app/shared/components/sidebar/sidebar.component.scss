@@ -26,61 +26,34 @@
 
         &-active {
             transition: none;
+            pointer-events: none;
 
             &-dashboard {
                 background-color: $transparent-light-20;
-
-                &:hover, &:active {
-                    background-color: $transparent-light-20;
-                }
             }
 
             &-cash {
                 background-color: $core-green-05;
-
-                &:hover, &:active {
-                    background-color: $core-green-05;
-                }
             }
 
             &-financial-instruments {
                 background-color: $extended-pink-06;
-
-                &:hover, &:active {
-                    background-color: $extended-pink-06;
-                }
             }
 
             &-payments {
                 background-color: $extended-indigo-05;
-                
-                &:hover, &:active {
-                    background-color: $extended-indigo-05;
-                }
             }
             
             &-reports {
                 background-color: $extended-cyan-07;
-            
-                &:hover, &:active {
-                    background-color: $extended-cyan-07;
-                }
             }
             
             &-data-management {
                 background-color: $extended-flame-07;
-            
-                &:hover, &:active {
-                    background-color: $extended-flame-07;
-                }
             }
             
             &-admin {
                 background-color: $extended-violet-06;
-            
-                &:hover, &:active {
-                    background-color: $extended-violet-06;
-                }
             }
         }
     }
@@ -97,10 +70,11 @@
         color: $transparent-light-80;
         white-space: pre-wrap;
         font-weight: bold;
+        margin-top: 0.25rem;
     }
 
     &-logo {
-        max-width: 65px;
+        max-width: 4rem;
         margin: auto;
     }
 }
