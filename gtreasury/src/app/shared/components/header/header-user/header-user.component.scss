@@ -1,0 +1,19 @@
+@import "../../../../../styles/variables.scss";
+
+.gt-user {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    &-menu {
+        display: inline-flex;
+        gap: 0.5rem;
+        align-items: center;
+        cursor: pointer;
+
+        &-icon {
+            color: $icon-default;
+            cursor: pointer;
+        }
+    }
+}

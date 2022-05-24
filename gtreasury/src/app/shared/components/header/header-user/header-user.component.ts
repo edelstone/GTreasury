@@ -20,7 +20,7 @@ export class HeaderUserComponent implements OnInit {
     // TODO:
     // Load information from a service
     this.user = new User({
-      initials: 'GT'
+      initials: 'JS'
     });
   }
 
