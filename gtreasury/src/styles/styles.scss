@@ -7,14 +7,13 @@ body {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-// Overrides that, for some reason, cannot work on component-level files
+// Overrides that, for some reason, don't work on component-level files
 
 .gt-sidebar .k-menu-vertical > .k-menu-item > .k-menu-link {
   padding: 0;
 }
 
-// Most of this CSS below was made in an earlier project and will be deprected or relocated to
-// the appropriate component CSS files
+// CSS from an earlier project; will be deprected or relocated to appropriate component-level files
 
 .gt-dropdownlist {
   margin-bottom: 1rem;
@@ -77,6 +76,9 @@ body {
   }
 }
 
+
+// CSS added by Mike Y. at SPR that we will likely replace with less utility-type styling
+
 .no-background
 {
   background-color: #FFFFFF;
@@ -97,16 +99,4 @@ body {
 .whole-cell {
   display: block;
   padding: 8px 12px; /* depends on theme */
-}
-
-.core-gray-01-background {
-  background-color: #FFFFFF;
-}
-
-.core-gray-02-background {
-  background-color: #FFFFFF;
-}
-
-.core-blue-background {
-  background-color: #00263E;
 }
