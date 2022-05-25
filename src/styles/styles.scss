@@ -1,0 +1,109 @@
+@import "variables.scss";
+@import "modern-css-reset/dist/reset.min.css";
+@import "@progress/kendo-theme-default/dist/all.scss";
+@import "../assets/fonts/fonts.css";
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  height: 100%;
+}
+
+// Overrides that, for some reason, don't work on component-level files
+
+.gt-sidebar .k-menu-vertical > .k-menu-item > .k-menu-link {
+  padding: 0;
+}
+
+// CSS from an earlier project; will be deprected or relocated to appropriate component-level files
+
+.gt-dropdownlist {
+  margin-bottom: 1rem;
+  max-width: 20rem;
+
+  .k-picker {
+    border-color: $component-border;
+    background: $component-bg;
+
+    &:hover {
+      border-color: $hovered-border;
+    }
+
+    &:active {
+      border-color: $selected-border;
+    }
+  }
+}
+
+.gt-grid {
+  .k-grid {
+    border: none;
+
+    table,
+    thead,
+    tbody,
+    th,
+    tr,
+    td {
+      border: none;
+    }
+
+    th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    td {
+      border-bottom: 1px solid $component-border;
+    }
+
+    tr:hover {
+      background-color: $base-bg;
+    }
+
+    .k-alt {
+      background-color: $component-bg;
+    }
+
+    .k-header {
+      font-weight: 700;
+      background-color: $component-bg;
+    }
+
+    .k-grid-pager {
+      border-color: $component-border;
+      padding-top: map-get($spacing, 4);
+      background-color: $component-bg;
+    }
+
+    .k-grouping-header {
+      border: none;
+    }
+  }
+}
+
+// CSS added by Mike Y. at SPR; we will likely replace with less utility-type styling
+
+.no-background {
+  background-color: #ffffff;
+}
+
+.light-blue-background {
+  background-color: #eaf0f8;
+}
+
+.dark-blue-background {
+  background-color: #d5e2f0;
+}
+
+.light-gray-background {
+  background-color: #f4f4f4;
+}
+
+.whole-cell {
+  display: block;
+  padding: 8px 12px; /* depends on theme */
+}
