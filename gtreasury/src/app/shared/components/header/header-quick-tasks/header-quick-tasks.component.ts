@@ -9,12 +9,16 @@ export class HeaderQuickTasksComponent  {
   readonly userTaskOptions = [
     {
       value: 1,
-      text: 'Option 1',
+      text: 'New payment',
     },
     {
       value: 2,
-      text: 'Option 2',
+      text: 'New deal',
     },
+    {
+      value: 2,
+      text: 'New forecast',
+    }
   ];
   
   readonly userTaskDefaultOption = {
