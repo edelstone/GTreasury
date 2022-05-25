@@ -3,8 +3,13 @@
 @import "@progress/kendo-theme-default/dist/all.scss";
 @import '../assets/fonts/fonts.css';
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  height: 100%;
 }
 
 // Overrides that, for some reason, don't work on component-level files

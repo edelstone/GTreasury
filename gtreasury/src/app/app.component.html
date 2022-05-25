@@ -1,7 +1,13 @@
-<div class="gt-content">
-  <gt-sidebar class="gt-sidebar-container"></gt-sidebar>
-  <div class="gt-header-container">
-    <gt-header></gt-header>
-    <router-outlet></router-outlet>
+<div class="gt-layout">
+  <div class="gt-layout-sidebar gt-layout-column">
+    <gt-sidebar></gt-sidebar>
+  </div>
+  <div class="gt-layout-main gt-layout-column">
+    <div class="gt-layout-header">
+      <gt-header></gt-header>
+    </div>
+    <div class="gt-layout-page">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>

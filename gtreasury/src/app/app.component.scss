@@ -1,11 +1,27 @@
 @import "../styles/variables.scss";
 
-.gt-content {
+.gt-layout {
     display: flex;
-    flex-direction: row;
-    height: 100vh;
-}
+    height: 100%;
+    overflow: hidden;
+    
+    &-column {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-.gt-header-container {
-    width: 100%;
+    &-sidebar {
+        flex-shrink: 0;
+        overflow-y: auto;
+    }
+
+    &-header {
+        padding: 0.75rem 2.5rem;
+    }
+
+    &-page {
+        overflow-y: auto;
+        padding: 2.5rem;
+    }
 }
