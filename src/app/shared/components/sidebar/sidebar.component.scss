@@ -5,56 +5,16 @@
     padding: 3rem 0;
     width: 7rem;
 
-    &-link {
-        text-decoration: none;
-        text-align: center;
-        width: 100%;
-        padding: 1rem 0.5rem;
-        margin-top: 1rem;
-        transition: background-color 150ms ease-out;
+  &-icon {
+    color: $transparent-light-80;
+  }
 
-        &:hover {
-            background-color: $transparent-light-12;
-        }
-
-        &:active {
-            background-color: $transparent-light-20;
-            transition: none;
-        }
-
-        &-active {
-            transition: none;
-            pointer-events: none;
-
-            &-dashboard {
-                background-color: $transparent-light-20;
-            }
-
-            &-cash {
-                background-color: $core-green-05;
-            }
-
-            &-financial-instruments {
-                background-color: $extended-pink-06;
-            }
-
-            &-payments {
-                background-color: $extended-indigo-05;
-            }
-            
-            &-reports {
-                background-color: $extended-cyan-07;
-            }
-            
-            &-data-management {
-                background-color: $extended-flame-07;
-            }
-            
-            &-admin {
-                background-color: $extended-violet-06;
-            }
-        }
-    }
+  &-text {
+    color: $transparent-light-80;
+    white-space: pre-wrap;
+    font-weight: bold;
+    margin-top: 0.25rem;
+  }
 
   &-link {
     text-decoration: none;
@@ -76,6 +36,10 @@
     &-active {
       transition: none;
       pointer-events: none;
+
+      .gt-sidebar-icon, .gt-sidebar-text {
+        color: $text-white;
+      }
 
       &-dashboard {
         background-color: $transparent-light-20;
@@ -109,17 +73,6 @@
 
   &-home {
     padding: 1.5rem 0.5rem;
-  }
-
-  &-icon {
-    color: $transparent-light-80;
-  }
-
-  &-text {
-    color: $transparent-light-80;
-    white-space: pre-wrap;
-    font-weight: bold;
-    margin-top: 0.25rem;
   }
 
   &-logo {
