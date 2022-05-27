@@ -37,7 +37,11 @@
       transition: none;
       pointer-events: none;
 
-      .gt-sidebar-icon, .gt-sidebar-text {
+      .gt-sidebar-icon {
+        color: $icon-white;
+      }
+      
+      .gt-sidebar-text {
         color: $text-white;
       }
 
