@@ -1,6 +1,6 @@
-<div class="tabs">
-  <div *ngFor="let tab of tabs" class="tab-option">
-    <a
+<div class="gt-tabstrip">
+  <div *ngFor="let tab of tabs" class="gt-tabstrip-option">
+    <a class="gt-tabstrip-link"
       [routerLink]="[tab.routerLink]"
       [routerLinkActive]="tab.activeClass ? [tab.activeClass] : ''"
     >

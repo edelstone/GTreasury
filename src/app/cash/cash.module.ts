@@ -24,7 +24,7 @@ const routes = [
       { path: 'worksheets', component: WorksheetsContainerComponent },
       { path: 'forecasts', component: TodoComponent },
       { path: 'balances', component: TodoComponent },
-      { path: 'generalLedger', component: TodoComponent },
+      { path: 'general-ledger', component: TodoComponent },
       { path: 'reconciliations', component: TodoComponent },
       { path: 'statements', component: TodoComponent },
       { path: '', redirectTo: 'worksheets', pathMatch: 'full' },

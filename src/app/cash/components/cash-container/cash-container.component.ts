@@ -9,34 +9,34 @@ import { TabStrip } from 'src/app/shared/components/subheader/tabstrip/tabstrip.
 export class CashContainerComponent {
   tabs: TabStrip[] = [
     {
-      title: 'Approvals',
+      title: 'Worksheets',
       routerLink: '/cash/worksheets',
-      activeClass: 'cash-active-tab',
+      activeClass: 'gt-tabstrip-active-cash',
     },
     {
       title: 'Forecasts',
       routerLink: '/cash/forecasts',
-      activeClass: 'cash-active-tab',
+      activeClass: 'gt-tabstrip-active-cash',
     },
     {
       title: 'Balances',
       routerLink: '/cash/balances',
-      activeClass: 'cash-active-tab',
+      activeClass: 'gt-tabstrip-active-cash',
     },
     {
-      title: 'General Ledger',
-      routerLink: '/cash/generalLedger',
-      activeClass: 'cash-active-tab',
+      title: 'General ledger',
+      routerLink: '/cash/general-ledger',
+      activeClass: 'gt-tabstrip-active-cash',
     },
     {
       title: 'Reconciliations',
       routerLink: '/cash/reconciliations',
-      activeClass: 'cash-active-tab',
+      activeClass: 'gt-tabstrip-active-cash',
     },
     {
       title: 'Statements',
       routerLink: '/cash/statements',
-      activeClass: 'cash-active-tab',
+      activeClass: 'gt-tabstrip-active-cash',
     },
   ];
 

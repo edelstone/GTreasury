@@ -1,16 +1,11 @@
-<div class="cash-toolbar">
-  <h4>Overview</h4>
-  <div class="cash-toolbar-right">
-    <span class="cash-toolbar-item">{{
+<div class="gt-cash-toolbar">
+  <h1 class="gt-cash-toolbar-title">Overview</h1>
+  <div class="gt-cash-toolbar-actions">
+    <span class="gt-cash-toolbar-date">{{
       loadingCompleteDate | date: "full"
     }}</span>
-    <div class="cash-toolbar-item">
-      <clr-icon shape="cog"></clr-icon>
-      <span>Settings</span>
-    </div>
-    <div class="cash-toolbar-item">
-      <button kendoButton>New Forecast</button>
-      <button kendoButton>New Worksheet</button>
-    </div>
+    <button kendoButton themeColor="secondary" icon="cog" fillMode="flat">Settings</button>
+    <button kendoButton themeColor="secondary" fillMode="outline">New Forecast</button>
+    <button kendoButton themeColor="primary">New Worksheet</button>
   </div>
 </div>

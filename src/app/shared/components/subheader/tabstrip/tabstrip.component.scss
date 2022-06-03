@@ -1,18 +1,26 @@
-//general css
-.tabs {
+@import "../../../../../styles/variables.scss";
+
+.gt-tabstrip {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  border-bottom: 1px solid #5661c4;
-}
+  gap: 0.5rem;
+  border-bottom: 1px solid $core-green-05;
 
-.tab-option {
-  margin: 5px 0px;
-}
+  &-option {
+    display: flex;
+  }
 
-// active-tab-css
-.cash-active-tab {
-  background-color: #5661c4;
-  color: #ffffff;
-  border-radius: 4px 4px 0px 0px;
+  &-link {
+    text-decoration: none;
+    color: $text-default;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 0.25rem 0.25rem 0 0;
+    padding: 0.75rem 1.5rem;
+  }
+
+  &-active-cash {
+    background-color: $core-green-05;
+    color: $core-gray-01;
+  }
 }
