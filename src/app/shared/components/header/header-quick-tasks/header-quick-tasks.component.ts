@@ -18,7 +18,7 @@ export class HeaderQuickTasksComponent {
     {
       value: 2,
       text: 'New forecast',
-    }
+    },
   ];
 
   readonly userTaskDefaultOption = {

@@ -1,0 +1,18 @@
+//general css
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #5661c4;
+}
+
+.tab-option {
+  margin: 5px 0px;
+}
+
+// active-tab-css
+.cash-active-tab {
+  background-color: #5661c4;
+  color: #ffffff;
+  border-radius: 4px 4px 0px 0px;
+}

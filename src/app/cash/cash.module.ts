@@ -4,7 +4,6 @@ import { CashContainerComponent } from './components/cash-container/cash-contain
 import { RouterModule } from '@angular/router';
 import { CashToolbarComponent } from './components/cash-container/cash-toolbar/cash-toolbar.component';
 import { ClarityModule } from '@clr/angular';
-import { CashTabstripComponent } from './components/cash-container/cash-tabstrip/cash-tabstrip.component';
 import { WorksheetsComponent } from './components/worksheets-container/worksheets/worksheets.component';
 import { TodoComponent } from '../todo/todo.component';
 import { StatementService } from '../core/services/statement/statement.service';
@@ -16,7 +15,7 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
-
+import { SharedModule } from '../shared/shared.module';
 const routes = [
   {
     path: '',
@@ -37,7 +36,6 @@ const routes = [
   declarations: [
     CashContainerComponent,
     CashToolbarComponent,
-    CashTabstripComponent,
     WorksheetsComponent,
     WorksheetsToolbarComponent,
     WorksheetsContainerComponent,
@@ -51,6 +49,7 @@ const routes = [
     InputsModule,
     DateInputsModule,
     ClarityModule,
+    SharedModule,
   ],
   providers: [StatementService, WorksheetsHelperService, DatePipe],
 })

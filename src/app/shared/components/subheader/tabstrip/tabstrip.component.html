@@ -1,0 +1,10 @@
+<div class="tabs">
+  <div *ngFor="let tab of tabs" class="tab-option">
+    <a
+      [routerLink]="[tab.routerLink]"
+      [routerLinkActive]="tab.activeClass ? [tab.activeClass] : ''"
+    >
+      {{ tab.title }}
+    </a>
+  </div>
+</div>

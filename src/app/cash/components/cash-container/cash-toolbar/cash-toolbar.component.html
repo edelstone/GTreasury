@@ -1,10 +1,16 @@
-<div class="display-flex flex-row">
+<div class="cash-toolbar">
   <h4>Overview</h4>
-  <span>{{ loadingCompleteDate | date: "full" }}</span>
-  <div>
-    <clr-icon shape="cog"></clr-icon>
-    <span>Settings</span>
+  <div class="cash-toolbar-right">
+    <span class="cash-toolbar-item">{{
+      loadingCompleteDate | date: "full"
+    }}</span>
+    <div class="cash-toolbar-item">
+      <clr-icon shape="cog"></clr-icon>
+      <span>Settings</span>
+    </div>
+    <div class="cash-toolbar-item">
+      <button kendoButton>New Forecast</button>
+      <button kendoButton>New Worksheet</button>
+    </div>
   </div>
-  <button kendoButton>New Forecast</button>
-  <button kendoButton>New Worksheet</button>
 </div>

@@ -17,6 +17,8 @@ import { HeaderSupportComponent } from './components/header/header-support/heade
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { LayoutModule } from '@progress/kendo-angular-layout';
 import { IndicatorsModule } from '@progress/kendo-angular-indicators';
+import { SubheaderComponent } from './components/subheader/subheader.component';
+import { TabstripComponent } from './components/subheader/tabstrip/tabstrip.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
     HeaderLanguageSelectorComponent,
     HeaderUserComponent,
     HeaderSupportComponent,
+    SubheaderComponent,
+    TabstripComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +46,6 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 
     ClarityModule,
   ],
-  exports: [HeaderComponent, SidebarComponent],
+  exports: [HeaderComponent, SidebarComponent, SubheaderComponent],
 })
 export class SharedModule {}
