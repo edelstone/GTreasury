@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { CashContainerComponent } from './components/cash-container/cash-container.component';
 import { RouterModule } from '@angular/router';
-import { CashToolbarComponent } from './components/cash-container/cash-toolbar/cash-toolbar.component';
+import { CashTitlebarComponent } from './components/cash-container/cash-titlebar/cash-titlebar.component';
 import { ClarityModule } from '@clr/angular';
 import { WorksheetsComponent } from './components/worksheets-container/worksheets/worksheets.component';
 import { TodoComponent } from '../todo/todo.component';
@@ -35,7 +35,7 @@ const routes = [
 @NgModule({
   declarations: [
     CashContainerComponent,
-    CashToolbarComponent,
+    CashTitlebarComponent,
     WorksheetsComponent,
     WorksheetsToolbarComponent,
     WorksheetsContainerComponent,
