@@ -1,10 +1,8 @@
-<div>
+<div class="gt-support-header">
   <clr-icon shape="help"></clr-icon>
-  <kendo-dropdownlist
-    [defaultItem]="supportDefaultOption"
-    [data]="supportOptions"
-    textField="text"
-    valueField="value"
-  >
-  </kendo-dropdownlist>
+  <kendo-menu [items]="items" [openOnClick]="true">
+    <ng-template kendoMenuItemTemplate let-item="item">
+        <span>{{item.text}}</span>
+    </ng-template>
+  </kendo-menu>
 </div>

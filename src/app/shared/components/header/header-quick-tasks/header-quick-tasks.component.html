@@ -1,9 +1,8 @@
-<div>
-  <kendo-dropdownlist
-    [defaultItem]="userTaskDefaultOption"
-    [data]="userTaskOptions"
-    textField="text"
-    valueField="value"
-  >
-  </kendo-dropdownlist>
+<div class="gt-quick-tasks-header">
+  <kendo-menu [items]="items" [openOnClick]="true">
+    <ng-template kendoMenuItemTemplate let-item="item">
+        <clr-icon *ngIf="item.iconClass" [attr.shape]="item.iconClass" size="16"></clr-icon>
+        <span>{{item.text}}</span>
+    </ng-template>
+  </kendo-menu>
 </div>

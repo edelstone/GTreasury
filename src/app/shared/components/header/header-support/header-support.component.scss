@@ -1,0 +1,9 @@
+@import "../../../../../styles/variables.scss";
+
+.gt-support-header {
+  display: flex;
+  align-items: center;
+  span {
+    color: $text-default;
+  }
+}

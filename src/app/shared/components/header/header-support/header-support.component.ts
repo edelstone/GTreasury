@@ -6,20 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-support.component.scss'],
 })
 export class HeaderSupportComponent {
-  readonly supportOptions = [
+  readonly items: any[] = [
     {
-      value: 1,
-      text: 'Option 1',
-    },
-    {
-      value: 2,
-      text: 'Option 2',
-    },
+      text: "Support",
+      items: [
+        {
+          text: "Option 1"
+        },
+        {
+          text: "Option 2"
+        }
+      ]
+    }
   ];
 
-  readonly supportDefaultOption = {
-    value: 0,
-    text: 'Support',
-  };
   constructor() {}
 }

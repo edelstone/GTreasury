@@ -6,25 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./header-quick-tasks.component.scss'],
 })
 export class HeaderQuickTasksComponent {
-  readonly userTaskOptions = [
+  readonly items: any[] = [
     {
-      value: 1,
-      text: 'New payment',
-    },
-    {
-      value: 2,
-      text: 'New deal',
-    },
-    {
-      value: 2,
-      text: 'New forecast',
-    },
+      text: "Quick Tasks",
+      items: [
+        {
+          text: "New payment",
+          iconClass: "wallet"
+        },
+        {
+          text: "New deal",
+          iconClass: "tags"
+        },
+        {
+          text: "New forecast",
+          iconClass: "curve-chart"
+        }
+      ]
+    }
   ];
-
-  readonly userTaskDefaultOption = {
-    value: 0,
-    text: 'Quick Tasks',
-  };
 
   constructor() {}
 }
