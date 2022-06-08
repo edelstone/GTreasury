@@ -13,8 +13,14 @@ body {
   height: 100%;
 }
 
+// The router outlet directive can take up space in flexbox layouts; this hides it.
+.gt-router-outlet {
+  display: none;
+}
+
 // Overrides that, for some reason, don't work on component-level files
 
+// Global sidebar
 .gt-sidebar .k-menu-vertical > .k-menu-item > .k-menu-link {
   padding: 0;
 }
