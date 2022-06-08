@@ -1,6 +1,6 @@
 <div class="gt-support-header">
   <clr-icon shape="help"></clr-icon>
-  <kendo-menu [items]="items" [openOnClick]="true">
+  <kendo-menu [items]="items" [openOnClick]="{ toggle: 'click' }">
     <ng-template kendoMenuItemTemplate let-item="item">
         <span>{{item.text}}</span>
     </ng-template>
