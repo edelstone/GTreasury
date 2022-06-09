@@ -1,5 +1,5 @@
 export class TickerDetails {
-  value: number;
+  value: string;
   percentage: number;
   isIncrease: boolean;
 

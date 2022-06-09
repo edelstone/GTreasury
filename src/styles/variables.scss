@@ -150,6 +150,7 @@ $extended-brown-08: #311a0c;
 // From main _variables file
 $enable-gradients: false;
 $enable-shadows: false;
+$kendo-border-radius: 2px;
 $primary: $core-blue-07;
 $primary-lighter: $core-blue-06;
 $primary-darker: $core-blue-08;
@@ -204,7 +205,7 @@ $primary-focused-shadow: none;
 
 // From component-level _variables files
 // These were done in our initial test project and will likely be deprecated or
-// moved to proper locations
+// moved to proper 
 
 $kendo-button-bg: $core-gray-03;
 $kendo-button-text: $text-default;

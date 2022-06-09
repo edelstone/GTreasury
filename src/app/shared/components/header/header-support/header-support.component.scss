@@ -1,9 +1,11 @@
 @import "../../../../../styles/variables.scss";
 
-.gt-support-header {
+.gt-support {
   display: flex;
   align-items: center;
-  span {
-    color: $text-default;
+  gap: 0.5rem;
+
+  &-icon {
+    color: $icon-default;
   }
 }

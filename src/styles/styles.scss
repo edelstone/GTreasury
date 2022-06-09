@@ -18,11 +18,52 @@ body {
   display: none;
 }
 
-// Overrides that, for some reason, don't work on component-level files
+// Overrides that, for whatever reason, don't work on component-level files
 
 // Global sidebar
-.gt-sidebar .k-menu-vertical > .k-menu-item > .k-menu-link {
-  padding: 0;
+.gt-sidebar {
+  
+  .k-menu-vertical > .k-menu-item > .k-menu-link {
+    padding: 0;
+  }
+}
+
+// Global header
+.gt-header {
+
+  .k-input-inner, .k-input-button, .k-menu-link {
+    padding: 0;
+  }
+
+  .k-menu-link {
+    color: $text-default;
+  }
+
+  .k-menu-expand-arrow, .k-button-icon {
+    color: $icon-default;
+  }
+
+  .gt-quick-tasks {
+
+    .k-menu-link {
+      padding-left: 0.75rem;
+      gap: 0.75rem;
+    }
+    
+    .k-menu-expand-arrow {
+      background: $core-gray-02;
+      height: 100%;
+      padding: 0.5rem 1rem;
+      margin-inline-end: 0;
+      box-shadow: inset 0 0 0 1px $core-gray-05;
+      border-radius: 0 2px 2px 0;
+    }
+  }
+}
+
+// Text field placeholders 
+::placeholder {
+  color: $text-extra-light !important;
 }
 
 // CSS from an earlier project; will be deprected or relocated to appropriate component-level files

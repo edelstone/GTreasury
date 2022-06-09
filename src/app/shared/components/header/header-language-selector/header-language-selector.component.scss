@@ -1,0 +1,17 @@
+@import "../../../../../styles/variables.scss";
+
+.gt-language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &-select {
+    background: none;
+    border: none;
+    width: auto;
+  }
+  
+  &-icon {
+    color: $icon-default;
+  }
+}

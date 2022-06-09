@@ -11,10 +11,10 @@ export class HeaderSupportComponent {
       text: "Support",
       items: [
         {
-          text: "Option 1"
+          text: "Contact us"
         },
         {
-          text: "Option 2"
+          text: "Report an issue"
         }
       ]
     }

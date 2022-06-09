@@ -1,7 +1,39 @@
-.color-green {
-  color: #1d7b50;
-}
+@import "../../../../../styles/variables.scss";
 
-.color-red {
-  color: red;
+.gt-ticker {
+  display: flex;
+  flex-direction: column;
+  color: $text-default;
+
+  &-select {
+    background: none;
+    border: none;
+    width: auto;
+  }
+
+  &-info {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.5rem;
+    font-weight: bold;
+
+    &-figure {
+      font-size: 1rem;
+    }
+
+    &-comparison {
+      display: flex;
+      align-items: center;
+      position: relative;
+      bottom: 1px;
+    }
+
+    &-up {
+      color: $text-success;
+    }
+
+    &-down {
+      color: $text-error;
+    }
+  }
 }

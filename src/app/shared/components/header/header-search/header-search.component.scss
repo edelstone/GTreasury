@@ -2,8 +2,20 @@
 
 .gt-search {
   width: 100%;
+  border-color: $core-gray-05;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+
+  &:hover, &:active {
+    border-color: $core-gray-06;
+  }
+
+  &:focus-within {
+    border-color: $core-blue-07;
+  }
 
   &-icon {
     color: $icon-light;
+    margin-right: 0.75rem;
   }
 }

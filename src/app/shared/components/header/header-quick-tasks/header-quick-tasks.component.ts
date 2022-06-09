@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class HeaderQuickTasksComponent {
   readonly items: any[] = [
     {
-      text: "Quick Tasks",
+      text: "Quick task",
       items: [
         {
           text: "New payment",

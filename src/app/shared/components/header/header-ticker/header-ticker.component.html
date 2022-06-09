@@ -1,17 +1,19 @@
-<div>
+<div class="gt-ticker">
   <kendo-dropdownlist
+    class="gt-ticker-select"
     [defaultItem]="tickerDefaultOption"
     [data]="tickerOptions"
+    [popupSettings]="{ width: 'auto' }"
     textField="text"
     valueField="value"
   >
   </kendo-dropdownlist>
-  <div *ngIf="tickerDetails" style="display: inline-block">
-    <div>{{ tickerDetails.value | number: "1.0-2" }}</div>
-    <div
+  <div *ngIf="tickerDetails" class="gt-ticker-info">
+    <div class="gt-ticker-info-figure">{{ tickerDetails.value }}</div>
+    <div class="gt-ticker-info-comparison"
       [class]="{
-        'color-green': tickerDetails.isIncrease,
-        'color-red': !tickerDetails.isIncrease
+        'gt-ticker-info-up': tickerDetails.isIncrease,
+        'gt-ticker-info-down': !tickerDetails.isIncrease
       }"
     >
       <clr-icon
