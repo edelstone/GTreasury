@@ -13,6 +13,10 @@ body {
   height: 100%;
 }
 
+table {
+  table-layout: auto !important;
+}
+
 // The router outlet directive can take up space in flexbox layouts; this hides it.
 .gt-router-outlet {
   display: none;
