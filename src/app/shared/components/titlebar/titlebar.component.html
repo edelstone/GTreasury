@@ -1,0 +1,9 @@
+<div class="gt-cash-titlebar">
+  <h1 class="gt-cash-titlebar-title">{{ titlebarName }}</h1>
+  <div class="gt-cash-titlebar-actions">
+    <span *ngIf="shouldDisplayDateTime" class="gt-cash-titlebar-date">{{ loadingCompleteDate | date: "ccc d MMM YYYY h:mm:ss" }} {{ loadingCompleteDate | date: "a" | lowercase }} {{tzName}}</span>
+    <button *ngIf="shouldDisplaySettings" kendoButton themeColor="secondary" fillMode="flat"><clr-icon shape="cog"></clr-icon> Settings</button>
+    <button *ngIf="shouldDisplaySecondary" kendoButton themeColor="secondary" size="large">New Forecast</button>
+    <button *ngIf="shouldDisplayPrimary" kendoButton themeColor="primary" size="large">New Worksheet</button>
+  </div>
+</div>
