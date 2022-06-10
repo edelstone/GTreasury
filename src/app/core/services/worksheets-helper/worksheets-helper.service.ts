@@ -76,6 +76,17 @@ export class WorksheetsHelperService {
 
     worksheet.rows.push(
       new WorksheetRow({
+        rowName: 'Subtotal',
+        worksheetGroup: new WorksheetGroup({
+          id: WorksheetCategory.Credits,
+          name: 'Credits',
+        }),
+        data: statements.map((s) => this.multiSelectCredit('subtotal', s)).flat(),
+      })
+    );
+
+    worksheet.rows.push(
+      new WorksheetRow({
         rowName: 'Example Debit',
         worksheetGroup: new WorksheetGroup({
           id: WorksheetCategory.Debits,
