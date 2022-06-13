@@ -154,12 +154,12 @@ $kendo-border-radius: 2px;
 $primary: $core-blue-07;
 $primary-lighter: $core-blue-06;
 $primary-darker: $core-blue-08;
-$secondary: $core-gray-09;
-$secondary-lighter: $core-gray-08;
-$secondary-darker: $core-gray-10;
-$tertiary: $secondary;
-$tertiary-lighter: $secondary-lighter;
-$tertiary-darker: $secondary-darker;
+$secondary: $core-gray-03;
+$secondary-lighter: $core-gray-02;
+$secondary-darker: $core-gray-04;
+$tertiary: $core-gray-09;
+$tertiary-lighter: $core-gray-08;
+$tertiary-darker: $core-gray-10;
 $info: $core-blue-07;
 $info-lighter: $core-blue-06;
 $info-darker: $core-blue-08;
@@ -203,21 +203,30 @@ $selected-hover-gradient: transparent;
 $focused-shadow: none;
 $primary-focused-shadow: none;
 
-// From component-level _variables files
-// These were done in our initial test project and will likely be deprecated or
-// moved to proper 
+// Component-level variables
 
-$kendo-button-bg: $core-gray-03;
+// Button
+$kendo-flat-button-hover-opacity: 0.08;
+$kendo-button-bg: $core-gray-01;
 $kendo-button-text: $text-default;
 $kendo-button-border: $core-gray-04;
-$kendo-button-hover-bg: $core-gray-04;
+$kendo-button-hover-bg: $core-gray-02;
+$kendo-button-active-bg: $core-gray-03;
+$kendo-button-selected-bg: $core-blue-02;
+$kendo-button-selected-border: $core-gray-04;
 $kendo-button-hover-border: $core-gray-05;
+
+// Link
 $link-text: $core-blue-08;
 $link-hover-text: $core-blue-09;
+
+// Reports
 $series-a: $core-red-03;
 $series-b: $core-yellow-03;
 $series-c: $core-green-03;
 $series-d: $extended-cyan-04;
 $series-e: $extended-indigo-05;
 $series-f: $extended-violet-05;
+
+// Grid
 $grid-hovered-bg: $core-gray-02;

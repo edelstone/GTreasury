@@ -1,5 +1,11 @@
-.gt-cash-container {
+.gt-cash {
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
+
+    &-navigation {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
 }

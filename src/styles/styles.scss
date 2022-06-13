@@ -11,18 +11,67 @@ body {
   font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica,
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   height: 100%;
+  color: $text-default;
 }
 
 table {
   table-layout: auto !important;
 }
 
-// The router outlet directive can take up space in flexbox layouts; this hides it.
-.gt-router-outlet {
-  display: none;
+// Menus
+.k-popup {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 $transparent-dark-20;
+  min-width: 5rem;
 }
 
-// Overrides that, for whatever reason, don't work on component-level files
+// Field placeholders 
+::placeholder {
+  color: $text-extra-light !important;
+}
+
+// Replaces default arrow icons used in some inputs
+// Down arrow 
+.k-i-arrow-s::before, .k-i-arrow-60-down::before, .k-i-collapse::before {
+  content: "\e015";
+}
+
+// Right arrow
+.k-i-expand::before {
+  content: "\e014";
+}
+
+// Buttons
+.k-button-flat.k-focus::after {
+  opacity: 0;
+}
+
+.k-button::before {
+  transition: none;
+}
+
+.k-button-solid-secondary {
+  border-color: $core-gray-04;
+
+  &:hover {
+    border-color: $core-gray-05;
+  }
+
+  &:active {
+    border-color: $core-gray-06;
+  }
+}
+
+// Inputs
+.k-input:hover, .k-input.k-hover, .k-input:focus, .k-input.k-focus {
+  border-color: $core-gray-05;
+}
+
+// Some Angular directives can take up space in flexbox layouts; this hides those.
+router-outlet, kendo-resize-sensor {
+  display: none;
+}
 
 // Global sidebar
 .gt-sidebar {
@@ -41,6 +90,7 @@ table {
 
   .k-menu-link {
     color: $text-default;
+    gap: 0.35rem;
   }
 
   .k-menu-expand-arrow, .k-button-icon {
@@ -65,30 +115,23 @@ table {
   }
 }
 
-// Text field placeholders 
-::placeholder {
-  color: $text-extra-light !important;
-}
+// Filters
 
-// CSS from an earlier project; will be deprected or relocated to appropriate component-level files
+.gt-toolbar {
 
-.gt-dropdownlist {
-  margin-bottom: 1rem;
-  max-width: 20rem;
-
-  .k-picker {
-    border-color: $component-border;
-    background: $component-bg;
-
-    &:hover {
-      border-color: $hovered-border;
+  &-actions-select {
+  
+    .k-icon {
+      font-size: 1.5rem;
     }
 
-    &:active {
-      border-color: $selected-border;
+    .k-input-inner, .k-input-button {
+      padding: 0;
     }
   }
 }
+
+// CSS from an earlier project; will be deprected or relocated to appropriate component-level files
 
 .gt-grid {
   .k-grid {

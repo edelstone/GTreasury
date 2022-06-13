@@ -1,6 +1,6 @@
 @import "../../../../styles/variables.scss";
 
-.gt-cash-titlebar {
+.gt-titlebar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,5 +20,38 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+
+    &-cta {
+      font-size: 18px;
+      padding: 0.5rem 0.75rem;
+    }
+
+    &-primary {
+
+      &:focus {
+        box-shadow: none;
+      }
+
+      &:hover {
+        opacity: 0.9;
+      }
+
+      &:active {
+        opacity: 0.95;
+      }
+
+      &-cash {
+        background-color: $core-green-05;
+      }
+    }
+
+    &-tertiary {
+
+      span {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+      }
+    }
   }
 }

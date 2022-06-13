@@ -1,70 +1,79 @@
-<div class="gt-actions-bar">
-  <div>
-    <kendo-dropdownlist
-      [data]="worksheets"
-      [defaultItem]="worksheetsDefaultOption"
-    >
-    </kendo-dropdownlist>
+<div class="gt-toolbar">
+  <div class="gt-toolbar-actions">
+    <div class="gt-toolbar-actions-left">
+      <div>
+        <kendo-dropdownlist
+          class="gt-toolbar-actions-select"
+          [data]="worksheets"
+          [defaultItem]="worksheetsDefaultOption"
+        >
+        </kendo-dropdownlist>
+      </div>
+      <div class="gt-toolbar-actions-buttons">
+        <kendo-buttongroup>
+          <button kendoButton themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="pencil" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="clone" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="trash" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="plus-circle" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="star" class="is-solid favorite"></clr-icon>
+          </button>
+          <button kendoButton themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="search" class="is-solid"></clr-icon>
+          </button>
+        </kendo-buttongroup>
+      </div>
+    </div>
+    <div class="gt-toolbar-actions-right">
+      <div class="gt-toolbar-actions-toggle">
+        <kendo-buttongroup selection="single">
+          <button kendoButton [togglable]="true" [selected]="true">
+            Transaction Date
+          </button>
+          <button kendoButton [togglable]="true">Value Date</button>
+          <button kendoButton [togglable]="true">Process Date</button>
+        </kendo-buttongroup>
+      </div>
+    </div>
   </div>
-  <div>
-    <kendo-buttongroup>
-      <button kendoButton themeColor="secondary" fillMode="flat">
-        <clr-icon shape="pencil" class="is-solid"></clr-icon>
-      </button>
-      <button kendoButton themeColor="secondary" fillMode="flat">
-        <clr-icon shape="clone" class="is-solid"></clr-icon>
-      </button>
-      <button kendoButton themeColor="secondary" fillMode="flat">
-        <clr-icon shape="trash" class="is-solid"></clr-icon>
-      </button>
-      <button kendoButton themeColor="secondary" fillMode="flat">
-        <clr-icon shape="plus-circle" class="is-solid"></clr-icon>
-      </button>
-      <button kendoButton themeColor="secondary" fillMode="flat">
-        <clr-icon shape="star" class="is-solid"></clr-icon>
-      </button>
-      <button kendoButton themeColor="secondary" fillMode="flat">
-        <clr-icon shape="search" class="is-solid"></clr-icon>
-      </button>
-    </kendo-buttongroup>
+  <div class="gt-toolbar-filters">
+    <div>
+      <kendo-textbox class="gt-toolbar-filters-search" placeholder="Search all data..."> </kendo-textbox>
+    </div>
+    <div>
+      <kendo-daterange>
+        <kendo-dateinput
+          class="gt-toolbar-filters-date"
+          kendoDateRangeStartInput
+          [(value)]="startDate"
+          format="dd MMM yyyy"
+        ></kendo-dateinput>
+        <kendo-dateinput
+          class="gt-toolbar-filters-date"
+          kendoDateRangeEndInput
+          [(value)]="endDate"
+          format="dd MMM yyyy"
+        ></kendo-dateinput>
+        <kendo-daterange-popup [animate]="false"></kendo-daterange-popup>
+      </kendo-daterange>
+    </div>
+    <div>
+      <kendo-multiselect class="gt-toolbar-filters-select" [data]="accountsAndGroups"> </kendo-multiselect>
+    </div>
+    <div>
+      <kendo-dropdownlist class="gt-toolbar-filters-dropdown" [data]="codeByDate"> </kendo-dropdownlist>
+    </div>
+    <div>
+      <kendo-multiselect class="gt-toolbar-filters-select" [data]="ledgerType"> </kendo-multiselect>
+    </div>
+    <div class="gt-toolbar-filters-switch">Decimals: <kendo-switch class="gt-toolbar-filters-switch-control"></kendo-switch></div>
   </div>
-  <div>
-    <kendo-buttongroup selection="single">
-      <button kendoButton [togglable]="true" [selected]="true">
-        Transaction Date
-      </button>
-      <button kendoButton [togglable]="true">Value Date</button>
-      <button kendoButton [togglable]="true">Process Date</button>
-    </kendo-buttongroup>
-  </div>
-</div>
-<div class="gt-filter-bar">
-  <div>
-    <kendo-textbox placeholder="Search all data..."> </kendo-textbox>
-  </div>
-  <div>
-    <kendo-daterange>
-      <kendo-dateinput
-        kendoDateRangeStartInput
-        [(value)]="startDate"
-        format="dd MMM yyyy"
-      ></kendo-dateinput>
-      <kendo-dateinput
-        kendoDateRangeEndInput
-        [(value)]="endDate"
-        format="dd MMM yyyy"
-      ></kendo-dateinput>
-      <kendo-daterange-popup [animate]="false"></kendo-daterange-popup>
-    </kendo-daterange>
-  </div>
-  <div>
-    <kendo-multiselect [data]="accountsAndGroups"> </kendo-multiselect>
-  </div>
-  <div>
-    <kendo-dropdownlist [data]="codeByDate"> </kendo-dropdownlist>
-  </div>
-  <div>
-    <kendo-multiselect [data]="ledgerType"> </kendo-multiselect>
-  </div>
-  <div>Decimals: <kendo-switch></kendo-switch></div>
 </div>
