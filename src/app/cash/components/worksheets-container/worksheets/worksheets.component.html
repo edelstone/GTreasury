@@ -45,9 +45,9 @@
             <ng-template
               kendoGridCellTemplate
               let-dataItem
-              let-rowIndex="rowIndex"
+              let-columnIndex="columnIndex"
             >
-              {{ dataItem.data[i] | number: "1.2-2" }}
+              {{ dataItem.data[columnIndex-1] | number: "1.2-2" }}
             </ng-template>
             <ng-template kendoGridFooterTemplate>
               {{ statement.actual.closingLedger | number: "1.2-2" }}
@@ -69,9 +69,9 @@
             <ng-template
               kendoGridCellTemplate
               let-dataItem
-              let-rowIndex="rowIndex"
+              let-columnIndex="columnIndex"
             >
-              {{ dataItem.data[i] | number: "1.2-2" }}
+              {{ dataItem.data[columnIndex-1] | number: "1.2-2" }}
             </ng-template>
             <ng-template kendoGridFooterTemplate>
               {{ statement.estimate.closingLedger | number: "1.2-2" }}
