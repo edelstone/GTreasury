@@ -42,6 +42,11 @@ table {
   content: "\e014";
 }
 
+// Up arrow
+.k-i-arrow-n::before {
+  content: "\e013";
+}
+
 // Buttons
 .k-button-flat.k-focus::after {
   opacity: 0;
@@ -66,6 +71,14 @@ table {
 // Inputs
 .k-input:hover, .k-input.k-hover, .k-input:focus, .k-input.k-focus {
   border-color: $core-gray-05;
+}
+
+.k-input:active, .k-input.k-hover, .k-input:focus, .k-input.k-focus {
+  border-color: $core-gray-05;
+}
+
+.k-list-item, .k-list-optionlabel {
+  gap: 0;
 }
 
 // Some Angular directives can take up space in flexbox layouts; this hides those.

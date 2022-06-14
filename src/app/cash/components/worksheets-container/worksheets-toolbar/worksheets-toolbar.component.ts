@@ -7,13 +7,15 @@ import { Component } from '@angular/core';
 })
 export class WorksheetsToolbarComponent {
   readonly worksheets = ['My cash worksheet 2'];
-  readonly worksheetsDefaultOption = 'My cash worksheet 1';
-  readonly accountsAndGroups = ['Option A', 'Option B', 'Option C'];
-  readonly codeByDate = ['User code by date'];
+  readonly worksheetsDefault = 'My cash worksheet 1';
+  readonly accountsAndGroupsDefault = ['5 accounts and groups'];
+  readonly tableLayout = ['User code by account', 'Date by user code', 'Date by account', 'Account by user code', 'Account by date'];
+  readonly tableLayoutDefault = ['User code by date'];
   readonly ledgerType = ['Actual', 'Estimate', 'Forecast'];
 
-  startDate = new Date(2022, 0, 17);
-  endDate = new Date(2022, 0, 23);
+  startDate = new Date();
+  endDate = new Date();
+  ledgerTypeDefault = ['Actual', 'Estimate'];
 
   constructor() {}
 }
