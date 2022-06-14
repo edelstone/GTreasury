@@ -153,6 +153,13 @@ router-outlet, kendo-resize-sensor {
   }
 }
 
+// Page-level layouts
+gt-cash-container, gt-todo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 // CSS from an earlier project; will be deprected or relocated to appropriate component-level files
 
 .gt-grid {

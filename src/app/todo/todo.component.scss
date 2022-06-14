@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.gt-empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: $transparent-dark-8;
+  border-radius: 4px;
+  flex-grow: 1;
+
+  &-logo {
+    opacity: 80%;
+    max-width: 150px;
+  }
+
+  &-text {
+    font-size: 1.5rem;
+    color: $transparent-dark-60;
+  }
+}
