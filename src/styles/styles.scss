@@ -78,7 +78,20 @@ table {
 }
 
 .k-list-item, .k-list-optionlabel {
+  transition: none;
   gap: 0;
+}
+
+.k-i-x-circle::before {
+  content: "\e11b";
+  color: $icon-default;
+  position: relative;
+  top: 1px;
+  left: 1px;
+
+  &:hover {
+    color: $core-gray-11;
+  }
 }
 
 // Some Angular directives can take up space in flexbox layouts; this hides those.
