@@ -14,6 +14,7 @@
           [headerClass]="{ 'no-background': true }"
           [class]="{ 'dark-blue-background': true }"
           [footerClass]="{ 'no-background': true }"
+          [width]="300"
         >
           <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
             {{ dataItem.rowName }}
@@ -38,6 +39,7 @@
             [headerClass]="{ 'no-background': true }"
             [class]="{ 'no-background': true }"
             [footerClass]="{ 'no-background': true }"
+            [width]="300"
           >
             <ng-template kendoGridHeaderTemplate>
               {{ statement.actual.openingLedger | number: "1.2-2" }}
@@ -62,6 +64,7 @@
             [headerClass]="{ 'no-background': true }"
             [class]="{ 'no-background': true }"
             [footerClass]="{ 'no-background': true }"
+            [width]="300"
           >
             <ng-template kendoGridHeaderTemplate>
               {{ statement.estimate.openingLedger | number: "1.2-2" }}

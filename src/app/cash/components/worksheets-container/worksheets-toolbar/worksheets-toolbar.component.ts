@@ -13,9 +13,16 @@ export class WorksheetsToolbarComponent {
   readonly tableLayoutDefault = ['User code by date'];
   readonly ledgerType = ['Actual', 'Estimate', 'Forecast'];
 
-  startDate = new Date();
+  startDate = this.getStartDate();
   endDate = new Date();
   ledgerTypeDefault = ['Actual', 'Estimate'];
 
   constructor() {}
+
+  public getStartDate() {
+    // Start date is 7 days ago
+    const date = new Date();
+    date.setDate(date.getDate() - 7);
+    return date;
+  }
 }

@@ -14,8 +14,14 @@ body {
   color: $text-default;
 }
 
-table {
-  table-layout: auto !important;
+.gt-worksheet {
+  .k-grid {
+    overflow: auto;
+    flex-direction: row;
+    .k-grid-aria-root {
+      overflow: visible;
+    }
+  }
 }
 
 // Menus
