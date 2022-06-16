@@ -3,6 +3,7 @@
     <kendo-grid-column-group
       title="Date"
       [headerClass]="{ 'no-background': true }"
+      [locked]="true"
     >
       <kendo-grid-column-group
         title="Data type"
@@ -83,7 +84,7 @@
         </kendo-grid-column-group>
       </kendo-grid-column-group>
     </ng-container>
-    <kendo-grid-column field="worksheetGroup.name" [hidden]="true">
+    <kendo-grid-column field="worksheetGroup.name" [hidden]="true" [width]="200">
       <ng-template kendoGridGroupHeaderTemplate let-value="value">
         {{ value }}
       </ng-template>
