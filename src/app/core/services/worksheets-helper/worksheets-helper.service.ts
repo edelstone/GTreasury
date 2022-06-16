@@ -26,7 +26,7 @@ export class WorksheetsHelperService {
 
     worksheet.rows.push(
       new WorksheetRow({
-        rowName: 'Cash Letter',
+        rowName: 'Cash letter',
         worksheetGroup: new WorksheetGroup({
           id: WorksheetCategory.Credits,
           name: 'Credits',
@@ -39,7 +39,7 @@ export class WorksheetsHelperService {
 
     worksheet.rows.push(
       new WorksheetRow({
-        rowName: 'Deposit Corrections',
+        rowName: 'Deposit corrections',
         worksheetGroup: new WorksheetGroup({
           id: WorksheetCategory.Credits,
           name: 'Credits',
@@ -87,7 +87,7 @@ export class WorksheetsHelperService {
 
     worksheet.rows.push(
       new WorksheetRow({
-        rowName: 'Example Debit',
+        rowName: 'Example debit',
         worksheetGroup: new WorksheetGroup({
           id: WorksheetCategory.Debits,
           name: 'Debits',

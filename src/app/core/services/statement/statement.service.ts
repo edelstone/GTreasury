@@ -8,7 +8,7 @@ import { Statement } from '../../model/statement';
 export class StatementService {
   private readonly statements: Statement[] = [
     {
-      date: new Date(2022, 1, 17),
+      date: new Date(2022, 5, 6),
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 11400993.21,
@@ -35,7 +35,7 @@ export class StatementService {
       }),
     },
     {
-      date: new Date(2022, 1, 18),
+      date: new Date(2022, 5, 7),
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 13827390.88,
@@ -62,7 +62,7 @@ export class StatementService {
       }),
     },
     {
-      date: new Date(2022, 1, 19),
+      date: new Date(2022, 5, 8),
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 10388267.95,
@@ -89,7 +89,7 @@ export class StatementService {
       }),
     },
     {
-      date: new Date(2022, 1, 20),
+      date: new Date(2022, 5, 9),
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 12456092.22,
@@ -116,7 +116,7 @@ export class StatementService {
       }),
     },
     {
-      date: new Date(2022, 1, 21),
+      date: new Date(2022, 5, 10),
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 11294896.27,
@@ -143,7 +143,7 @@ export class StatementService {
       }),
     },
     {
-      date: new Date(2022, 1, 22),
+      date: new Date(2022, 5, 11),
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 13278194.88,
@@ -170,7 +170,7 @@ export class StatementService {
       }),
     },
     {
-      date: new Date(2022, 1, 23),
+      date: new Date(2022, 5, 12),
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 13278194.88,
@@ -197,7 +197,7 @@ export class StatementService {
       }),
     },
     {
-      date: new Date(2022, 1, 24),
+      date: new Date(2022, 5, 13),
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 12294896.27,
