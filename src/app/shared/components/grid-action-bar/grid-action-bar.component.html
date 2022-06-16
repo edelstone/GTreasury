@@ -1,0 +1,33 @@
+<div class="gt-action-bar">
+  <div>
+    <button kendoButton themeColor="primary">+ New worksheet</button>
+  </div>
+
+  <div class="gt-action-bar-dropdown-buttons">
+    <kendo-dropdownlist
+      class="gt-action-bar-select"
+      [data]="viewOptions"
+      [defaultItem]="defaultItem"
+      textField="text"
+      valueField="value"
+    >
+    </kendo-dropdownlist>
+    <div class="gt-action-bar-buttons">
+      <!-- <button kendoButton themeColor="secondary" fillMode="outline">
+        <clr-icon shape="floppy"></clr-icon>
+      </button>
+      <button kendoButton themeColor="secondary" fillMode="outline">
+        <clr-icon shape="trash"></clr-icon>
+      </button>
+      <button kendoButton themeColor="secondary" fillMode="outline">
+        <clr-icon shape="bar-chart"></clr-icon>
+      </button> -->
+      <button kendoButton themeColor="secondary" fillMode="outline">
+        <clr-icon shape="export"></clr-icon>
+      </button>
+      <button kendoButton themeColor="secondary" fillMode="outline">
+        <clr-icon shape="printer"></clr-icon>
+      </button>
+    </div>
+  </div>
+</div>
