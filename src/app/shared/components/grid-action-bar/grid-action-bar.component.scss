@@ -1,22 +1,19 @@
-
-.gt-action-bar {
+.gt-grid-actions {
   display: flex;
-  flex-direction: row;
-}
+  
+  &-right {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
 
-.gt-action-bar-dropdown-buttons {
-  display: flex;
-  flex-direction: row;
-  flex-grow: 1;
-  justify-content: flex-end;
-  gap: 0.5rem;
-}
-
-.gt-action-bar-select {
-  width: 150px;
-}
-
-.gt-action-bar-buttons {
-  display: flex;
-  gap: 0.5rem;
+  &-select {
+    width: 150px;
+  }
+  
+  &-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
 }

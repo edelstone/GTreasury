@@ -1,31 +1,39 @@
-<div class="gt-action-bar">
+<div class="gt-grid-actions">
+<!--
   <div>
-    <button kendoButton themeColor="primary">+ New worksheet</button>
+    <button kendoButton themeColor="primary">
+      <clr-icon shape="plus"></clr-icon>New worksheet
+    </button>
   </div>
+-->
 
-  <div class="gt-action-bar-dropdown-buttons">
+  <div class="gt-grid-actions-right">
+  <!-- 
     <kendo-dropdownlist
-      class="gt-action-bar-select"
+      class="gt-grid-actions-select"
       [data]="viewOptions"
       [defaultItem]="defaultItem"
       textField="text"
       valueField="value"
     >
     </kendo-dropdownlist>
-    <div class="gt-action-bar-buttons">
-      <!-- <button kendoButton themeColor="secondary" fillMode="outline">
+  -->
+    <div class="gt-grid-actions-buttons">
+    <!--
+      <button kendoButton size="large" themeColor="secondary" fillMode="outline">
         <clr-icon shape="floppy"></clr-icon>
       </button>
-      <button kendoButton themeColor="secondary" fillMode="outline">
+      <button kendoButton size="large" themeColor="secondary" fillMode="outline" [disabled]="true">
         <clr-icon shape="trash"></clr-icon>
       </button>
-      <button kendoButton themeColor="secondary" fillMode="outline">
+      <button kendoButton size="large" themeColor="secondary" fillMode="outline">
         <clr-icon shape="bar-chart"></clr-icon>
-      </button> -->
-      <button kendoButton themeColor="secondary" fillMode="outline">
+      </button>
+    -->
+      <button kendoButton size="large" themeColor="secondary" fillMode="outline">
         <clr-icon shape="export"></clr-icon>
       </button>
-      <button kendoButton themeColor="secondary" fillMode="outline">
+      <button kendoButton size="large" themeColor="secondary" fillMode="outline">
         <clr-icon shape="printer"></clr-icon>
       </button>
     </div>

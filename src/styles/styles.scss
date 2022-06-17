@@ -14,6 +14,18 @@ body {
   color: $text-default;
 }
 
+// Some Angular directives can take up space in flexbox layouts; this hides those.
+router-outlet, kendo-resize-sensor {
+  display: none;
+}
+
+// Page-level layouts
+gt-cash-container, gt-todo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 // Menus
 .k-popup {
   border-radius: 4px;
@@ -22,12 +34,7 @@ body {
   min-width: 5rem;
 }
 
-// Field placeholders 
-::placeholder {
-  color: $text-extra-light !important;
-}
-
-// Replaces default arrow icons used in some inputs
+// Icon replacements
 // Down arrow 
 .k-i-arrow-s::before, .k-i-arrow-60-down::before, .k-i-collapse::before {
   content: "\e015";
@@ -44,16 +51,23 @@ body {
 }
 
 // Buttons
+.k-button-text {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .k-button-flat.k-focus::after {
   opacity: 0;
 }
 
-.k-button::before {
+.k-button, .k-button::before {
   transition: none;
 }
 
-.k-button-solid-secondary {
+.k-button-solid-secondary, .k-button-outline-secondary {
   border-color: $core-gray-04;
+  color: $text-default;
 
   &:hover {
     border-color: $core-gray-05;
@@ -65,6 +79,10 @@ body {
 }
 
 // Inputs
+::placeholder {
+  color: $text-extra-light !important;
+}
+
 .k-input:hover, .k-input.k-hover, .k-input:focus, .k-input.k-focus {
   border-color: $core-gray-05;
 }
@@ -78,6 +96,10 @@ body {
   gap: 0;
 }
 
+.k-picker .k-input-button {
+  color: $icon-default;
+}
+
 .k-i-x-circle::before {
   content: "\e11b";
   color: $icon-default;
@@ -86,12 +108,7 @@ body {
   left: 1px;
 }
 
-// Some Angular directives can take up space in flexbox layouts; this hides those.
-router-outlet, kendo-resize-sensor {
-  display: none;
-}
-
-// Global sidebar
+// Sidebar
 .gt-sidebar {
   
   .k-menu-vertical > .k-menu-item > .k-menu-link {
@@ -99,7 +116,7 @@ router-outlet, kendo-resize-sensor {
   }
 }
 
-// Global header
+// Header
 .gt-header {
 
   .k-input-inner, .k-input-button, .k-menu-link {
@@ -109,10 +126,6 @@ router-outlet, kendo-resize-sensor {
   .k-menu-link {
     color: $text-default;
     gap: 0.35rem;
-  }
-
-  .k-menu-expand-arrow, .k-button-icon {
-    color: $icon-default;
   }
 
   .gt-quick-tasks {
@@ -133,7 +146,7 @@ router-outlet, kendo-resize-sensor {
   }
 }
 
-// Filters
+// Filter and control bars
 
 .gt-toolbar {
 
@@ -147,13 +160,6 @@ router-outlet, kendo-resize-sensor {
       padding: 0;
     }
   }
-}
-
-// Page-level layouts
-gt-cash-container, gt-todo {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
 }
 
 // CSS from an earlier project; will be deprected or relocated to appropriate component-level files
