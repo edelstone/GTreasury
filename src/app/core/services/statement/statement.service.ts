@@ -9,6 +9,8 @@ export class StatementService {
   private readonly statements: Statement[] = [
     {
       date: new Date(2022, 5, 6),
+      dateText: '',
+      isWeekend: false,
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 11400993.21,
@@ -36,6 +38,8 @@ export class StatementService {
     },
     {
       date: new Date(2022, 5, 7),
+      dateText: '',
+      isWeekend: false,
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 13827390.88,
@@ -63,6 +67,8 @@ export class StatementService {
     },
     {
       date: new Date(2022, 5, 8),
+      dateText: '',
+      isWeekend: false,
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 10388267.95,
@@ -90,6 +96,8 @@ export class StatementService {
     },
     {
       date: new Date(2022, 5, 9),
+      dateText: '',
+      isWeekend: false,
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 12456092.22,
@@ -117,6 +125,8 @@ export class StatementService {
     },
     {
       date: new Date(2022, 5, 10),
+      dateText: '',
+      isWeekend: false,
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 11294896.27,
@@ -144,6 +154,8 @@ export class StatementService {
     },
     {
       date: new Date(2022, 5, 11),
+      dateText: '',
+      isWeekend: true,
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 13278194.88,
@@ -171,6 +183,8 @@ export class StatementService {
     },
     {
       date: new Date(2022, 5, 12),
+      dateText: '',
+      isWeekend: true,
       actual: new Ledger({
         dataType: 'Actual',
         openingLedger: 13278194.88,
@@ -197,30 +211,32 @@ export class StatementService {
       }),
     },
     {
-      date: new Date(2022, 5, 13),
+      date: new Date(2022, 5, 12),
+      dateText: 'Week ending',
+      isWeekend: false,
       actual: new Ledger({
         dataType: 'Actual',
-        openingLedger: 12294896.27,
+        openingLedger: 13278194.88,
         credit: new Credit({
-          ACH: 3029881.39,
-          cashLetter: 240938.28,
-          depositCorrection: 1237958.64,
-          miscellaneous: 398736.99,
-          ZBA: 2291938.75,
+          ACH: 0,
+          cashLetter: 0,
+          depositCorrection: 0,
+          miscellaneous: 0,
+          ZBA: 0,
         }),
-        closingLedger: 13267398.44,
+        closingLedger: 13278194.88,
       }),
       estimate: new Ledger({
         dataType: 'Estimate',
-        openingLedger: 12287398.12,
+        openingLedger: 12283928.12,
         credit: new Credit({
-          ACH: 3211948.93,
-          cashLetter: 280283.99,
-          depositCorrection: 1572387.35,
-          miscellaneous: 428209.29,
-          ZBA: 2312839.48,
+          ACH: 0,
+          cashLetter: 0,
+          depositCorrection: 0,
+          miscellaneous: 0,
+          ZBA: 0,
         }),
-        closingLedger: 13584930.99,
+        closingLedger: 12283928.12,
       }),
     },
   ];
@@ -230,6 +246,8 @@ export class StatementService {
   // TODO:
   // Generate worksheets search model
   public getStatements(): Observable<Statement[]> {
+    // The isWeekend attribute can be calculated from the date on the frontend
+    // It is necessary for styling in the worksheet
     return of(this.statements);
   }
 }

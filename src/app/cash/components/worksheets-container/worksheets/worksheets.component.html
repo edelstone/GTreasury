@@ -27,19 +27,19 @@
     <ng-container *ngFor="let statement of statements | async; let i = index">
       <kendo-grid-column-group
         [locked]="false"
-        [headerClass]="{ 'no-background': true }"
+        [headerClass]="statement.dateText.length > 0 ? {'dark-blue-background' : true } : statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
       >
         <ng-template kendoGridHeaderTemplate>
-          {{ formatDate(statement.date) }}
+          <span [ngClass]="{'no-background': statement.dateText.length > 0}">{{statement.dateText}} {{ formatDate(statement.date) }}</span>
         </ng-template>
         <kendo-grid-column-group
           title="Actual"
           [headerClass]="{ 'light-blue-background': true }"
         >
           <kendo-grid-column
-            [headerClass]="{ 'no-background': true }"
-            [class]="{ 'no-background': true }"
-            [footerClass]="{ 'no-background': true }"
+            [headerClass]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
+            [class]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
+            [footerClass]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
             [width]="120"
           >
             <ng-template kendoGridHeaderTemplate>
@@ -62,9 +62,9 @@
           [headerClass]="{ 'light-blue-background': true }"
         >
           <kendo-grid-column
-            [headerClass]="{ 'no-background': true }"
-            [class]="{ 'no-background': true }"
-            [footerClass]="{ 'no-background': true }"
+            [headerClass]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
+            [class]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
+            [footerClass]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
             [width]="120"
           >
             <ng-template kendoGridHeaderTemplate>
