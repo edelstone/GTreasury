@@ -162,74 +162,74 @@ gt-cash-container, gt-todo {
   }
 }
 
-// CSS from an earlier project; will be deprected or relocated to appropriate component-level files
+// Grid
+.k-grid {
+  border: none;
 
-.gt-grid {
-  .k-grid {
+  .k-grid-header-locked, .k-grid-content-locked, .k-grid-footer-locked {
     border: none;
 
-    table,
-    thead,
-    tbody,
-    th,
-    tr,
-    td {
-      border: none;
+    th, td {
+      border-color: $core-gray-04;
     }
+  }
 
-    th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-    }
+  .k-grouping-row + tr td {
+    border-top: none;
+  }
 
-    td {
-      border-bottom: 1px solid $component-border;
-    }
-
-    tr:hover {
-      background-color: $base-bg;
-    }
-
-    .k-alt {
-      background-color: $component-bg;
-    }
-
-    .k-header {
-      font-weight: 700;
-      background-color: $component-bg;
-    }
-
-    .k-grid-pager {
-      border-color: $component-border;
-      padding-top: map-get($spacing, 4);
-      background-color: $component-bg;
-    }
-
-    .k-grouping-header {
-      border: none;
-    }
+  th, td {
+    border-width: 0 0 1px 0;
+    border-color: $core-gray-04;
   }
 }
 
-// CSS added by Mike Y. at SPR; we will likely replace with less utility-type styling
+// Worksheet
+.gt-worksheets {
 
-.no-background {
-  background-color: #ffffff;
-}
+  th, td {
+    text-align: right;
+  }
 
-.light-blue-background {
-  background-color: #eaf0f8;
-}
+  .gt-worksheet {
 
-.dark-blue-background {
-  background-color: #d5e2f0;
-}
+    .k-grid-footer td, .k-group-footer td {
+      font-weight: normal;
+    }
 
-.light-gray-background {
-  background-color: #f4f4f4;
-}
+    &-groupheaders {
+      background: $core-blue-02;
+      text-align: left;
+    }
 
-.whole-cell {
-  display: block;
-  padding: 8px 12px; /* depends on theme */
+    &-lockedheaders {
+      text-align: left;
+    }
+
+    &-datatype {
+      background: $core-blue-01;
+      text-align: center;
+    }
+
+    &-header {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    &-summary {
+
+      &-header {
+        background: $core-gray-09;
+        color: $text-white;
+      }
+    }
+
+    &-weekend {
+      background: $core-gray-02;
+
+      &-header {
+        background: $core-gray-02;
+      }
+    }
+  }
 }

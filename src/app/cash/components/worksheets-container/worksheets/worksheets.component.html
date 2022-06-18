@@ -2,19 +2,19 @@
   <kendo-grid [kendoGridBinding]="(worksheet | async)!.rows" [group]="groups">
     <kendo-grid-column-group
       title="Date"
-      [headerClass]="{ 'no-background': true }"
       [locked]="true"
+      [headerClass]="{ 'gt-worksheet-lockedheaders': true }"
     >
       <kendo-grid-column-group
         title="Data type"
-        [headerClass]="{ 'no-background': true }"
+        [headerClass]="{ 'gt-worksheet-lockedheaders': true }"
       >
         <kendo-grid-column
           title="Opening ledger"
           field="rowName"
-          [headerClass]="{ 'no-background': true }"
-          [class]="{ 'dark-blue-background': true }"
-          [footerClass]="{ 'no-background': true }"
+          [headerClass]="{ 'gt-worksheet-lockedheaders': true }"
+          [class]="{ 'gt-worksheet-groupheaders': true }"
+          [footerClass]="{ 'gt-worksheet-lockedheaders': true }"
           [width]="200"
         >
           <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
@@ -27,19 +27,19 @@
     <ng-container *ngFor="let statement of statements | async; let i = index">
       <kendo-grid-column-group
         [locked]="false"
-        [headerClass]="statement.dateText.length > 0 ? {'dark-blue-background' : true } : statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
+        [headerClass]="statement.dateText.length > 0 ? {'gt-worksheet-summary-header gt-worksheet-header' : true } : statement.isWeekend ? { 'gt-worksheet-weekend-header gt-worksheet-header': true } : { 'gt-worksheet-weekday-header gt-worksheet-header': true }"
       >
         <ng-template kendoGridHeaderTemplate>
-          <span [ngClass]="{'no-background': statement.dateText.length > 0}">{{statement.dateText}} {{ formatDate(statement.date) }}</span>
+          <span [ngClass]="{'gt-worksheet-summary': statement.dateText.length > 0}">{{statement.dateText}} {{ formatDate(statement.date) }}</span>
         </ng-template>
         <kendo-grid-column-group
           title="Actual"
-          [headerClass]="{ 'light-blue-background': true }"
+          [headerClass]="{ 'gt-worksheet-datatype': true }"
         >
           <kendo-grid-column
-            [headerClass]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
-            [class]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
-            [footerClass]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
+            [headerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+            [class]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+            [footerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
             [width]="120"
           >
             <ng-template kendoGridHeaderTemplate>
@@ -59,12 +59,12 @@
         </kendo-grid-column-group>
         <kendo-grid-column-group
           title="Estimate"
-          [headerClass]="{ 'light-blue-background': true }"
+          [headerClass]="{ 'gt-worksheet-datatype': true }"
         >
           <kendo-grid-column
-            [headerClass]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
-            [class]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
-            [footerClass]="statement.isWeekend ? {'light-gray-background': true} : { 'no-background': true }"
+            [headerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+            [class]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+            [footerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
             [width]="120"
           >
             <ng-template kendoGridHeaderTemplate>

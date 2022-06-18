@@ -147,7 +147,7 @@ $extended-brown-08: #311a0c;
 
 // Kendo UI overrides
 
-// From main _variables file
+// General theme
 $enable-gradients: false;
 $enable-shadows: false;
 $kendo-border-radius: 2px;
@@ -203,7 +203,7 @@ $selected-hover-gradient: transparent;
 $focused-shadow: none;
 $primary-focused-shadow: none;
 
-// Component-level variables
+// Component-specific overrides
 
 // Button
 $kendo-flat-button-hover-opacity: 0.08;
@@ -220,7 +220,7 @@ $kendo-button-hover-border: $core-gray-05;
 $link-text: $core-blue-08;
 $link-hover-text: $core-blue-09;
 
-// Reports
+// Charts
 $series-a: $core-red-03;
 $series-b: $core-yellow-03;
 $series-c: $core-green-03;
@@ -229,7 +229,10 @@ $series-e: $extended-indigo-05;
 $series-f: $extended-violet-05;
 
 // Grid
-$grid-hovered-bg: $core-gray-02;
+$grid-hovered-bg: $core-gray-01;
+$grid-alt-bg: $core-gray-01;
+$grid-header-bg: $core-gray-01;
+$grid-footer-bg: $core-gray-01;
 
 // Switch
 $kendo-switch-off-track-border: $core-gray-04;
