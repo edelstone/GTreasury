@@ -21,7 +21,14 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
-- task: PublishPipelineArtifact@1
+- task: CmdLine@2
   inputs:
-    targetPath: '$(Pipeline.Workspace)/dist'
-    publishLocation: 'release'
+    script: |
+      ls
+      cd ./dist
+      ls
+
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Build Artifacts'
+  inputs:
+    targetPath: 'dist'
