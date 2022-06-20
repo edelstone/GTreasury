@@ -23,9 +23,9 @@ steps:
 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '/'
+    SourceFolder: ''
     Contents: 'web.config'
-    TargetFolder: '/dist'
+    TargetFolder: 'dist'
 
 - task: PublishBuildArtifacts@1
   inputs:
