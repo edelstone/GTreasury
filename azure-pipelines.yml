@@ -28,15 +28,19 @@ steps:
       cd ./dist
       ls
 
-- task: CopyPublishBuildArtifacts@1  
-  displayName: 'Copy Publish Artifact'  
-  inputs:  
-    CopyRoot: dist  
-    Contents: '**'  
-    ArtifactName: release  
-    ArtifactType: Container  
-  
-- task: DownloadPipelineArtifact@2  
-  displayName: 'Download Pipeline Artifact'  
-  inputs:  
-    targetPath: ' $(Build.ArtifactStagingDirectory)/dist' 
+
+- task: ArchiveFiles@2
+  displayName: 'Archive files'
+  inputs:
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/dist/'
+    includeRootFolder: false
+    archiveType: zip
+    archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    replaceExistingArchive: true
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
