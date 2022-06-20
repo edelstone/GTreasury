@@ -21,6 +21,12 @@ steps:
     ng build --prod
   displayName: 'npm install and build'
 
+- task: CopyFiles@2
+  inputs:
+    SourceFolder: '/'
+    Contents: 'web.config'
+    TargetFolder: '/dist'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'dist'
