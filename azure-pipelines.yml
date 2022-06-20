@@ -25,7 +25,7 @@ steps:
   inputs:
     SourceFolder: ''
     Contents: 'web.config'
-    TargetFolder: 'dist'
+    TargetFolder: 'dist/gtreasury'
 
 - task: PublishBuildArtifacts@1
   inputs:
