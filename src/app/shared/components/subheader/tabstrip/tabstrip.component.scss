@@ -21,6 +21,10 @@
     &:hover {
       background-color: $core-gray-02;
     }
+
+    &:active {
+      background-color: $core-gray-03;
+    }
   }
 
   &-active-cash {

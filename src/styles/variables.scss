@@ -210,8 +210,8 @@ $kendo-flat-button-hover-opacity: 0.08;
 $kendo-button-bg: $core-gray-01;
 $kendo-button-text: $text-default;
 $kendo-button-border: $core-gray-04;
-$kendo-button-hover-bg: $core-gray-02;
-$kendo-button-active-bg: $core-gray-03;
+$kendo-button-hover-bg: $core-blue-01;
+$kendo-button-active-bg: $core-blue-02;
 $kendo-button-selected-bg: $core-blue-02;
 $kendo-button-selected-border: $core-gray-04;
 $kendo-button-hover-border: $core-gray-05;
@@ -227,6 +227,8 @@ $series-c: $core-green-03;
 $series-d: $extended-cyan-04;
 $series-e: $extended-indigo-05;
 $series-f: $extended-violet-05;
+$chart-major-lines: $core-gray-04;
+$chart-minor-lines: $core-gray-02;
 
 // Grid
 $grid-hovered-bg: $core-gray-01;
@@ -246,3 +248,8 @@ $kendo-chip-solid-border: $core-gray-04;
 $kendo-chip-solid-bg: $core-gray-02;
 $kendo-chip-solid-focus-bg: $core-gray-03;
 $kendo-chip-solid-hover-bg: $core-gray-03;
+
+// List
+$kendo-list-item-hover-bg: $core-blue-01;
+$kendo-list-item-selected-bg: $core-blue-02;
+$kendo-list-item-selected-text: $text-default;

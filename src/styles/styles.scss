@@ -96,6 +96,14 @@ gt-cash-container, gt-todo {
   gap: 0;
 }
 
+.k-list-item:active, .k-list-item.k-selected:hover {
+  background: $core-blue-02;
+}
+
+.k-list-item.k-selected:active {
+  background: $core-blue-03;
+}
+
 .k-picker .k-input-button {
   color: $icon-default;
 }
