@@ -1,0 +1,42 @@
+<div class="gt-portfolio">
+  <kendo-grid
+    [kendoGridBinding]="portfolioData"
+    kendoGridSelectBy="id"
+    [pageSize]="25"
+    [pageable]="true"
+    [sortable]="true"
+    [groupable]="true"
+    [reorderable]="true"
+    [resizable]="true"
+    [height]="500"
+    [columnMenu]="{ filter: true }"
+    >
+      <kendo-grid-checkbox-column
+        [width]="5"
+        [headerClass]="{'text-center': true}"
+        [class]="{'text-center': true}"
+        [resizable]="false"
+        [columnMenu]="false"
+        [showSelectAll]="true"
+      >
+      </kendo-grid-checkbox-column>
+      <kendo-grid-command-column title="Actions" [width]="20">
+        <ng-template kendoGridCellTemplate>
+            <button kendoGridEditCommand class="k-primary">Edit</button>
+            <button kendoGridRemoveCommand>Remove</button>
+        </ng-template>
+      </kendo-grid-command-column>
+      <kendo-grid-column field="id" title="ID" [width]="20"></kendo-grid-column>
+      <kendo-grid-column field="status" title="Status" [width]="20"></kendo-grid-column>
+      <kendo-grid-column field="name" title="Name" [width]="20"></kendo-grid-column>
+      <kendo-grid-column field="type" title="Type" [width]="20"></kendo-grid-column>
+      <kendo-grid-column field="product" title="Product" [width]="20"></kendo-grid-column>
+      <kendo-grid-column field="amount" title="Amount" [width]="20" format="#,#.00"></kendo-grid-column>
+      <kendo-grid-column field="currency" title="Currency" [width]="20"></kendo-grid-column>
+      <kendo-grid-column field="attachments" title="Attachments" [width]="20"></kendo-grid-column>
+      <kendo-grid-column field="start" title="Start" [width]="20" format="d MMM yyyy"></kendo-grid-column>
+      <kendo-grid-column field="term" title="Term" [width]="20"></kendo-grid-column>
+      <kendo-grid-column field="end" title="End" [width]="20" format="d MMM yyyy"></kendo-grid-column>
+      <kendo-grid-column field="rate" title="Rate" [width]="20"></kendo-grid-column>
+  </kendo-grid>
+</div>

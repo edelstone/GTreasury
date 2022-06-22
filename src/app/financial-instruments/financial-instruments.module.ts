@@ -1,42 +1,42 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
-import { CashContainerComponent } from './components/cash-container/cash-container.component';
+import { FinancialInstrumentsContainerComponent } from './components/financial-instruments-container/financial-instruments-container.component';
 import { RouterModule } from '@angular/router';
 import { ClarityModule } from '@clr/angular';
-import { WorksheetsComponent } from './components/worksheets-container/worksheets/worksheets.component';
 import { TodoComponent } from '../todo/todo.component';
 import { StatementService } from '../core/services/statement/statement.service';
 import { WorksheetsHelperService } from '../core/services/worksheets-helper/worksheets-helper.service';
 import { GridModule } from '@progress/kendo-angular-grid';
-import { WorksheetsToolbarComponent } from './components/worksheets-container/worksheets-toolbar/worksheets-toolbar.component';
-import { WorksheetsContainerComponent } from './components/worksheets-container/worksheets-container.component';
+import { PortfoliosContainerComponent } from './components/portfolios-container/portfolios-container.component';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { SharedModule } from '../shared/shared.module';
+import { PortfoliosToolbarComponent } from './components/portfolios-container/portfolios-toolbar/portfolios-toolbar.component';
+import { PortfoliosGridComponent } from './components/portfolios-container/portfolios-grid/portfolios-grid.component';
 const routes = [
   {
     path: '',
-    component: CashContainerComponent,
+    component: FinancialInstrumentsContainerComponent,
     children: [
-      { path: 'worksheets', component: WorksheetsContainerComponent },
-      { path: 'forecasts', component: TodoComponent },
-      { path: 'balances', component: TodoComponent },
-      { path: 'general-ledger', component: TodoComponent },
-      { path: 'reconciliations', component: TodoComponent },
-      { path: 'statements', component: TodoComponent },
-      { path: '', redirectTo: 'worksheets', pathMatch: 'full' },
+      { path: 'portfolios', component: PortfoliosContainerComponent },
+      { path: 'risk-analysis', component: TodoComponent },
+      { path: 'hedge-accounting', component: TodoComponent },
+      { path: 'assets-and-liability', component: TodoComponent },
+      { path: 'facilities', component: TodoComponent },
+      { path: 'fraud', component: TodoComponent },
+      { path: '', redirectTo: 'portfolios', pathMatch: 'full' },
     ],
   },
 ];
 
 @NgModule({
   declarations: [
-    CashContainerComponent,
-    WorksheetsComponent,
-    WorksheetsToolbarComponent,
-    WorksheetsContainerComponent,
+    FinancialInstrumentsContainerComponent,
+    PortfoliosContainerComponent,
+    PortfoliosToolbarComponent,
+    PortfoliosGridComponent
   ],
   imports: [
     CommonModule,
@@ -51,4 +51,4 @@ const routes = [
   ],
   providers: [StatementService, WorksheetsHelperService, DatePipe],
 })
-export class CashModule {}
+export class FinancialInstrumentsModule {}

@@ -20,6 +20,7 @@ import { IndicatorsModule } from '@progress/kendo-angular-indicators';
 import { SubheaderComponent } from './components/subheader/subheader.component';
 import { TabstripComponent } from './components/subheader/tabstrip/tabstrip.component';
 import { GridActionBarComponent } from './components/grid-action-bar/grid-action-bar.component';
+import { TitlebarComponent } from './components/titlebar/titlebar.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { GridActionBarComponent } from './components/grid-action-bar/grid-action
     SubheaderComponent,
     TabstripComponent,
     GridActionBarComponent,
+    TitlebarComponent
   ],
   imports: [
     CommonModule,
@@ -45,9 +47,8 @@ import { GridActionBarComponent } from './components/grid-action-bar/grid-action
     ButtonsModule,
     LayoutModule,
     IndicatorsModule,
-
     ClarityModule,
   ],
-  exports: [HeaderComponent, SidebarComponent, SubheaderComponent, GridActionBarComponent],
+  exports: [HeaderComponent, SidebarComponent, SubheaderComponent, GridActionBarComponent, TitlebarComponent],
 })
 export class SharedModule {}

@@ -1,0 +1,48 @@
+<div class="gt-toolbar">
+  <div class="gt-toolbar-actions">
+    <div class="gt-toolbar-actions-left">
+      <div>
+        <kendo-dropdownlist
+          class="gt-toolbar-actions-select"
+          [data]="portfolios"
+          [defaultItem]="portfoliosDefault"
+        >
+        </kendo-dropdownlist>
+      </div>
+      <div class="gt-toolbar-actions-buttons">
+        <kendo-buttongroup>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="pencil" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="clone" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="trash" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="plus-circle" class="is-solid"></clr-icon>
+          </button>
+        </kendo-buttongroup>
+      </div>
+    </div>
+    <div class="gt-toolbar-actions-right">
+      <div class="gt-toolbar-actions-toggle">
+        <kendo-buttongroup selection="single">
+          <button kendoButton [togglable]="true" [selected]="true">
+            All
+          </button>
+          <button kendoButton [togglable]="true">Interest rate</button>
+          <button kendoButton [togglable]="true">FX</button>
+          <button kendoButton [togglable]="true">Commodity</button>
+        </kendo-buttongroup>
+        <kendo-buttongroup selection="single">
+          <button kendoButton [togglable]="true" [selected]="true">
+            All deals
+          </button>
+          <button kendoButton [togglable]="true">Live deals</button>
+        </kendo-buttongroup>
+      </div>
+    </div>
+  </div>
+</div>
