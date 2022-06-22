@@ -3,7 +3,6 @@ import { Component, Input } from '@angular/core';
 export interface TabStrip {
   title: string;
   class?: string;
-  activeClass?: string;
   routerLink?: string;
 }
 @Component({

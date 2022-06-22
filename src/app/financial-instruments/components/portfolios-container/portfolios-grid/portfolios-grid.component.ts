@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Portfolio } from 'src/app/core/model/portfolio';
 
 @Component({
@@ -6,7 +6,7 @@ import { Portfolio } from 'src/app/core/model/portfolio';
   templateUrl: './portfolios-grid.component.html',
   styleUrls: ['./portfolios-grid.component.scss']
 })
-export class PortfoliosGridComponent implements OnInit {
+export class PortfoliosGridComponent {
 
   portfolioData: Portfolio[] = [
     {
@@ -27,8 +27,5 @@ export class PortfoliosGridComponent implements OnInit {
   ];
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

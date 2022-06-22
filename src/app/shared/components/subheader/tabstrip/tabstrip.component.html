@@ -2,7 +2,7 @@
   <div *ngFor="let tab of tabs" class="gt-tabstrip-option">
     <a class="gt-tabstrip-link"
       [routerLink]="[tab.routerLink]"
-      [routerLinkActive]="tab.activeClass ? [tab.activeClass] : ''"
+      [routerLinkActive]="'gt-tabstrip-active'"
     >
       {{ tab.title }}
     </a>

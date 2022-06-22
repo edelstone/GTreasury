@@ -3,6 +3,17 @@
 @import "@progress/kendo-theme-default/dist/all.scss";
 @import "../assets/fonts/fonts.css";
 
+:root {
+  --highlight-color: #{$core-blue-07};
+  --dashboard-highlight-color: #{$core-blue-07};
+  --cash-highlight-color: #{$core-green-05};
+  --financialinstruments-highlight-color: #{$extended-pink-06};
+  --payments-highlight-color: #{$extended-indigo-05};
+  --reports-highlight-color: #{$extended-cyan-07};
+  --datamanagement-highlight-color: #{$extended-flame-07};
+  --admin-highlight-color: #{$extended-violet-06};
+}
+
 html {
   height: 100%;
 }

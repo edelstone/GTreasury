@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppArea, UiHelperService } from 'src/app/core/services/ui-helper/ui-helper.service';
 import { TabStrip } from 'src/app/shared/components/subheader/tabstrip/tabstrip.component';
 
 @Component({
@@ -11,34 +12,30 @@ export class FinancialInstrumentsContainerComponent {
     {
       title: 'Portfolios',
       routerLink: '/financial-instruments/portfolios',
-      activeClass: 'gt-tabstrip-active-financial-instruments',
     },
     {
       title: 'Risk analysis',
       routerLink: '/financial-instruments/risk-analysis',
-      activeClass: 'gt-tabstrip-active-financial-instruments',
     },
     {
       title: 'Hedge accounting',
       routerLink: '/financial-instruments/hedge-accounting',
-      activeClass: 'gt-tabstrip-active-financial-instruments',
     },
     {
       title: 'Assets and liability',
       routerLink: '/financial-instruments/assets-and-liability',
-      activeClass: 'gt-tabstrip-active-financial-instruments',
     },
     {
       title: 'Facilities',
       routerLink: '/financial-instruments/facilities',
-      activeClass: 'gt-tabstrip-active-financial-instruments',
     },
     {
       title: 'Fraud',
       routerLink: '/financial-instruments/fraud',
-      activeClass: 'gt-tabstrip-active-financial-instruments',
     },
   ];
 
-  constructor() {}
+  constructor(uiHelperService: UiHelperService) {
+    uiHelperService.setPropertiesFor(AppArea.FinancialInstruments);
+  }
 }
