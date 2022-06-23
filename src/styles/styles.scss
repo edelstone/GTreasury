@@ -31,7 +31,7 @@ router-outlet, kendo-resize-sensor {
 }
 
 // Page-level layouts
-gt-cash-container, gt-todo {
+gt-cash-container, gt-financial-instruments-container, gt-todo {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -61,6 +61,11 @@ gt-cash-container, gt-todo {
   content: "\e013";
 }
 
+// Table header ellipses
+.k-grid .k-header .k-i-more-vertical:before {
+  content: url("../assets/images/filter-line.svg");
+}
+
 // Buttons
 .k-button-text {
   display: flex;
@@ -70,6 +75,10 @@ gt-cash-container, gt-todo {
 
 .k-button-flat.k-focus::after {
   opacity: 0;
+}
+
+.k-button-sm {
+  padding: 2px;
 }
 
 .k-button, .k-button::before {
@@ -185,11 +194,42 @@ gt-cash-container, gt-todo {
 .k-grid {
   border: none;
 
+  .k-grid-aria-root {
+    border-bottom: 1px solid $core-gray-04;
+  }
+
   .k-grid-header-locked, .k-grid-content-locked, .k-grid-footer-locked {
     border: none;
 
     th, td {
       border-color: $core-gray-04;
+    }
+  }
+
+  .k-grid-content-locked .k-state-selected td, .k-grid-content-locked .k-state-selected:hover td, td.k-state-selected, tr.k-state-selected > td {
+    background: $core-blue-01;
+  }
+
+  .k-grid-pager {
+    padding: 0.5rem 0;
+    background: none;
+    margin-top: 0.5rem;
+    border: none;
+
+    .k-pager-info {
+      margin-right: 0;
+    }
+  }
+
+  .k-filterable {
+    font-weight: bold;
+  }
+
+  .k-grouping-header {
+    background: $core-gray-02;
+
+    .k-group-indicator {
+      background: $core-gray-03;
     }
   }
 

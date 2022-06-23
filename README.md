@@ -1,13 +1,13 @@
-# Gtreasury
+# GTreasury Angular Demo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
-## Getting Started
+## Getting started
 
-Since this is just a simple Angular project, this should be straight forward
+Since this is just a simple Angular project, this should be straightforward.
 
-1. Install Node/npm [here](https://nodejs.org/en/download/)
-2. Install Angular [here](https://angular.io/cli)
+1. Install Node/npm [here](https://nodejs.org/en/download/).
+2. Install Angular [here](https://angular.io/cli).
 3. Run `npm install` to install packages.
 
 ## Development server
@@ -15,6 +15,7 @@ Since this is just a simple Angular project, this should be straight forward
 Run `ng serve` for a dev server. Navigate to [http://localhost:4200/](http://localhost:4200/). The application will automatically reload if you change any of the source files.
 
 ## Public server
+
 A successful merge will automatically trigger a build and deploy process to a public Azure server. The website URL is [https://gtreasury.azurewebsites.net/](https://gtreasury.azurewebsites.net/).
 
 ## Code scaffolding
@@ -33,9 +34,10 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Developer Guidelines
+## Developer guidelines
 
-Generally, please follow the [Angular style guide](https://angular.io/guide/styleguide)
+Generally, please follow the [Angular style guide](https://angular.io/guide/styleguide).
+
 Specific rules:
 
 1. Separate features are broken down into feature modules that are lazy loaded.

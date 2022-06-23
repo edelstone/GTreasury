@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class PortfoliosToolbarComponent {
 
-  readonly portfolios = ['My protfolio 2'];
-  readonly portfoliosDefault = 'My portfolio 1';
+  readonly portfolios = ['Adelaide\'s Portfolio', 'Ben\'s Portfolio 1', 'Ben\'s Portfolio 2', 'Maddy\'s Portfolio', 'Ziad\'s Portfolio'];
+  readonly portfoliosDefault = 'Jonathan\'s Portfolio';
 
   constructor() { }
 

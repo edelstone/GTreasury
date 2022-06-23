@@ -1,0 +1,29 @@
+@import "../../../../../styles/variables.scss";
+
+.gt-toolbar {
+
+  &-actions {
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    &-select {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    &-toggles {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
