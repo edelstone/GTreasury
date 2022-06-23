@@ -6,7 +6,7 @@ export class Portfolio {
   product: string;
   amount: number;
   currency: string;
-  attachments: string;
+  attachments: number;
   start: Date;
   term: string;
   end: Date;

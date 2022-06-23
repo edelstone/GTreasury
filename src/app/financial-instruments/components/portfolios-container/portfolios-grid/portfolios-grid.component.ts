@@ -17,7 +17,7 @@ export class PortfoliosGridComponent {
       product: 'INTERCO_LOAN1',
       amount: -400993.21,
       currency: 'USD',
-      attachments: '5',
+      attachments: 5,
       start: new Date(2022, 1, 18),
       term: '5y',
       end: new Date(2027, 1, 18),
