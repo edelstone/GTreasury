@@ -252,6 +252,10 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
 
   .gt-worksheet {
 
+    .k-grid-aria-root {
+      border: none;
+    }
+    
     .k-grid-footer td, .k-group-footer td {
       font-weight: normal;
     }
