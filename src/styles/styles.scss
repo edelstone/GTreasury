@@ -37,6 +37,19 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
   flex-grow: 1;
 }
 
+.gt-layout-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-grow: 1;
+  }
+}
+
 // Menus
 .k-popup {
   border-radius: 4px;
