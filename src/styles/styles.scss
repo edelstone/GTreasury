@@ -229,7 +229,7 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
     }
   }
 
-  .k-grid-content-locked .k-state-selected td, .k-grid-content-locked .k-state-selected:hover td, td.k-state-selected, tr.k-state-selected > td {
+  .k-grid-content-locked .k-state-selected td, .k-grid-content-locked .k-state-selected:hover td, td.k-state-selected, tr.k-state-selected > td, .k-grid-content-locked .k-state-selected.k-alt td {
     background: $core-blue-01;
   }
 
@@ -264,6 +264,30 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
     border-width: 0 0 1px 0;
     border-color: $core-gray-04;
   }
+
+  .gt-numeric-date {
+    text-align: right;
+  }
+
+  .gt-grid-badge {
+    padding: 0.25rem;
+    border-radius: 2px;
+    font-size: 12px;
+  }
+
+  .gt-grid-link {
+    color: $core-blue-08;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Pager
+.k-pager-numbers .k-link.k-state-selected, .k-pager-numbers .k-link:hover, .k-pager-numbers .k-link.k-state-hover {
+  background: $core-blue-01;
 }
 
 // Worksheet
@@ -318,8 +342,4 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
       }
     }
   }
-}
-
-.gt-currency-date {
-  text-align: right !important;
 }

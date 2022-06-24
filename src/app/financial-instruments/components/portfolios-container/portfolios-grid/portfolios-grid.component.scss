@@ -1,33 +1,17 @@
 @import "../../../../../styles/variables.scss";
 
-.badge {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4px;
-    width: 64px;
-    height: 24px;
-    border-radius: 2px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 16px;
+.gt-grid-badge {
 
-    &-created {
-      background-color: $extended-violet-02;
-    }
-    &-confirmed {
-      background-color: $extended-flame-02;
-    }
-    &-submitted {
-      background-color: $extended-indigo-02;
-    }
+  &-created {
+    background-color: $extended-violet-02;
+  }
+
+  &-confirmed {
+    background-color: $extended-flame-02;
+  }
+  
+  &-submitted {
+    background-color: $extended-indigo-02;
+  }
 }
-
-a {
-  color: #1D558D;
-  text-decoration: underline;
-}
-
 

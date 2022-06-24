@@ -3,7 +3,9 @@
     [kendoGridBinding]="portfolioData"
     kendoGridSelectBy="id"
     [pageSize]="10"
-    [pageable]="true"
+    [pageable]="{
+      pageSizes: true
+    }"
     [sortable]="true"
     [groupable]="true"
     [reorderable]="true"
@@ -36,31 +38,31 @@
             </button>
         </ng-template>
       </kendo-grid-command-column>
-      <kendo-grid-column field="id" title="ID" [width]="100" [locked]="true">
+      <kendo-grid-column field="id" title="ID" [width]="90" [locked]="true" class="gt-numeric-date">
         <ng-template kendoGridCellTemplate let-dataItem>
-          <a href="javascript:void(0);">{{dataItem.id}}</a>
+          <a class="gt-grid-link" href="javascript:void(0);">{{dataItem.id}}</a>
         </ng-template>
       </kendo-grid-column>
       <kendo-grid-column field="status" title="Status" [width]="150">
         <ng-template kendoGridCellTemplate let-dataItem>
-          <span class="badge" [ngClass]="'badge-' + dataItem.status.toLowerCase()">{{dataItem.status}}</span>
+          <span class="gt-grid-badge" [ngClass]="'gt-grid-badge-' + dataItem.status.toLowerCase()">{{dataItem.status}}</span>
         </ng-template>
       </kendo-grid-column>
       <kendo-grid-column field="name" title="Name" [width]="150"></kendo-grid-column>
-      <kendo-grid-column field="type" title="Type" [width]="150"></kendo-grid-column>
+      <kendo-grid-column field="type" title="Type" [width]="170"></kendo-grid-column>
       <kendo-grid-column field="product" title="Product" [width]="150"></kendo-grid-column>
-      <kendo-grid-column field="amount" title="Amount" [width]="150" format="#,#.00" class="gt-currency-date"></kendo-grid-column>
+      <kendo-grid-column field="amount" title="Amount" [width]="150" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
       <kendo-grid-column field="currency" title="Currency" [width]="150"></kendo-grid-column>
       <kendo-grid-column field="attachments" title="Attachments" [width]="170">
         <ng-template kendoGridCellTemplate let-dataItem>
-          <a *ngIf="dataItem.attachments > 0" href="javascript:void(0);">{{dataItem.attachments}}</a>
+          <a class="gt-grid-link" *ngIf="dataItem.attachments > 0" href="javascript:void(0);">{{dataItem.attachments}}</a>
           <span *ngIf="dataItem.attachments <= 0">N/A</span>
         </ng-template>
       </kendo-grid-column>
-      <kendo-grid-column field="start" title="Start" [width]="150" format="d MMM yyyy" class="gt-currency-date"></kendo-grid-column>
+      <kendo-grid-column field="start" title="Start" [width]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
       <kendo-grid-column field="term" title="Term" [width]="120"></kendo-grid-column>
-      <kendo-grid-column field="end" title="End" [width]="150" format="d MMM yyyy" class="gt-currency-date"></kendo-grid-column>
-      <kendo-grid-column field="rate" title="Rate" [width]="150"></kendo-grid-column>
+      <kendo-grid-column field="end" title="End" [width]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+      <kendo-grid-column field="rate" title="Rate" [width]="150" class="gt-numeric-date"></kendo-grid-column>
       <kendo-grid-column field="frequency" title="Frequency" [width]="150"></kendo-grid-column>
   </kendo-grid>
 </div>
