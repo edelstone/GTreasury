@@ -79,6 +79,15 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
   content: url("../assets/images/filter-line.svg");
 }
 
+// Table sort arrows
+.k-i-sort-asc-sm::before {
+  content: url("../assets/images/arrow-up.svg");
+}
+
+.k-i-sort-desc-sm::before {
+  content: url("../assets/images/arrow-down.svg");
+}
+
 // Buttons
 .k-button-text {
   display: flex;
@@ -282,6 +291,10 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
     &:hover {
       text-decoration: none;
     }
+  }
+
+  .k-command-cell > .k-button + .k-button {
+    margin-inline-start: 0.25rem;
   }
 }
 

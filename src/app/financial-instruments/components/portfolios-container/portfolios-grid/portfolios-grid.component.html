@@ -3,9 +3,8 @@
     [kendoGridBinding]="portfolioData"
     kendoGridSelectBy="id"
     [pageSize]="10"
-    [pageable]="{
-      pageSizes: true
-    }"
+    [pageable]="{ pageSizes: [5, 10, 15, 20, 25] }"
+    [selectable]="{ checkboxOnly: true }"
     [sortable]="true"
     [groupable]="true"
     [reorderable]="true"
@@ -20,9 +19,10 @@
         [columnMenu]="false"
         [showSelectAll]="true"
         [locked]="true"
+        [reorderable]="false"
       >
       </kendo-grid-checkbox-column>
-      <kendo-grid-command-column title="Actions" [width]="140" [locked]="true">
+      <kendo-grid-command-column title="Actions" [width]="140" [locked]="true" [reorderable]="false">
         <ng-template kendoGridCellTemplate>
             <button kendoGridEditCommand size="small" themeColor="tertiary" fillMode="flat">
               <clr-icon shape="pencil" class="is-solid"></clr-icon>
@@ -38,7 +38,7 @@
             </button>
         </ng-template>
       </kendo-grid-command-column>
-      <kendo-grid-column field="id" title="ID" [width]="90" [locked]="true" class="gt-numeric-date">
+      <kendo-grid-column field="id" title="ID" [width]="90" [locked]="true" [reorderable]="false" class="gt-numeric-date">
         <ng-template kendoGridCellTemplate let-dataItem>
           <a class="gt-grid-link" href="javascript:void(0);">{{dataItem.id}}</a>
         </ng-template>
