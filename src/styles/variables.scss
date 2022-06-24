@@ -185,7 +185,7 @@ $component-bg: $core-gray-01;
 $component-text: $text-default;
 $component-border: $core-gray-04;
 $base-bg: $core-gray-02;
-$base-text: $text-default;
+$base-text: $text-default;  
 $base-border: $core-gray-04;
 $base-gradient: transparent;
 $hovered-bg: $core-gray-03;
@@ -202,6 +202,8 @@ $selected-hover-border: $core-blue-08;
 $selected-hover-gradient: transparent;
 $focused-shadow: none;
 $primary-focused-shadow: none;
+$invalid-text: $core-red-05;
+$invalid-border: $core-red-04;
 
 // Component-specific overrides
 
@@ -243,6 +245,11 @@ $kendo-switch-off-track-hover-border: $core-gray-05;
 $kendo-switch-off-track-focus-border: $core-gray-05;
 $kendo-switch-on-track-focus-ring: none;
 $kendo-switch-off-track-focus-ring: none;
+
+// Checkbox
+$kendo-checkbox-hover-border: $core-gray-05;
+$kendo-checkbox-checked-image: url("../assets/images/check.svg");
+$kendo-checkbox-indeterminate-image: url("../assets/images/minus.svg");
 
 // Chip
 $kendo-chip-solid-border: $core-gray-04;

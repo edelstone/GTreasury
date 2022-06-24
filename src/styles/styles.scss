@@ -149,6 +149,16 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
   left: 1px;
 }
 
+.k-checkbox:checked, .k-checkbox.k-checked {
+  &:hover {
+    background-color: $core-blue-08;
+  }
+
+  &:active {
+    background-color: $core-blue-09;
+  }
+}
+
 // Sidebar
 .gt-sidebar {
 
