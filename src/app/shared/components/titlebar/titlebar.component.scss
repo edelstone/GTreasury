@@ -35,5 +35,10 @@
         opacity: 0.95;
       }
     }
+
+    &-tertiary {
+      display: flex;
+      gap: 0.5rem;
+    }
   }
 }
