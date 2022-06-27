@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'gt-grid-toolbar',
+  selector: 'gt-portfolios-toolbar',
   templateUrl: './portfolios-toolbar.component.html',
   styleUrls: ['./portfolios-toolbar.component.scss']
 })

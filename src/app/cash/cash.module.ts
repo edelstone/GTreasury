@@ -9,7 +9,6 @@ import { StatementService } from '../core/services/statement/statement.service';
 import { WorksheetsHelperService } from '../core/services/worksheets-helper/worksheets-helper.service';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { WorksheetsToolbarComponent } from './components/worksheets-container/worksheets-toolbar/worksheets-toolbar.component';
-import { WorksheetsContainerComponent } from './components/worksheets-container/worksheets-container.component';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { InputsModule } from '@progress/kendo-angular-inputs';
@@ -20,7 +19,7 @@ const routes = [
     path: '',
     component: CashContainerComponent,
     children: [
-      { path: 'worksheets', component: WorksheetsContainerComponent },
+      { path: 'worksheets', component: WorksheetsComponent },
       { path: 'forecasts', component: TodoComponent },
       { path: 'balances', component: TodoComponent },
       { path: 'general-ledger', component: TodoComponent },
@@ -36,7 +35,6 @@ const routes = [
     CashContainerComponent,
     WorksheetsComponent,
     WorksheetsToolbarComponent,
-    WorksheetsContainerComponent,
   ],
   imports: [
     CommonModule,

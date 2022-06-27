@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { GridComponent } from '@progress/kendo-angular-grid';
 import { Portfolio } from 'src/app/core/model/portfolio';
+import { ActionButton } from 'src/app/shared/components/grid-action-bar/grid-action-bar.component';
 
 @Component({
-  selector: 'gt-grid',
+  selector: 'gt-portfolios-grid',
   templateUrl: './portfolios-grid.component.html',
   styleUrls: ['./portfolios-grid.component.scss']
 })
 export class PortfoliosGridComponent {
 
+  @ViewChild('portfolioGrid') portfolioGrid: GridComponent;
+  viewOptions = [
+    { value: 1, text: 'View 1' },
+    { value: 2, text: 'View 2' },
+    { value: 3, text: 'View 3' },
+  ];
+  itemButton = { text: 'New Deal' };
   portfolioData: Portfolio[] = [
     {
       id: 21,
@@ -387,5 +396,26 @@ export class PortfoliosGridComponent {
   ];
 
   constructor() { }
+
+  onActionClicked(actionButton: ActionButton) {
+    switch (actionButton) {
+      case ActionButton.ExportToPdf:
+        this.portfolioGrid.saveAsPDF();
+        break;
+      case ActionButton.ExportToExcel:
+        this.portfolioGrid.saveAsExcel();
+        break;
+      default:
+        break;
+    }
+  }
+
+  exportToPDF(): void {
+    this.portfolioGrid.saveAsPDF();
+  }
+
+  exportToExcel(): void {
+    this.portfolioGrid.saveAsExcel();
+  }
 
 }

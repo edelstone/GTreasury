@@ -1,93 +1,99 @@
-<div class="gt-worksheet">
-  <kendo-grid [kendoGridBinding]="(worksheet | async)!.rows" [group]="groups">
-    <kendo-grid-column-group
-      title="Date"
-      [locked]="true"
-      [headerClass]="{ 'gt-worksheet-lockedheaders': true }"
-    >
+<div class="gt-worksheets">
+  <div class="gt-worksheets-controls">
+    <gt-worksheets-toolbar></gt-worksheets-toolbar>
+    <gt-grid-action-bar></gt-grid-action-bar>
+  </div>
+  <div class="gt-worksheet">
+    <kendo-grid [kendoGridBinding]="(worksheet | async)!.rows" [group]="groups">
       <kendo-grid-column-group
-        title="Data type"
+        title="Date"
+        [locked]="true"
         [headerClass]="{ 'gt-worksheet-lockedheaders': true }"
       >
-        <kendo-grid-column
-          title="Opening ledger"
-          field="rowName"
+        <kendo-grid-column-group
+          title="Data type"
           [headerClass]="{ 'gt-worksheet-lockedheaders': true }"
-          [class]="{ 'gt-worksheet-groupheaders': true }"
-          [footerClass]="{ 'gt-worksheet-lockedheaders': true }"
-          [width]="200"
         >
-          <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
-            {{ dataItem.rowName }}
+          <kendo-grid-column
+            title="Opening ledger"
+            field="rowName"
+            [headerClass]="{ 'gt-worksheet-lockedheaders': true }"
+            [class]="{ 'gt-worksheet-groupheaders': true }"
+            [footerClass]="{ 'gt-worksheet-lockedheaders': true }"
+            [width]="200"
+          >
+            <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+              {{ dataItem.rowName }}
+            </ng-template>
+            <ng-template kendoGridFooterTemplate> Closing ledger </ng-template>
+          </kendo-grid-column>
+        </kendo-grid-column-group>
+      </kendo-grid-column-group>
+      <ng-container *ngFor="let statement of statements | async; let i = index">
+        <kendo-grid-column-group
+          [locked]="false"
+          [headerClass]="statement.dateText.length > 0 ? {'gt-worksheet-summary-header gt-worksheet-header' : true } : statement.isWeekend ? { 'gt-worksheet-weekend-header gt-worksheet-header': true } : { 'gt-worksheet-weekday-header gt-worksheet-header': true }"
+        >
+          <ng-template kendoGridHeaderTemplate>
+            <span [ngClass]="{'gt-worksheet-summary': statement.dateText.length > 0}">{{statement.dateText}} {{ formatDate(statement.date) }}</span>
           </ng-template>
-          <ng-template kendoGridFooterTemplate> Closing ledger </ng-template>
-        </kendo-grid-column>
-      </kendo-grid-column-group>
-    </kendo-grid-column-group>
-    <ng-container *ngFor="let statement of statements | async; let i = index">
-      <kendo-grid-column-group
-        [locked]="false"
-        [headerClass]="statement.dateText.length > 0 ? {'gt-worksheet-summary-header gt-worksheet-header' : true } : statement.isWeekend ? { 'gt-worksheet-weekend-header gt-worksheet-header': true } : { 'gt-worksheet-weekday-header gt-worksheet-header': true }"
-      >
-        <ng-template kendoGridHeaderTemplate>
-          <span [ngClass]="{'gt-worksheet-summary': statement.dateText.length > 0}">{{statement.dateText}} {{ formatDate(statement.date) }}</span>
+          <kendo-grid-column-group
+            title="Actual"
+            [headerClass]="{ 'gt-worksheet-datatype': true }"
+          >
+            <kendo-grid-column
+              [headerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+              [class]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+              [footerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+              [width]="120"
+            >
+              <ng-template kendoGridHeaderTemplate>
+                {{ statement.actual.openingLedger | number: "1.2-2" }}
+              </ng-template>
+              <ng-template
+                kendoGridCellTemplate
+                let-dataItem
+                let-columnIndex="columnIndex"
+              >
+                {{ dataItem.data[columnIndex-1] | number: "1.2-2" }}
+              </ng-template>
+              <ng-template kendoGridFooterTemplate>
+                {{ statement.actual.closingLedger | number: "1.2-2" }}
+              </ng-template>
+            </kendo-grid-column>
+          </kendo-grid-column-group>
+          <kendo-grid-column-group
+            title="Estimate"
+            [headerClass]="{ 'gt-worksheet-datatype': true }"
+          >
+            <kendo-grid-column
+              [headerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+              [class]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+              [footerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
+              [width]="120"
+            >
+              <ng-template kendoGridHeaderTemplate>
+                {{ statement.estimate.openingLedger | number: "1.2-2" }}
+              </ng-template>
+              <ng-template
+                kendoGridCellTemplate
+                let-dataItem
+                let-columnIndex="columnIndex"
+              >
+                {{ dataItem.data[columnIndex-1] | number: "1.2-2" }}
+              </ng-template>
+              <ng-template kendoGridFooterTemplate>
+                {{ statement.estimate.closingLedger | number: "1.2-2" }}
+              </ng-template>
+            </kendo-grid-column>
+          </kendo-grid-column-group>
+        </kendo-grid-column-group>
+      </ng-container>
+      <kendo-grid-column field="worksheetGroup.name" [hidden]="true" [width]="200">
+        <ng-template kendoGridGroupHeaderTemplate let-value="value">
+          {{ value }}
         </ng-template>
-        <kendo-grid-column-group
-          title="Actual"
-          [headerClass]="{ 'gt-worksheet-datatype': true }"
-        >
-          <kendo-grid-column
-            [headerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
-            [class]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
-            [footerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
-            [width]="120"
-          >
-            <ng-template kendoGridHeaderTemplate>
-              {{ statement.actual.openingLedger | number: "1.2-2" }}
-            </ng-template>
-            <ng-template
-              kendoGridCellTemplate
-              let-dataItem
-              let-columnIndex="columnIndex"
-            >
-              {{ dataItem.data[columnIndex-1] | number: "1.2-2" }}
-            </ng-template>
-            <ng-template kendoGridFooterTemplate>
-              {{ statement.actual.closingLedger | number: "1.2-2" }}
-            </ng-template>
-          </kendo-grid-column>
-        </kendo-grid-column-group>
-        <kendo-grid-column-group
-          title="Estimate"
-          [headerClass]="{ 'gt-worksheet-datatype': true }"
-        >
-          <kendo-grid-column
-            [headerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
-            [class]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
-            [footerClass]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
-            [width]="120"
-          >
-            <ng-template kendoGridHeaderTemplate>
-              {{ statement.estimate.openingLedger | number: "1.2-2" }}
-            </ng-template>
-            <ng-template
-              kendoGridCellTemplate
-              let-dataItem
-              let-columnIndex="columnIndex"
-            >
-              {{ dataItem.data[columnIndex-1] | number: "1.2-2" }}
-            </ng-template>
-            <ng-template kendoGridFooterTemplate>
-              {{ statement.estimate.closingLedger | number: "1.2-2" }}
-            </ng-template>
-          </kendo-grid-column>
-        </kendo-grid-column-group>
-      </kendo-grid-column-group>
-    </ng-container>
-    <kendo-grid-column field="worksheetGroup.name" [hidden]="true" [width]="200">
-      <ng-template kendoGridGroupHeaderTemplate let-value="value">
-        {{ value }}
-      </ng-template>
-    </kendo-grid-column>
-  </kendo-grid>
+      </kendo-grid-column>
+    </kendo-grid>
+  </div>
 </div>

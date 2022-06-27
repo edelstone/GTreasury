@@ -1,68 +1,84 @@
-<div class="gt-portfolio">
-  <kendo-grid
-    [kendoGridBinding]="portfolioData"
-    kendoGridSelectBy="id"
-    [pageSize]="10"
-    [pageable]="{ pageSizes: [5, 10, 15, 20, 25] }"
-    [selectable]="{ checkboxOnly: true }"
-    [sortable]="true"
-    [groupable]="true"
-    [reorderable]="true"
-    [resizable]="true"
-    [columnMenu]="{ filter: true }"
-    >
-      <kendo-grid-checkbox-column
-        [width]="40"
-        [headerClass]="{'text-center': true}"
-        [class]="{'text-center': true}"
-        [resizable]="false"
-        [columnMenu]="false"
-        [showSelectAll]="true"
-        [locked]="true"
-        [reorderable]="false"
+<div class="gt-portfolios">
+  <div class="gt-portfolios-controls">
+    <gt-portfolios-toolbar></gt-portfolios-toolbar>
+    <gt-grid-action-bar
+      [showSave]="true"
+      [showDelete]="true"
+      [showBarChart]="true"
+      [viewOptions]="viewOptions"
+      [itemButton]="itemButton"
+      (actionClicked)="onActionClicked($event)"
+    ></gt-grid-action-bar>
+  </div>
+  <div class="gt-portfolio">
+    <kendo-grid
+      #portfolioGrid="kendoGrid"
+      [kendoGridBinding]="portfolioData"
+      kendoGridSelectBy="id"
+      [pageSize]="10"
+      [pageable]="{ pageSizes: [5, 10, 15, 20, 25] }"
+      [selectable]="{ checkboxOnly: true }"
+      [sortable]="true"
+      [groupable]="true"
+      [reorderable]="true"
+      [resizable]="true"
+      [columnMenu]="{ filter: true }"
       >
-      </kendo-grid-checkbox-column>
-      <kendo-grid-command-column title="Actions" [width]="140" [minResizableWidth]="140" [locked]="true" [reorderable]="false">
-        <ng-template kendoGridCellTemplate>
-            <button kendoGridEditCommand size="small" themeColor="tertiary" fillMode="flat">
-              <clr-icon shape="pencil" class="is-solid"></clr-icon>
-            </button>
-            <button class="k-button k-button-sm k-rounded-md k-button-flat-tertiary k-button-flat" size="small" themeColor="tertiary" fillMode="flat">
-              <clr-icon shape="clone" class="is-solid"></clr-icon>
-            </button>
-            <button kendoGridRemoveCommand size="small" themeColor="tertiary" fillMode="flat">
-              <clr-icon shape="trash" class="is-solid"></clr-icon>
-            </button>
-            <button class="k-button k-button-sm k-rounded-md k-button-flat-tertiary k-button-flat" size="small" themeColor="tertiary" fillMode="flat">
-              <clr-icon shape="ellipsis-vertical" class="is-solid"></clr-icon>
-            </button>
-        </ng-template>
-      </kendo-grid-command-column>
-      <kendo-grid-column field="id" title="ID" [width]="90" [minResizableWidth]="90" [locked]="true" [reorderable]="false" class="gt-numeric-date">
-        <ng-template kendoGridCellTemplate let-dataItem>
-          <a class="gt-grid-link" href="javascript:void(0);">{{dataItem.id}}</a>
-        </ng-template>
-      </kendo-grid-column>
-      <kendo-grid-column field="status" title="Status" [width]="150" [minResizableWidth]="150">
-        <ng-template kendoGridCellTemplate let-dataItem>
-          <span class="gt-grid-badge" [ngClass]="'gt-grid-badge-' + dataItem.status.toLowerCase()">{{dataItem.status}}</span>
-        </ng-template>
-      </kendo-grid-column>
-      <kendo-grid-column field="name" title="Name" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
-      <kendo-grid-column field="type" title="Type" [width]="170" [minResizableWidth]="170"></kendo-grid-column>
-      <kendo-grid-column field="product" title="Product" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
-      <kendo-grid-column field="amount" title="Amount" [width]="150" [minResizableWidth]="150" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
-      <kendo-grid-column field="currency" title="Currency" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
-      <kendo-grid-column field="attachments" title="Attachments" [width]="170" [minResizableWidth]="170">
-        <ng-template kendoGridCellTemplate let-dataItem>
-          <a class="gt-grid-link" *ngIf="dataItem.attachments > 0" href="javascript:void(0);">{{dataItem.attachments}}</a>
-          <span *ngIf="dataItem.attachments <= 0">N/A</span>
-        </ng-template>
-      </kendo-grid-column>
-      <kendo-grid-column field="start" title="Start" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
-      <kendo-grid-column field="term" title="Term" [width]="120" [minResizableWidth]="120"></kendo-grid-column>
-      <kendo-grid-column field="end" title="End" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
-      <kendo-grid-column field="rate" title="Rate" [width]="150" [minResizableWidth]="150" class="gt-numeric-date"></kendo-grid-column>
-      <kendo-grid-column field="frequency" title="Frequency" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
-  </kendo-grid>
+        <kendo-grid-checkbox-column
+          [width]="40"
+          [headerClass]="{'text-center': true}"
+          [class]="{'text-center': true}"
+          [resizable]="false"
+          [columnMenu]="false"
+          [showSelectAll]="true"
+          [locked]="true"
+          [reorderable]="false"
+        >
+        </kendo-grid-checkbox-column>
+        <kendo-grid-command-column title="Actions" [width]="140" [minResizableWidth]="140" [locked]="true" [reorderable]="false">
+          <ng-template kendoGridCellTemplate>
+              <button kendoGridEditCommand size="small" themeColor="tertiary" fillMode="flat">
+                <clr-icon shape="pencil" class="is-solid"></clr-icon>
+              </button>
+              <button class="k-button k-button-sm k-rounded-md k-button-flat-tertiary k-button-flat" size="small" themeColor="tertiary" fillMode="flat">
+                <clr-icon shape="clone" class="is-solid"></clr-icon>
+              </button>
+              <button kendoGridRemoveCommand size="small" themeColor="tertiary" fillMode="flat">
+                <clr-icon shape="trash" class="is-solid"></clr-icon>
+              </button>
+              <button class="k-button k-button-sm k-rounded-md k-button-flat-tertiary k-button-flat" size="small" themeColor="tertiary" fillMode="flat">
+                <clr-icon shape="ellipsis-vertical" class="is-solid"></clr-icon>
+              </button>
+          </ng-template>
+        </kendo-grid-command-column>
+        <kendo-grid-column field="id" title="ID" [width]="90" [minResizableWidth]="90" [locked]="true" [reorderable]="false" class="gt-numeric-date">
+          <ng-template kendoGridCellTemplate let-dataItem>
+            <a class="gt-grid-link" href="javascript:void(0);">{{dataItem.id}}</a>
+          </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="status" title="Status" [width]="150" [minResizableWidth]="150">
+          <ng-template kendoGridCellTemplate let-dataItem>
+            <span class="gt-grid-badge" [ngClass]="'gt-grid-badge-' + dataItem.status.toLowerCase()">{{dataItem.status}}</span>
+          </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="name" title="Name" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
+        <kendo-grid-column field="type" title="Type" [width]="170" [minResizableWidth]="170"></kendo-grid-column>
+        <kendo-grid-column field="product" title="Product" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
+        <kendo-grid-column field="amount" title="Amount" [width]="150" [minResizableWidth]="150" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="currency" title="Currency" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
+        <kendo-grid-column field="attachments" title="Attachments" [width]="170" [minResizableWidth]="170">
+          <ng-template kendoGridCellTemplate let-dataItem>
+            <a class="gt-grid-link" *ngIf="dataItem.attachments > 0" href="javascript:void(0);">{{dataItem.attachments}}</a>
+            <span *ngIf="dataItem.attachments <= 0">N/A</span>
+          </ng-template>
+        </kendo-grid-column>
+        <kendo-grid-column field="start" title="Start" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="term" title="Term" [width]="120" [minResizableWidth]="120"></kendo-grid-column>
+        <kendo-grid-column field="end" title="End" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="rate" title="Rate" [width]="150" [minResizableWidth]="150" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="frequency" title="Frequency" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
+        <kendo-grid-pdf fileName="Portfolio.pdf" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true"></kendo-grid-pdf>
+        <kendo-grid-excel fileName="Portfolio.xlsx"></kendo-grid-excel>
+    </kendo-grid>
+  </div>
 </div>

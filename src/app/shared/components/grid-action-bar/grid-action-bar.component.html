@@ -1,15 +1,13 @@
 <div class="gt-grid-actions">
-<!--
-  <div>
+  <div *ngIf="itemButton && itemButton.text.length > 0">
     <button kendoButton themeColor="primary">
-      <clr-icon shape="plus"></clr-icon>New worksheet
+      <clr-icon shape="plus"></clr-icon>{{itemButton.text}}
     </button>
   </div>
--->
 
   <div class="gt-grid-actions-right">
-  <!-- 
     <kendo-dropdownlist
+      *ngIf="viewOptions.length > 0"
       class="gt-grid-actions-select"
       [data]="viewOptions"
       [defaultItem]="defaultItem"
@@ -17,23 +15,20 @@
       valueField="value"
     >
     </kendo-dropdownlist>
-  -->
     <div class="gt-grid-actions-buttons">
-    <!--
-      <button kendoButton size="large" themeColor="secondary" fillMode="outline">
+      <button *ngIf="showSave" kendoButton size="large" themeColor="secondary" fillMode="outline">
         <clr-icon shape="floppy"></clr-icon>
       </button>
-      <button kendoButton size="large" themeColor="secondary" fillMode="outline" [disabled]="true">
+      <button *ngIf="showDelete" kendoButton size="large" themeColor="secondary" fillMode="outline" [disabled]="true">
         <clr-icon shape="trash"></clr-icon>
       </button>
-      <button kendoButton size="large" themeColor="secondary" fillMode="outline">
+      <button *ngIf="showBarChart" kendoButton size="large" themeColor="secondary" fillMode="outline">
         <clr-icon shape="bar-chart"></clr-icon>
       </button>
-    -->
-      <button kendoButton size="large" themeColor="secondary" fillMode="outline">
+      <button kendoButton size="large" themeColor="secondary" fillMode="outline" (click)="actionButtonClicked(actionButton.ExportToExcel)">
         <clr-icon shape="export"></clr-icon>
       </button>
-      <button kendoButton size="large" themeColor="secondary" fillMode="outline">
+      <button kendoButton size="large" themeColor="secondary" fillMode="outline" (click)="actionButtonClicked(actionButton.ExportToPdf)">
         <clr-icon shape="printer"></clr-icon>
       </button>
     </div>

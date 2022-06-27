@@ -6,8 +6,7 @@ import { ClarityModule } from '@clr/angular';
 import { TodoComponent } from '../todo/todo.component';
 import { StatementService } from '../core/services/statement/statement.service';
 import { WorksheetsHelperService } from '../core/services/worksheets-helper/worksheets-helper.service';
-import { GridModule } from '@progress/kendo-angular-grid';
-import { PortfoliosContainerComponent } from './components/portfolios-container/portfolios-container.component';
+import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { InputsModule } from '@progress/kendo-angular-inputs';
@@ -20,7 +19,7 @@ const routes = [
     path: '',
     component: FinancialInstrumentsContainerComponent,
     children: [
-      { path: 'portfolios', component: PortfoliosContainerComponent },
+      { path: 'portfolios', component: PortfoliosGridComponent },
       { path: 'risk-analysis', component: TodoComponent },
       { path: 'hedge-accounting', component: TodoComponent },
       { path: 'assets-and-liability', component: TodoComponent },
@@ -34,7 +33,6 @@ const routes = [
 @NgModule({
   declarations: [
     FinancialInstrumentsContainerComponent,
-    PortfoliosContainerComponent,
     PortfoliosToolbarComponent,
     PortfoliosGridComponent
   ],
@@ -42,6 +40,8 @@ const routes = [
     CommonModule,
     RouterModule.forChild(routes),
     GridModule,
+    PDFModule,
+    ExcelModule,
     DropDownsModule,
     ButtonsModule,
     InputsModule,

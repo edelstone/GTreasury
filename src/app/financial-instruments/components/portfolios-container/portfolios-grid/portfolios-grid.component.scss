@@ -1,5 +1,17 @@
 @import "../../../../../styles/variables.scss";
 
+.gt-portfolios {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
 .gt-grid-badge {
 
   &-created {
