@@ -16,7 +16,7 @@ export class PortfoliosGridComponent {
     { value: 2, text: 'View 2' },
     { value: 3, text: 'View 3' },
   ];
-  itemButton = { text: 'New Deal' };
+  itemButton = { text: 'New deal' };
   portfolioData: Portfolio[] = [
     {
       id: 21,
