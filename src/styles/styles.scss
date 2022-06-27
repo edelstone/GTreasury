@@ -42,6 +42,18 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
   flex-direction: column;
   flex-grow: 1;
 
+  &-titlebar {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-title {
+    font-size: 2rem;
+    line-height: 43px;
+    font-weight: normal;
+    color: $text-light;
+  }
+
   &-content {
     display: flex;
     flex-direction: column;

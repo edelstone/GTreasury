@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppArea, UiHelperService } from 'src/app/core/services/ui-helper/ui-helper.service';
 import { TabStrip } from 'src/app/shared/components/subheader/tabstrip/tabstrip.component';
+import { TitlebarButtonConfig } from 'src/app/shared/components/titlebar/titlebar.component';
 
 @Component({
   selector: 'gt-cash-container',
@@ -33,6 +34,20 @@ export class CashContainerComponent {
       title: 'Statements',
       routerLink: '/cash/statements',
     },
+  ];
+
+  primaryButton: TitlebarButtonConfig = {
+    id: "PrimaryButton", text: 'New worksheet'
+  }
+
+  secondaryButton: TitlebarButtonConfig = {
+    id: "SecondaryButton", text: 'New forecast'
+  }
+
+  tertiaryButtons: TitlebarButtonConfig[] = [
+    {
+      id: "TertiaryOne", text: "Settings", icon: "cog"
+    }
   ];
 
   constructor(uiHelperService: UiHelperService) {

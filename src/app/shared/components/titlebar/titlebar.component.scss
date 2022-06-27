@@ -6,13 +6,6 @@
   align-items: center;
   margin-bottom: 2.5rem;
 
-  &-title {
-    font-size: 2rem;
-    line-height: 43px;
-    font-weight: normal;
-    color: $text-light;
-  }
-
   &-date {
     font-size: 14px;
   }
@@ -28,6 +21,7 @@
     }
 
     &-primary {
+      background-color: var(--highlight-color);
 
       &:focus {
         box-shadow: none;
@@ -39,10 +33,6 @@
 
       &:active {
         opacity: 0.95;
-      }
-
-      &-cash {
-        background-color: $core-green-05;
       }
     }
   }
