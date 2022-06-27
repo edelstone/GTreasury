@@ -12,8 +12,8 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { SharedModule } from '../shared/shared.module';
-import { PortfoliosToolbarComponent } from './components/portfolios-container/portfolios-toolbar/portfolios-toolbar.component';
-import { PortfoliosGridComponent } from './components/portfolios-container/portfolios-grid/portfolios-grid.component';
+import { PortfoliosToolbarComponent } from './components/portfolios-grid/portfolios-toolbar/portfolios-toolbar.component';
+import { PortfoliosGridComponent } from './components/portfolios-grid/portfolios-grid.component';
 const routes = [
   {
     path: '',
