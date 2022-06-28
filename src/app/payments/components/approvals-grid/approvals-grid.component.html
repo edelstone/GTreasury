@@ -11,7 +11,7 @@
       [kendoGridBinding]="approvalData"
       kendoGridSelectBy="id"
       [pageSize]="10"
-      [pageable]="{ pageSizes: [5, 10, 15, 20, 25] }"
+      [pageable]="{ pageSizes: [10, 25, 50] }"
       [selectable]="{ checkboxOnly: true }"
       [sortable]="true"
       [groupable]="true"
@@ -46,24 +46,24 @@
               </button>
           </ng-template>
         </kendo-grid-command-column>
-        <kendo-grid-column field="accountId" title="Account ID" [width]="90" [minResizableWidth]="90" [locked]="true" [reorderable]="false" class="gt-numeric-date">
+        <kendo-grid-column field="accountId" title="Account ID" [width]="150" [minResizableWidth]="150" [locked]="true" [reorderable]="false">
           <ng-template kendoGridCellTemplate let-dataItem>
             <a class="gt-grid-link" href="javascript:void(0);">{{dataItem.accountId}}</a>
           </ng-template>
         </kendo-grid-column>
-        <kendo-grid-column field="approvalStatus" title="Approval Status" [width]="150" [minResizableWidth]="150">
+        <kendo-grid-column field="approvalStatus" title="Approval status" [width]="180" [minResizableWidth]="180">
           <ng-template kendoGridCellTemplate let-dataItem>
             <span class="gt-grid-badge" [ngClass]="'gt-grid-badge-' + dataItem.approvalStatus.toLowerCase().replaceAll(' ', '-')">{{dataItem.approvalStatus}}</span>
           </ng-template>
         </kendo-grid-column>
-        <kendo-grid-column field="sendingAccount" title="Sending account" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
-        <kendo-grid-column field="receivingAccount" title="Receiving account" [width]="170" [minResizableWidth]="170"></kendo-grid-column>
-        <kendo-grid-column field="amount" title="Amount" [width]="150" [minResizableWidth]="150" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
-        <kendo-grid-column field="currency" title="Currency" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
-        <kendo-grid-column field="approvalsNeeded" title="Approval needed" [width]="170" [minResizableWidth]="170"></kendo-grid-column>
-        <kendo-grid-column field="transactionDate" title="Transaction date" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="sendingAccount" title="Sending account" [width]="180" [minResizableWidth]="180"></kendo-grid-column>
+        <kendo-grid-column field="receivingAccount" title="Receiving account" [width]="190" [minResizableWidth]="190"></kendo-grid-column>
+        <kendo-grid-column field="amount" title="Amount" [width]="140" [minResizableWidth]="140" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="currency" title="Currency" [width]="140" [minResizableWidth]="140"></kendo-grid-column>
+        <kendo-grid-column field="approvalsNeeded" title="Approvals needed" [width]="190" [minResizableWidth]="190" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="transactionDate" title="Transaction date" [width]="190" [minResizableWidth]="190" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
         <kendo-grid-column field="valueDate" title="Value date" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
-        <kendo-grid-column field="processDate" title="Process date" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="processDate" title="Process date" [width]="170" [minResizableWidth]="170" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
         <kendo-grid-pdf fileName="Approvals.pdf" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true"></kendo-grid-pdf>
         <kendo-grid-excel fileName="Approvals.xlsx"></kendo-grid-excel>
     </kendo-grid>
