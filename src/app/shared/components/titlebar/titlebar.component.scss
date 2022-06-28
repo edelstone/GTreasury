@@ -22,7 +22,8 @@
 
     &-primary {
       background-color: var(--highlight-color);
-
+      border-color: var(--highlight-color);
+      
       &:focus {
         box-shadow: none;
       }
