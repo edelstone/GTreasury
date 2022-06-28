@@ -31,7 +31,10 @@ router-outlet, kendo-resize-sensor {
 }
 
 // Page-level layouts
-gt-cash-container, gt-financial-instruments-container, gt-todo {
+gt-todo,
+gt-cash-container,
+gt-financial-instruments-container,
+gt-payments-container {
   display: flex;
   flex-direction: column;
   flex-grow: 1;

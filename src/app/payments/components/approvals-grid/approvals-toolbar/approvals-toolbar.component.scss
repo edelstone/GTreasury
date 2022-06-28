@@ -1,0 +1,22 @@
+@import "../../../../../styles/variables.scss";
+
+.gt-toolbar {
+
+  &-actions {
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+  }
+
+  &-filters {
+
+    &-search {
+      width: 12rem;;
+    }
+  }
+}
