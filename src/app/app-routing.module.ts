@@ -12,7 +12,10 @@ const routes: Routes = [
     path: 'financial-instruments',
     loadChildren: () => import('./financial-instruments/financial-instruments.module').then((m) => m.FinancialInstrumentsModule),
   },
-  { path: 'payments', component: TodoComponent },
+  {
+    path: 'payments',
+    loadChildren: () => import('./payments/payments.module').then((m) => m.PaymentsModule),
+  },
   { path: 'reports', component: TodoComponent },
   { path: 'dataManagement', component: TodoComponent },
   { path: 'administration', component: TodoComponent },

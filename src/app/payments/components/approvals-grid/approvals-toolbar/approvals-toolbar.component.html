@@ -1,0 +1,24 @@
+<div class="gt-toolbar">
+  <div class="gt-toolbar-actions">
+    <div class="gt-toolbar-actions-left">
+      <div class="gt-toolbar-filters">
+        <div>
+          <kendo-textbox
+            class="gt-toolbar-filters-search"
+            [clearButton]="true"
+            placeholder="Search all data...">
+          </kendo-textbox>
+        </div>
+    </div>
+    <div class="gt-toolbar-actions-right">
+      <div class="gt-toolbar-actions-toggles">
+        <kendo-buttongroup selection="single">
+          <button kendoButton [togglable]="true">
+            All approvals
+          </button>
+          <button kendoButton [togglable]="true" [selected]="true">My approvals</button>
+        </kendo-buttongroup>
+      </div>
+    </div>
+  </div>
+</div>

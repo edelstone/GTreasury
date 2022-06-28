@@ -410,12 +410,4 @@ export class PortfoliosGridComponent {
     }
   }
 
-  exportToPDF(): void {
-    this.portfolioGrid.saveAsPDF();
-  }
-
-  exportToExcel(): void {
-    this.portfolioGrid.saveAsExcel();
-  }
-
 }
