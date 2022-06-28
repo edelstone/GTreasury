@@ -1,0 +1,8 @@
+<div class="gt-title-actions">
+  <span *ngIf="showDateTime" class="gt-title-actions-date">{{ loadingCompleteDate | date: "ccc d MMM YYYY h:mm:ss" }} {{ loadingCompleteDate | date: "a" | lowercase }} {{tzName}}</span>
+  <div class="gt-title-actions-tertiary" *ngIf="tertiaryButtons.length > 0">
+    <button *ngFor="let button of tertiaryButtons" class="gt-title-actions-tertiary-button" kendoButton themeColor="tertiary" fillMode="flat"><clr-icon [attr.shape]="button.icon"></clr-icon>{{button.text}}</button>
+  </div>
+  <button class="gt-title-actions-cta gt-title-actions-secondary" *ngIf="secondaryButton" kendoButton themeColor="secondary" size="large">{{secondaryButton.text}}</button>
+  <button class="gt-title-actions-cta gt-title-actions-primary" *ngIf="primaryButton" kendoButton themeColor="primary" size="large">{{primaryButton.text}}</button>
+</div>

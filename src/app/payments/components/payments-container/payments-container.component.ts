@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AppArea, UiHelperService } from 'src/app/core/services/ui-helper/ui-helper.service';
 import { TabStrip } from 'src/app/shared/components/subheader/tabstrip/tabstrip.component';
-import { TitlebarButtonConfig } from 'src/app/shared/components/titlebar/titlebar.component';
+import { TitleActionBarButtonConfig } from 'src/app/shared/components/title-action-bar/title-action-bar.component';
 
 @Component({
   selector: 'gt-payments-container',
@@ -38,15 +38,15 @@ export class PaymentsContainerComponent {
     },
   ];
 
-  primaryButton: TitlebarButtonConfig = {
+  primaryButton: TitleActionBarButtonConfig = {
     id: "PrimaryButton", text: 'New payment'
   }
 
-  secondaryButton: TitlebarButtonConfig = {
+  secondaryButton: TitleActionBarButtonConfig = {
     id: "SecondaryButton", text: 'New transfer'
   }
 
-  tertiaryButtons: TitlebarButtonConfig[] = [
+  tertiaryButtons: TitleActionBarButtonConfig[] = [
     {
       id: "TertiaryOne", text: "Settings", icon: "cog"
     },

@@ -1,21 +1,21 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
-export class TitlebarButtonConfig {
+export class TitleActionBarButtonConfig {
   id: string;
   text: string;
   icon?: string;
 }
 
 @Component({
-  selector: 'gt-titlebar',
-  templateUrl: './titlebar.component.html',
-  styleUrls: ['./titlebar.component.scss'],
+  selector: 'gt-title-action-bar',
+  templateUrl: './title-action-bar.component.html',
+  styleUrls: ['./title-action-bar.component.scss'],
 })
-export class TitlebarComponent implements OnInit {
+export class TitleActionBarComponent implements OnInit {
   @Input() showDateTime: boolean = false;
-  @Input() primaryButton?: TitlebarButtonConfig = undefined;
-  @Input() secondaryButton?: TitlebarButtonConfig = undefined;
-  @Input() tertiaryButtons: TitlebarButtonConfig[] = [];
+  @Input() primaryButton?: TitleActionBarButtonConfig = undefined;
+  @Input() secondaryButton?: TitleActionBarButtonConfig = undefined;
+  @Input() tertiaryButtons: TitleActionBarButtonConfig[] = [];
 
   @Output() actionClicked = new EventEmitter<string>();
 

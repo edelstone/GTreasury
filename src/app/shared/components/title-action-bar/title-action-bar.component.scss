@@ -1,0 +1,38 @@
+@import "../../../../styles/variables.scss";
+
+.gt-title-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  &-date {
+    font-size: 14px;
+  }
+
+  &-cta {
+    font-size: 18px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  &-primary {
+    background-color: var(--highlight-color);
+    border-color: var(--highlight-color);
+    
+    &:focus {
+      box-shadow: none;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+    &:active {
+      opacity: 0.95;
+    }
+  }
+
+  &-tertiary {
+    display: flex;
+    gap: 0.5rem;
+  }
+}

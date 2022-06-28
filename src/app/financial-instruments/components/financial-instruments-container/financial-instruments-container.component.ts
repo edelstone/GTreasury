@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AppArea, UiHelperService } from 'src/app/core/services/ui-helper/ui-helper.service';
 import { TabStrip } from 'src/app/shared/components/subheader/tabstrip/tabstrip.component';
-import { TitlebarButtonConfig } from 'src/app/shared/components/titlebar/titlebar.component';
+import { TitleActionBarButtonConfig } from 'src/app/shared/components/title-action-bar/title-action-bar.component';
 
 @Component({
   selector: 'gt-financial-instruments-container',
@@ -36,15 +36,15 @@ export class FinancialInstrumentsContainerComponent {
     },
   ];
 
-  primaryButton: TitlebarButtonConfig = {
+  primaryButton: TitleActionBarButtonConfig = {
     id: "PrimaryButton", text: 'New deal'
   }
 
-  secondaryButton: TitlebarButtonConfig = {
+  secondaryButton: TitleActionBarButtonConfig = {
     id: "SecondaryButton", text: 'New risk analysis'
   }
 
-  tertiaryButtons: TitlebarButtonConfig[] = [
+  tertiaryButtons: TitleActionBarButtonConfig[] = [
     {
       id: "TertiaryOne", text: "Settings", icon: "cog"
     },

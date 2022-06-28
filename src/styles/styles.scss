@@ -41,10 +41,12 @@ gt-cash-container, gt-financial-instruments-container, gt-todo {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  gap: 2.5rem;
 
   &-titlebar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &-title {
