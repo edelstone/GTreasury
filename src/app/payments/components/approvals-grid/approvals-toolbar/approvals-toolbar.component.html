@@ -9,6 +9,15 @@
             placeholder="Search all data...">
           </kendo-textbox>
         </div>
+        <div>
+          <kendo-multiselect
+            class="gt-toolbar-filters-select"
+            [data]="templateType"
+            placeholder="Select template types..."
+            [(value)]="templateTypeDefault"
+          >
+          </kendo-multiselect>
+        </div>
       </div>
     </div>
     <div class="gt-toolbar-actions-right">

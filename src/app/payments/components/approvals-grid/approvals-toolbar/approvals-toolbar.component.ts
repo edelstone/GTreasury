@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class ApprovalsToolbarComponent {
 
+  readonly templateType = ['Repetitive', 'Non-repetitive', 'Free form'];
+  templateTypeDefault = ['Repetitive', 'Non-repetitive', 'Free form'];
+
   constructor() { }
 
 }
