@@ -7,7 +7,7 @@
 
   &-card {
   box-shadow: $elevation-general-01;
-  
+
     &-header {
       display: flex;
       justify-content: space-between;
@@ -17,11 +17,16 @@
         font-weight: bold;
         font-size: 18px;
       }
+
+      &-right {
+        display: flex;
+        gap: 2rem;
+      }
     }
   }
 
   .gt-grid-badge {
-    
+
     &-yes {
       background-color: $core-blue-02;
     }
@@ -29,5 +34,62 @@
     &-no {
       background-color: $core-red-02;
     }
+  }
+}
+
+.gt-toolbar {
+
+  &-actions {
+    display: flex;
+    justify-content: space-between;
+
+    &-left {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    &-select {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: bold;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    &-toggles {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
+
+.gt-percentages {
+  display: flex;
+  justify-content: center;
+
+  &-first {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 56px;
+    align-items: center;
+  }
+
+  &-second {
+    font-family: 'Segoe UI';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+
+    /* identical to box height, or 139% */
+    display: flex;
+    align-items: center;
+
+    /* Text/Success */
+    color: #1D7B50;
   }
 }

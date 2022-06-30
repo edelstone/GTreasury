@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SeriesLabelsContentArgs } from '@progress/kendo-angular-charts';
 
 @Component({
   selector: 'gt-dashboard-tile-layout',
@@ -40,6 +41,45 @@ export class DashboardTileLayoutComponent {
     },
   ]
 
+  readonly closingBalanceData = [
+    {
+      kind: "60",
+      share: 16.6,
+    },
+    {
+      kind: "60",
+      share: 16.6,
+    },
+    {
+      kind: "60",
+      share: 16.6,
+    },
+    {
+      kind: "60",
+      share: 16.6,
+    },
+    {
+      kind: "60",
+      share: 16.6,
+    },
+    {
+      kind: "60",
+      share: 16.6,
+    },
+  ];
+
+  readonly timePeriod = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
+  selectedTimePeriod = 'DAY';
+
+  readonly numberOfDays = ['7 DAYS', '14 DAYS', '21 DAYS', '28 DAYS'];
+  selectedNumberOfDays = '7 DAYS';
+
+  readonly exposure = ['On balance sheet', 'Other'];
+  selectedExposure = 'On balance sheet';
+
   constructor() { }
 
+  public labelContent(e: SeriesLabelsContentArgs): string {
+    return e.category;
+  }
 }

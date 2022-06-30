@@ -57,4 +57,246 @@
         </kendo-grid>
       </kendo-tilelayout-item-body>
     </kendo-tilelayout-item>
-</kendo-tilelayout>
+
+    <kendo-tilelayout-item class="gt-dashboard-card" [col]="1">
+      <kendo-tilelayout-item-header class="gt-dashboard-card-header">
+        <div class="gt-dashboard-card-header-name">Closing balances by currency</div>
+        <div class="gt-dashboard-card-header-right">
+          <div>
+            <kendo-dropdownlist
+            class="gt-toolbar-actions-select"
+            [data]="timePeriod"
+            [(ngModel)]="selectedTimePeriod"
+            >
+            </kendo-dropdownlist>
+          </div>
+          <div>
+            <button kendoButton size="small" themeColor="tertiary" fillMode="flat">
+              <clr-icon shape="filter" size="24"></clr-icon>
+            </button>
+          </div>
+        </div>
+      </kendo-tilelayout-item-header>
+      <kendo-tilelayout-item-body>
+        <kendo-chart
+        [style.height]="'100%'"
+        >
+          <kendo-chart-series>
+            <kendo-chart-series-item
+            [autoFit]="true"
+            type="donut"
+            [data]="closingBalanceData"
+            categoryField="kind"
+            field="share"
+            >
+              <kendo-chart-series-item-labels
+              position="outsideEnd"
+              color="#000"
+              [content]="labelContent"
+              >
+              </kendo-chart-series-item-labels>
+            </kendo-chart-series-item>
+          </kendo-chart-series>
+          <kendo-chart-legend [visible]="false"></kendo-chart-legend>
+        </kendo-chart>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+
+
+
+    <kendo-tilelayout-item class="gt-dashboard-card" [col]="2">
+      <kendo-tilelayout-item-header class="gt-dashboard-card-header">
+        <div class="gt-dashboard-card-header-name">Forecast</div>
+        <div class="gt-dashboard-card-header-right">
+          <div>
+            <kendo-dropdownlist
+            class="gt-toolbar-actions-select"
+            [data]="numberOfDays"
+            [(ngModel)]="selectedNumberOfDays"
+            >
+            </kendo-dropdownlist>
+          </div>
+          <div>
+            <button kendoButton size="small" themeColor="tertiary" fillMode="flat">
+              <clr-icon shape="filter" size="24"></clr-icon>
+            </button>
+          </div>
+        </div>
+      </kendo-tilelayout-item-header>
+      <kendo-tilelayout-item-body>
+        <kendo-chart
+        [style.height]="'100%'"
+        >
+          <kendo-chart-category-axis>
+            <kendo-chart-category-axis-item
+              [categories]="['Mon', 'Tue', 'Wed', 'Thu', 'Fri']"
+            >
+            </kendo-chart-category-axis-item>
+          </kendo-chart-category-axis>
+
+          <kendo-chart-series>
+            <kendo-chart-series-item
+              type="area"
+              [data]="[5, 15, 10, 5, 15]"
+              [line]="{ style: 'smooth' }"
+            >
+            </kendo-chart-series-item>
+            <kendo-chart-series-item
+              type="area"
+              [data]="[15, 30, 15, 5, 25]"
+              [line]="{ style: 'smooth' }"
+            >
+            </kendo-chart-series-item>
+            <kendo-chart-series-item
+              type="area"
+              [data]="[18, 10, 13, 18, 3]"
+              [line]="{ style: 'smooth' }"
+            >
+            </kendo-chart-series-item>
+          </kendo-chart-series>
+        </kendo-chart>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+
+
+    <kendo-tilelayout-item class="gt-dashboard-card" [col]="1">
+      <kendo-tilelayout-item-header class="gt-dashboard-card-header">
+        <div class="gt-dashboard-card-header-name">Market data</div>
+        <div class="gt-dashboard-card-header-right">
+          <div>
+            <kendo-dropdownlist
+            class="gt-toolbar-actions-select"
+            [data]="numberOfDays"
+            [(ngModel)]="selectedNumberOfDays"
+            >
+            </kendo-dropdownlist>
+          </div>
+          <div>
+            <button kendoButton size="small" themeColor="tertiary" fillMode="flat">
+              <clr-icon shape="filter" size="24"></clr-icon>
+            </button>
+          </div>
+        </div>
+      </kendo-tilelayout-item-header>
+      <kendo-tilelayout-item-body>
+
+        <div class="gt-toolbar-actions-toggles">
+          <kendo-buttongroup selection="single">
+\            <button kendoButton [togglable]="true" [selected]="true">Interest rate</button>
+            <button kendoButton [togglable]="true">FX</button>
+            <button kendoButton [togglable]="true">Commodity</button>
+          </kendo-buttongroup>
+        </div>
+
+        <div class="gt-percentages">
+          <div class="gt-percentages-first">0.15250%</div>
+          <div class="gt-percentages-second"><clr-icon shape="arrow"></clr-icon>12%</div>
+        </div>
+
+        <kendo-chart
+        [style.height]="'100%'"
+        >
+          <kendo-chart-category-axis>
+            <kendo-chart-category-axis-item
+              [categories]="['Mon', 'Tue', 'Wed', 'Thu', 'Fri']"
+            >
+            </kendo-chart-category-axis-item>
+          </kendo-chart-category-axis>
+
+          <kendo-chart-series>
+            <kendo-chart-series-item
+              type="line"
+              [data]="[20, 19, 29, 21, 23]"
+              color="red"
+            >
+            </kendo-chart-series-item>
+          </kendo-chart-series>
+        </kendo-chart>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+
+    <kendo-tilelayout-item class="gt-dashboard-card" [col]="2">
+      <kendo-tilelayout-item-header class="gt-dashboard-card-header">
+        <div class="gt-dashboard-card-header-name">Currency exposure</div>
+        <div class="gt-dashboard-card-header-right">
+          <div>
+            <kendo-dropdownlist
+            class="gt-toolbar-actions-select"
+            [data]="numberOfDays"
+            [(ngModel)]="selectedNumberOfDays"
+            >
+            </kendo-dropdownlist>
+          </div>
+          <div>
+            <button kendoButton size="small" themeColor="tertiary" fillMode="flat">
+              <clr-icon shape="filter" size="24"></clr-icon>
+            </button>
+          </div>
+        </div>
+      </kendo-tilelayout-item-header>
+      <kendo-tilelayout-item-body>
+        <div>
+          <kendo-dropdownlist
+          class="gt-toolbar-actions-select"
+          [data]="exposure"
+          [(ngModel)]="selectedExposure"
+        >
+          </kendo-dropdownlist>
+        </div>
+        <kendo-chart
+        [style.height]="'100%'"
+        >
+          <kendo-chart-series>
+            <kendo-chart-series-item
+              type="bar"
+              [data]="[32]"
+              color="red"
+              type="column"
+              name="Series A"
+            >
+            </kendo-chart-series-item>
+            <kendo-chart-series-item
+              type="bar"
+              [data]="[19]"
+              color="yellow"
+              type="column"
+              name="Series B"
+            >
+            </kendo-chart-series-item>
+            <kendo-chart-series-item
+              type="bar"
+              [data]="[28]"
+              color="green"
+              type="column"
+              name="Series C"
+            >
+            </kendo-chart-series-item>
+            <kendo-chart-series-item
+              type="bar"
+              [data]="[12]"
+              color="blue"
+              type="column"
+              name="Series D"
+            >
+            </kendo-chart-series-item>
+            <kendo-chart-series-item
+              type="bar"
+              [data]="[26]"
+              color="purple"
+              type="column"
+              name="Series E"
+            >
+            </kendo-chart-series-item>
+          </kendo-chart-series>
+          <kendo-chart-legend [visible]="true" position="bottom" orientation="horizontal">
+            <kendo-chart-legend-item cursor="pointer">
+            </kendo-chart-legend-item>
+          </kendo-chart-legend>
+        </kendo-chart>
+      </kendo-tilelayout-item-body>
+    </kendo-tilelayout-item>
+
+
+
+
+  </kendo-tilelayout>
