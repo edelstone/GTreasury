@@ -3,7 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { TodoComponent } from './todo/todo.component';
 
 const routes: Routes = [
-  { path: 'dashboard', component: TodoComponent },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+  },
   {
     path: 'cash',
     loadChildren: () => import('./cash/cash.module').then((m) => m.CashModule),

@@ -1,0 +1,14 @@
+@import "../../../../../styles/variables.scss";
+
+.gt-tilelayout-item-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gt-grid-badge-yes {
+  background-color: $core-blue-02;
+}
+
+.gt-grid-badge-no {
+  background-color: $core-red-02;
+}

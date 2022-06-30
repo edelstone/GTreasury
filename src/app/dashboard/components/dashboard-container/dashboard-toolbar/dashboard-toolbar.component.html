@@ -1,0 +1,63 @@
+<div class="gt-toolbar">
+  <div class="gt-toolbar-actions">
+    <div class="gt-toolbar-actions-left">
+      <div>
+        <kendo-dropdownlist
+          class="gt-toolbar-actions-select"
+          [data]="dashboards"
+          [(ngModel)]="selectedValue"
+        >
+        </kendo-dropdownlist>
+      </div>
+      <div class="gt-toolbar-actions-buttons">
+        <kendo-buttongroup>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="pencil" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="clone" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="trash" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="share" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="printer" class="is-solid"></clr-icon>
+          </button>
+          <button kendoButton size="large" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="plus-circle" class="is-solid"></clr-icon>
+          </button>
+        </kendo-buttongroup>
+      </div>
+    </div>
+    <div class="gt-toolbar-actions-right">
+      <kendo-menu [items]="entityItems" [openOnClick]="{ toggle: 'click' }">
+        <ng-template kendoMenuItemTemplate let-item="item">
+            <span>{{item.text}}</span>
+        </ng-template>
+      </kendo-menu>
+      <kendo-menu [items]="bankItems" [openOnClick]="{ toggle: 'click' }">
+        <ng-template kendoMenuItemTemplate let-item="item">
+            <span>{{item.text}}</span>
+        </ng-template>
+      </kendo-menu>
+      <kendo-menu [items]="currencyItems" [openOnClick]="{ toggle: 'click' }">
+        <ng-template kendoMenuItemTemplate let-item="item">
+            <span>{{item.text}}</span>
+        </ng-template>
+      </kendo-menu>
+      <kendo-menu [items]="regionItems" [openOnClick]="{ toggle: 'click' }">
+        <ng-template kendoMenuItemTemplate let-item="item">
+            <span>{{item.text}}</span>
+        </ng-template>
+      </kendo-menu>
+      <kendo-menu [items]="accountGroupsItems" [openOnClick]="{ toggle: 'click' }">
+        <ng-template kendoMenuItemTemplate let-item="item">
+            <span>{{item.text}}</span>
+        </ng-template>
+      </kendo-menu>
+    </div>
+  </div>
+</div>

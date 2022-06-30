@@ -1,1 +1,17 @@
-<p>dashboard-container works!</p>
+<div class="gt-layout-body">
+  <div class="gt-layout-body-titlebar">
+    <div><h1 class="gt-layout-body-title">Treasury dashboard</h1></div>
+    <div>
+      <gt-title-action-bar
+        [showDateTime]="true"
+        [primaryButton]="primaryButton"
+        [secondaryButton]="secondaryButton"
+        [tertiaryButtons]="tertiaryButtons"
+      ></gt-title-action-bar>
+    </div>
+  </div>
+  <div class="gt-layout-body-content">
+    <gt-dashboard-toolbar></gt-dashboard-toolbar>
+    <gt-dashboard-tile-layout></gt-dashboard-tile-layout>
+  </div>
+</div>
