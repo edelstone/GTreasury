@@ -67,11 +67,16 @@ gt-payments-container {
   }
 }
 
+.k-layout-item-hint-reorder {
+  border: none;
+  background-color: $core-blue-01;
+}
+
 // Menus
 .k-popup {
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 4px 8px 0 $transparent-dark-20;
+  box-shadow: $elevation-general-02;
   min-width: 5rem;
 }
 
@@ -239,9 +244,17 @@ gt-payments-container {
   }
 }
 
+.gt-toolbar-actions .k-menu-link {
+  padding: 0;
+}
+
 // Grid
 .k-grid {
   border: none;
+
+  .k-column-title {
+    font-weight: bold;
+  }
 
   .k-grid-aria-root {
     border-bottom: 1px solid $core-gray-04;

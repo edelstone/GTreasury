@@ -1,45 +1,55 @@
 <kendo-tilelayout
       [columns]="2"
-      [rowHeight]="255"
       [resizable]="true"
       [reorderable]="true"
+      class="gt-dashboard"
     >
-    <kendo-tilelayout-item [col]="1">
-      <kendo-tilelayout-item-header class="gt-tilelayout-item-header">
-        <div>Favorite worksheets</div>
-        <div><clr-icon shape="filter-grid"></clr-icon></div>
+    <kendo-tilelayout-item class="gt-dashboard-card" [col]="1">
+      <kendo-tilelayout-item-header class="gt-dashboard-card-header">
+        <div class="gt-dashboard-card-header-name">Favorite worksheets</div>
+        <div class="gt-dashboard-card-header-right">
+          <button kendoButton size="small" themeColor="tertiary" fillMode="flat">
+            <clr-icon shape="filter" size="24"></clr-icon>
+          </button>
+        </div>
       </kendo-tilelayout-item-header>
       <kendo-tilelayout-item-body>
         <kendo-grid
           [kendoGridBinding]="favoriteWorksheetsData"
           [sortable]="true"
+          [resizable]="true"
+          [autoSize]="true"
         >
-          <kendo-grid-column field="title" title="Title" [width]="150">
+          <kendo-grid-column field="title" title="Title">
             <ng-template kendoGridCellTemplate let-dataItem>
               <a class="gt-grid-link" href="javascript:void(0);">{{dataItem.title}}</a>
             </ng-template>
           </kendo-grid-column>
-          <kendo-grid-column field="description" title="Description" [width]="150"></kendo-grid-column>
+          <kendo-grid-column field="description" title="Description"></kendo-grid-column>
         </kendo-grid>
       </kendo-tilelayout-item-body>
     </kendo-tilelayout-item>
-    <kendo-tilelayout-item [col]="2">
-      <kendo-tilelayout-item-header class="gt-tilelayout-item-header">
-        <div>Job status errors</div>
-        <div><clr-icon shape="filter-grid"></clr-icon></div>
+    <kendo-tilelayout-item class="gt-dashboard-card" [col]="2">
+      <kendo-tilelayout-item-header class="gt-dashboard-card-header">
+        <div class="gt-dashboard-card-header-name">Job status errors</div>
+        <button kendoButton size="small" themeColor="tertiary" fillMode="flat">
+          <clr-icon shape="filter" size="24"></clr-icon>
+        </button>
       </kendo-tilelayout-item-header>
       <kendo-tilelayout-item-body>
         <kendo-grid
           [kendoGridBinding]="jobStatusErrorsData"
           [sortable]="true"
+          [resizable]="true"
+          [autoSize]="true"
         >
-          <kendo-grid-column field="jobId" title="Job ID" [width]="30">
+          <kendo-grid-column field="jobId" title="Job ID">
             <ng-template kendoGridCellTemplate let-dataItem>
               <a class="gt-grid-link" href="javascript:void(0);">{{dataItem.jobId}}</a>
             </ng-template>
           </kendo-grid-column>
-          <kendo-grid-column field="description" title="Description" [width]="150"></kendo-grid-column>
-          <kendo-grid-column field="jobStopped" title="Job stopped?" [width]="50">
+          <kendo-grid-column field="description" title="Description"></kendo-grid-column>
+          <kendo-grid-column field="jobStopped" title="Job stopped?">
             <ng-template kendoGridCellTemplate let-dataItem>
               <span class="gt-grid-badge" [ngClass]="'gt-grid-badge-' + dataItem.jobStopped.toLowerCase()">{{dataItem.jobStopped}}</span>
             </ng-template>

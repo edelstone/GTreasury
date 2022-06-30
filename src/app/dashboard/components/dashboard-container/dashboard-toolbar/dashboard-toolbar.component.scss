@@ -5,11 +5,17 @@
   &-actions {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     &-left {
       display: flex;
       gap: 1rem;
       align-items: center;
+    }
+
+    &-right {
+      display: flex;
+      gap: 2rem;
     }
 
     &-select {
@@ -19,11 +25,6 @@
       font-weight: bold;
       align-items: flex-end;
       gap: 0.5rem;
-    }
-
-    &-toggles {
-      display: flex;
-      gap: 1rem;
     }
   }
 }

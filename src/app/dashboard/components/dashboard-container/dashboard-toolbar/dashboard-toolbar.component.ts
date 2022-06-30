@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DashboardToolbarComponent {
 
-  readonly dashboards = ['My primary dashboard', 'My secondary dashboard', 'My tertiary dashboard'];
+  readonly dashboards = ['My primary dashboard', 'My second dashboard', 'My third dashboard'];
   selectedValue = 'My primary dashboard';
 
   readonly entityItems: any[] = [
@@ -15,19 +15,19 @@ export class DashboardToolbarComponent {
   ];
 
   readonly bankItems: any[] = [
-    { text: "Entity", items: [ { text: "Entity 1" }, { text: "Entity 2" } ] }
+    { text: "Bank", items: [ { text: "Bank 1" }, { text: "Bank 2" } ] }
   ];
 
   readonly currencyItems: any[] = [
-    { text: "Entity", items: [ { text: "Entity 1" }, { text: "Entity 2" } ] }
+    { text: "Currency", items: [ { text: "Currency 1" }, { text: "Currency 2" } ] }
   ];
 
   readonly regionItems: any[] = [
-    { text: "Entity", items: [ { text: "Entity 1" }, { text: "Entity 2" } ] }
+    { text: "Region", items: [ { text: "Region 1" }, { text: "Region 2" } ] }
   ];
 
   readonly accountGroupsItems: any[] = [
-    { text: "Entity", items: [ { text: "Entity 1" }, { text: "Entity 2" } ] }
+    { text: "Account groups", items: [ { text: "Account group 1" }, { text: "Account group 2" } ] }
   ];
 
   constructor() { }

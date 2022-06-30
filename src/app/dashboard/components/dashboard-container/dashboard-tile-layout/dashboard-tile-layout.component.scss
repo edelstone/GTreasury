@@ -1,14 +1,33 @@
 @import "../../../../../styles/variables.scss";
 
-.gt-tilelayout-item-header {
-  display: flex;
-  justify-content: space-between;
-}
+.gt-dashboard {
+  padding: 0 !important;
+  background: $core-gray-01;
+  margin-top: 0.5rem;
 
-.gt-grid-badge-yes {
-  background-color: $core-blue-02;
-}
+  &-card {
+  box-shadow: $elevation-general-01;
+  
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      border: none;
 
-.gt-grid-badge-no {
-  background-color: $core-red-02;
+      &-name {
+        font-weight: bold;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .gt-grid-badge {
+    
+    &-yes {
+      background-color: $core-blue-02;
+    }
+
+    &-no {
+      background-color: $core-red-02;
+    }
+  }
 }
