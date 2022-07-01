@@ -71,10 +71,10 @@ export class DashboardTileLayoutComponent {
   readonly timePeriod = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
   selectedTimePeriod = 'DAY';
 
-  readonly numberOfDays = ['7 DAYS', '14 DAYS', '21 DAYS', '28 DAYS'];
+  readonly numberOfDays = ['7 DAYS', '30 DAYS', '90 DAYS', '365 DAYS'];
   selectedNumberOfDays = '7 DAYS';
 
-  readonly exposure = ['On balance sheet', 'Other'];
+  readonly exposure = ['On balance sheet', 'Off balance sheet'];
   selectedExposure = 'On balance sheet';
 
   constructor() { }

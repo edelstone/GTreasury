@@ -26,7 +26,8 @@ body {
 }
 
 // Some Angular directives can take up space in flexbox layouts; this hides those.
-router-outlet, kendo-resize-sensor {
+router-outlet,
+kendo-resize-sensor {
   display: none;
 }
 
@@ -34,10 +35,20 @@ router-outlet, kendo-resize-sensor {
 gt-todo,
 gt-cash-container,
 gt-financial-instruments-container,
-gt-payments-container {
+gt-payments-container,
+gt-dashboard-container {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+}
+
+.gt-layout-page {
+
+  gt-dashboard-container {
+    padding: 2.5rem;
+    margin: -2.5rem;
+    background-color: $core-gray-02;
+  }
 }
 
 .gt-layout-body {
@@ -82,7 +93,9 @@ gt-payments-container {
 
 // Icon replacements
 // Down arrow
-.k-i-arrow-s::before, .k-i-arrow-60-down::before, .k-i-collapse::before {
+.k-i-arrow-s::before,
+.k-i-arrow-60-down::before,
+.k-i-collapse::before {
   content: "\e015";
 }
 
@@ -125,11 +138,13 @@ gt-payments-container {
   padding: 2px;
 }
 
-.k-button, .k-button::before {
+.k-button,
+.k-button::before {
   transition: none;
 }
 
-.k-button-solid-secondary, .k-button-outline-secondary {
+.k-button-solid-secondary,
+.k-button-outline-secondary {
   border-color: $core-gray-04;
   color: $text-default;
 
@@ -144,23 +159,31 @@ gt-payments-container {
 
 // Inputs
 ::placeholder {
-  color: $text-extra-light !important;
+  color: $text-extra-light  !important;
 }
 
-.k-input:hover, .k-input.k-hover, .k-input:focus, .k-input.k-focus {
+.k-input:hover,
+.k-input.k-hover,
+.k-input:focus,
+.k-input.k-focus {
   border-color: $core-gray-05;
 }
 
-.k-input:active, .k-input.k-hover, .k-input:focus, .k-input.k-focus {
+.k-input:active,
+.k-input.k-hover,
+.k-input:focus,
+.k-input.k-focus {
   border-color: $core-gray-05;
 }
 
-.k-list-item, .k-list-optionlabel {
+.k-list-item,
+.k-list-optionlabel {
   transition: none;
   gap: 0;
 }
 
-.k-list-item:active, .k-list-item.k-selected:hover {
+.k-list-item:active,
+.k-list-item.k-selected:hover {
   background: $core-blue-02;
 }
 
@@ -180,7 +203,8 @@ gt-payments-container {
   left: 1px;
 }
 
-.k-checkbox:checked, .k-checkbox.k-checked {
+.k-checkbox:checked,
+.k-checkbox.k-checked {
   &:hover {
     background-color: $core-blue-08;
   }
@@ -193,7 +217,7 @@ gt-payments-container {
 // Sidebar
 .gt-sidebar {
 
-  .k-menu-vertical > .k-menu-item > .k-menu-link {
+  .k-menu-vertical>.k-menu-item>.k-menu-link {
     padding: 0;
   }
 }
@@ -201,7 +225,9 @@ gt-payments-container {
 // Header
 .gt-header {
 
-  .k-input-inner, .k-input-button, .k-menu-link {
+  .k-input-inner,
+  .k-input-button,
+  .k-menu-link {
     padding: 0;
   }
 
@@ -238,7 +264,8 @@ gt-payments-container {
       font-size: 1.5rem;
     }
 
-    .k-input-inner, .k-input-button {
+    .k-input-inner,
+    .k-input-button {
       padding: 0;
     }
   }
@@ -260,15 +287,22 @@ gt-payments-container {
     border-bottom: 1px solid $core-gray-04;
   }
 
-  .k-grid-header-locked, .k-grid-content-locked, .k-grid-footer-locked {
+  .k-grid-header-locked,
+  .k-grid-content-locked,
+  .k-grid-footer-locked {
     border: none;
 
-    th, td {
+    th,
+    td {
       border-color: $core-gray-04;
     }
   }
 
-  .k-grid-content-locked .k-state-selected td, .k-grid-content-locked .k-state-selected:hover td, td.k-state-selected, tr.k-state-selected > td, .k-grid-content-locked .k-state-selected.k-alt td {
+  .k-grid-content-locked .k-state-selected td,
+  .k-grid-content-locked .k-state-selected:hover td,
+  td.k-state-selected,
+  tr.k-state-selected>td,
+  .k-grid-content-locked .k-state-selected.k-alt td {
     background: $core-blue-01;
   }
 
@@ -295,11 +329,12 @@ gt-payments-container {
     }
   }
 
-  .k-grouping-row + tr td {
+  .k-grouping-row+tr td {
     border-top: none;
   }
 
-  th, td {
+  th,
+  td {
     border-width: 0 0 1px 0;
     border-color: $core-gray-04;
   }
@@ -323,20 +358,23 @@ gt-payments-container {
     }
   }
 
-  .k-command-cell > .k-button + .k-button {
+  .k-command-cell>.k-button+.k-button {
     margin-inline-start: 0.25rem;
   }
 }
 
 // Pager
-.k-pager-numbers .k-link.k-state-selected, .k-pager-numbers .k-link:hover, .k-pager-numbers .k-link.k-state-hover {
+.k-pager-numbers .k-link.k-state-selected,
+.k-pager-numbers .k-link:hover,
+.k-pager-numbers .k-link.k-state-hover {
   background: $core-blue-01;
 }
 
 // Worksheet
 .gt-worksheets {
 
-  th, td {
+  th,
+  td {
     text-align: right;
   }
 
@@ -346,7 +384,8 @@ gt-payments-container {
       border: none;
     }
 
-    .k-grid-footer td, .k-group-footer td {
+    .k-grid-footer td,
+    .k-group-footer td {
       font-weight: normal;
     }
 
@@ -383,6 +422,18 @@ gt-payments-container {
       &-header {
         background: $core-gray-02;
       }
+    }
+  }
+}
+
+// Dashboard
+.gt-dashboard {
+
+  &-card-header-select {
+
+    .k-input-inner,
+    .k-input-button {
+      padding: 0;
     }
   }
 }
