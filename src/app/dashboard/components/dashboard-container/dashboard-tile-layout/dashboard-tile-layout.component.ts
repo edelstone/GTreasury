@@ -11,16 +11,40 @@ export class DashboardTileLayoutComponent {
   readonly favoriteWorksheetsData = [
     {
       title: 'CARRY FORWARD',
-      description: 'carry forward example TD 2022-01-10'
+      description: 'Carry forward example TD 2022-06-10'
     },
     {
       title: 'CASH TARGET B',
-      description: 'Cash with target balance'
+      description: 'Cash with target balance entity X'
     },
     {
       title: 'CASH BALANCE',
       description: 'Cash balancing worksheet'
     },
+    {
+      title: 'FI Cash Inherit',
+      description: 'Cash inherited 2022-07-01'
+    },
+    {
+      title: 'B SERIES FUNDING',
+      description: 'Funding round B with entity Y'
+    },
+    {
+      title: 'Sample data',
+      description: 'Cash worksheet 01'
+    },
+    {
+      title: 'Another sample',
+      description: 'Sample cash balancing worksheet'
+    },
+    {
+      title: 'CASH TARGET C',
+      description: 'Targeting C funds Citizens Bank'
+    },
+    {
+      title: 'CASH TARGET X',
+      description: 'Targeting X funds'
+    }
   ]
 
   readonly jobStatusErrorsData = [
@@ -39,32 +63,62 @@ export class DashboardTileLayoutComponent {
       description: 'CITIZENS_FT.TXT',
       jobStopped: 'No'
     },
+    {
+      jobId: 639,
+      description: 'GL Credit Template.csv',
+      jobStopped: 'Yes'
+    },
+    {
+      jobId: 2096,
+      description: 'Bank Leumi X1',
+      jobStopped: 'No'
+    },
+    {
+      jobId: 4444,
+      description: 'PRT.4000.XT',
+      jobStopped: 'No'
+    },
+    {
+      jobId: 3019,
+      description: 'Bank of Spain recruitment',
+      jobStopped: 'Yes'
+    },
+    {
+      jobId: 18399,
+      description: 'Payment import 401',
+      jobStopped: 'No'
+    },
+    {
+      jobId: 33,
+      description: 'CITIZENS_FT_1000.CSV',
+      jobStopped: 'No'
+    }
   ]
 
   readonly closingBalanceData = [
     {
-      kind: "60",
-      share: 16.6,
+      kind: "Figure 1",
+      share: 20,
     },
     {
-      kind: "60",
-      share: 16.6,
+      kind: "Figure 2",
+      share: 30,
     },
     {
-      kind: "60",
-      share: 16.6,
+      kind: "Figure 3",
+      share: 10,
     },
     {
-      kind: "60",
-      share: 16.6,
+      kind: "Figure 4",
+      share: 8,
     },
     {
-      kind: "60",
-      share: 16.6,
+      kind: "Figure 5",
+      share: 28,
     },
     {
-      kind: "60",
-      share: 16.6,
+      kind: "Figure 6",
+      share: 4,
     },
   ];
 
