@@ -110,8 +110,8 @@ gt-dashboard-container {
 }
 
 // Table header ellipses
-.k-grid .k-header .k-i-more-vertical:before {
-  content: url("../assets/images/filter-line.svg");
+.k-grid .k-header .k-i-more-vertical:before, .k-i-filter:before {
+  content: url("../assets/images/filter.svg");
 }
 
 // Table sort arrows
@@ -121,6 +121,11 @@ gt-dashboard-container {
 
 .k-i-sort-desc-sm::before {
   content: url("../assets/images/arrow-down.svg");
+}
+
+// Filter menu
+.k-i-columns::before {
+  content: url("../assets/images/view-columns.svg");
 }
 
 // Buttons
@@ -434,6 +439,13 @@ gt-dashboard-container {
     .k-input-inner,
     .k-input-button {
       padding: 0;
+    }
+  }
+
+  &-card-multiChild-select {
+
+    .k-button-icon:before {
+      font-size: 20px;
     }
   }
 }
