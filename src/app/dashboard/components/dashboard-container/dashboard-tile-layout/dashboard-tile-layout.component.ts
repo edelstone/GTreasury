@@ -122,11 +122,20 @@ export class DashboardTileLayoutComponent {
     },
   ];
 
-  readonly timePeriod = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
-  selectedTimePeriod = 'DAY';
+  readonly timePeriod1 = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
+  selectedTimePeriod1 = 'DAY';
 
-  readonly numberOfDays = ['7 DAYS', '30 DAYS', '90 DAYS', '365 DAYS'];
-  selectedNumberOfDays = '7 DAYS';
+  readonly timePeriod2 = ['DAY', 'WEEK', 'MONTH', 'YEAR'];
+  selectedTimePeriod2 = 'DAY';
+
+  readonly numberOfDays1 = ['7 DAYS', '30 DAYS', '90 DAYS', '365 DAYS'];
+  selectedNumberOfDays1 = '7 DAYS';
+
+  readonly numberOfDays2 = ['7 DAYS', '30 DAYS', '90 DAYS', '365 DAYS'];
+  selectedNumberOfDays2 = '7 DAYS';
+
+  readonly numberOfDays3 = ['7 DAYS', '30 DAYS', '90 DAYS', '365 DAYS'];
+  selectedNumberOfDays3 = '7 DAYS';
 
   readonly exposure = ['On balance sheet', 'Off balance sheet'];
   selectedExposure = 'On balance sheet';

@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
+import { ExcelExportData } from '@progress/kendo-angular-excel-export';
 import { GridComponent } from '@progress/kendo-angular-grid';
+import { process } from "@progress/kendo-data-query";
 import { Approval } from 'src/app/core/model/approval';
-import { ActionButton } from 'src/app/shared/components/grid-action-bar/grid-action-bar.component';
 
 @Component({
   selector: 'gt-appovals-grid',
@@ -9,7 +10,6 @@ import { ActionButton } from 'src/app/shared/components/grid-action-bar/grid-act
   styleUrls: ['./approvals-grid.component.scss']
 })
 export class ApprovalsGridComponent {
-
   @ViewChild('approvalsGrid') approvalsGrid: GridComponent;
 
   approvalData: Approval[] = [
@@ -541,19 +541,20 @@ export class ApprovalsGridComponent {
       processDate: new Date(2022, 6, 12),
     }
   ]
-  constructor() { }
+  // Bind 'this' explicitly to capture the execution context of the component.
+  constructor() {
+    this.allData = this.allData.bind(this);
+  }
 
-  onActionClicked(actionButton: ActionButton) {
-    switch (actionButton) {
-      case ActionButton.ExportToPdf:
-        this.approvalsGrid.saveAsPDF();
-        break;
-      case ActionButton.ExportToExcel:
-        this.approvalsGrid.saveAsExcel();
-        break;
-      default:
-        break;
-    }
+  // By default, the Grid exports its current data. To export data that is different
+  // from the current Grid data, specify a custom fetchData function. It returns an
+  // ExcelExportData value or array.
+  public allData(): ExcelExportData {
+    const result: ExcelExportData = {
+      data: process(this.approvalData, {}).data
+    };
+
+    return result;
   }
 
 }

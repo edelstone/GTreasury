@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { GridComponent } from '@progress/kendo-angular-grid';
 
 export enum ActionButton {
   ExportToPdf,
@@ -19,13 +20,13 @@ export enum ActionButton {
   styleUrls: ['./grid-action-bar.component.scss']
 })
 export class GridActionBarComponent {
+  @Input() targetGrid: GridComponent;
   @Input() showSave: boolean = false;
   @Input() showDelete: boolean = false;
   @Input() showBarChart: boolean = false;
   @Input() viewOptions: {text: string, value: number}[] = [];
   @Input() itemButton?: {text: string} = undefined;
 
-  @Output() actionClicked = new EventEmitter<ActionButton>();
   actionButton = ActionButton;
 
   readonly defaultItem = {
@@ -36,9 +37,22 @@ export class GridActionBarComponent {
   constructor() { }
 
   actionButtonClicked(actionButton: ActionButton) {
-    // This handles the action button that was clicked. The view drop down
-    // and the "New" button can be handled the same way.
-    this.actionClicked.emit(actionButton);
+    // // This handles the action button that was clicked. The view drop down
+    // // and the "New" button can be handled the same way.
+    // this.actionClicked.emit(actionButton);
+
+    // https://www.telerik.com/kendo-angular-ui/components/grid/export/pdf-export/#toc-triggering-export-externally
+    // https://www.telerik.com/kendo-angular-ui/components/grid/export/excel-export/#toc-triggering-export-externally
+    switch (actionButton) {
+      case ActionButton.ExportToPdf:
+        this.targetGrid.saveAsPDF();
+        break;
+      case ActionButton.ExportToExcel:
+        this.targetGrid.saveAsExcel();
+        break;
+      default:
+        break;
+    }
   }
 
 }

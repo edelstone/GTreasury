@@ -2,12 +2,12 @@
   <div class="gt-portfolios-controls">
     <gt-portfolios-toolbar></gt-portfolios-toolbar>
     <gt-grid-action-bar
+      [targetGrid]="portfolioGrid"
       [showSave]="true"
       [showDelete]="true"
       [showBarChart]="true"
       [viewOptions]="viewOptions"
       [itemButton]="itemButton"
-      (actionClicked)="onActionClicked($event)"
     ></gt-grid-action-bar>
   </div>
   <div class="gt-portfolio">
@@ -77,8 +77,33 @@
         <kendo-grid-column field="end" title="End" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
         <kendo-grid-column field="rate" title="Rate" [width]="150" [minResizableWidth]="150" class="gt-numeric-date"></kendo-grid-column>
         <kendo-grid-column field="frequency" title="Frequency" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
-        <kendo-grid-pdf fileName="Portfolio.pdf" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true"></kendo-grid-pdf>
-        <kendo-grid-excel fileName="Portfolio.xlsx"></kendo-grid-excel>
+
+        <kendo-grid-pdf fileName="Portfolio.pdf" [allPages]="true" [scale]="0.5" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
+          <kendo-grid-column field="id" title="ID" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="status" title="Status">
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <span class="gt-grid-badge" [ngClass]="'gt-grid-badge-' + dataItem.status.toLowerCase()">{{dataItem.status}}</span>
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column field="name" title="Name"></kendo-grid-column>
+          <kendo-grid-column field="type" title="Type"></kendo-grid-column>
+          <kendo-grid-column field="product" title="Product"></kendo-grid-column>
+          <kendo-grid-column field="amount" title="Amount" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="currency" title="Currency"></kendo-grid-column>
+          <kendo-grid-column field="attachments" title="Attachments">
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <span *ngIf="dataItem.attachments > 0">{{dataItem.attachments}}</span>
+              <span *ngIf="dataItem.attachments <= 0">N/A</span>
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column field="start" title="Start" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="term" title="Term"></kendo-grid-column>
+          <kendo-grid-column field="end" title="End" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="rate" title="Rate" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="frequency" title="Frequency"></kendo-grid-column>
+        </kendo-grid-pdf>
+
+        <kendo-grid-excel fileName="Portfolio.xlsx" [fetchData]="allData"></kendo-grid-excel>
     </kendo-grid>
   </div>
 </div>

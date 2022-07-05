@@ -2,7 +2,7 @@
   <div class="gt-approvals-controls">
     <gt-approvals-toolbar></gt-approvals-toolbar>
     <gt-grid-action-bar
-      (actionClicked)="onActionClicked($event)"
+      [targetGrid]="approvalsGrid"
     ></gt-grid-action-bar>
   </div>
   <div class="gt-approval">
@@ -64,8 +64,25 @@
         <kendo-grid-column field="transactionDate" title="Transaction date" [width]="190" [minResizableWidth]="190" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
         <kendo-grid-column field="valueDate" title="Value date" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
         <kendo-grid-column field="processDate" title="Process date" [width]="170" [minResizableWidth]="170" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
-        <kendo-grid-pdf fileName="Approvals.pdf" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true"></kendo-grid-pdf>
-        <kendo-grid-excel fileName="Approvals.xlsx"></kendo-grid-excel>
+
+        <kendo-grid-pdf fileName="Approvals.pdf" [scale]="0.5" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
+          <kendo-grid-column field="accountId" title="Account ID"></kendo-grid-column>
+          <kendo-grid-column field="approvalStatus" title="Approval status">
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <span class="gt-grid-badge" [ngClass]="'gt-grid-badge-' + dataItem.approvalStatus.toLowerCase().replaceAll(' ', '-')">{{dataItem.approvalStatus}}</span>
+            </ng-template>
+          </kendo-grid-column>
+          <kendo-grid-column field="sendingAccount" title="Sending account"></kendo-grid-column>
+          <kendo-grid-column field="receivingAccount" title="Receiving account"></kendo-grid-column>
+          <kendo-grid-column field="amount" title="Amount" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="currency" title="Currency"></kendo-grid-column>
+          <kendo-grid-column field="approvalsNeeded" title="Approvals needed" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="transactionDate" title="Transaction date" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="valueDate" title="Value date" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+          <kendo-grid-column field="processDate" title="Process date" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+        </kendo-grid-pdf>
+
+        <kendo-grid-excel fileName="Approvals.xlsx" [fetchData]="allData"></kendo-grid-excel>
     </kendo-grid>
   </div>
 </div>

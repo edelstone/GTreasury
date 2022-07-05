@@ -1,7 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
+import { ExcelExportData } from '@progress/kendo-angular-excel-export';
 import { GridComponent } from '@progress/kendo-angular-grid';
+import { process } from "@progress/kendo-data-query";
 import { Portfolio } from 'src/app/core/model/portfolio';
-import { ActionButton } from 'src/app/shared/components/grid-action-bar/grid-action-bar.component';
 
 @Component({
   selector: 'gt-portfolios-grid',
@@ -1835,19 +1836,21 @@ export class PortfoliosGridComponent {
     }
   ];
 
-  constructor() { }
+  // Bind 'this' explicitly to capture the execution context of the component.
+  // https://www.telerik.com/kendo-angular-ui/components/grid/export/excel-export/#toc-exporting-specific-data
+  constructor() {
+    this.allData = this.allData.bind(this);
+  }
 
-  onActionClicked(actionButton: ActionButton) {
-    switch (actionButton) {
-      case ActionButton.ExportToPdf:
-        this.portfolioGrid.saveAsPDF();
-        break;
-      case ActionButton.ExportToExcel:
-        this.portfolioGrid.saveAsExcel();
-        break;
-      default:
-        break;
-    }
+  // By default, the Grid exports its current data. To export data that is different
+  // from the current Grid data, specify a custom fetchData function. It returns an
+  // ExcelExportData value or array.
+  public allData(): ExcelExportData {
+    const result: ExcelExportData = {
+      data: process(this.portfolioData, {}).data
+    };
+
+    return result;
   }
 
 }
