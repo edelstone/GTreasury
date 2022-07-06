@@ -7,7 +7,7 @@ import { WorksheetsComponent } from './components/worksheets/worksheets.componen
 import { TodoComponent } from '../todo/todo.component';
 import { StatementService } from '../core/services/statement/statement.service';
 import { WorksheetsHelperService } from '../core/services/worksheets-helper/worksheets-helper.service';
-import { GridModule, PDFModule, ExcelModule } from '@progress/kendo-angular-grid';
+import { GridModule } from '@progress/kendo-angular-grid';
 import { WorksheetsToolbarComponent } from './components/worksheets/worksheets-toolbar/worksheets-toolbar.component';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
@@ -40,8 +40,6 @@ const routes = [
     CommonModule,
     RouterModule.forChild(routes),
     GridModule,
-    PDFModule,
-    ExcelModule,
     DropDownsModule,
     ButtonsModule,
     InputsModule,

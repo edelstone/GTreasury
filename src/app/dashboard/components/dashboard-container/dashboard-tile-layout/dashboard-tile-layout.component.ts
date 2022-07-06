@@ -145,4 +145,12 @@ export class DashboardTileLayoutComponent {
   public labelContent(e: SeriesLabelsContentArgs): string {
     return e.category;
   }
+
+  public crosshair = {
+    visible: true,
+    tooltip: {
+      visible: true,
+      format: "#.##",
+    },
+  };
 }

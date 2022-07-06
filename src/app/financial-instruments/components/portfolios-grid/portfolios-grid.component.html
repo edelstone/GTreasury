@@ -23,6 +23,7 @@
       [reorderable]="true"
       [resizable]="true"
       [columnMenu]="{ filter: true }"
+      [kendoGridInCellEditing]="createFormGroup"
       >
         <kendo-grid-checkbox-column
           [width]="40"
@@ -64,7 +65,7 @@
         <kendo-grid-column field="name" title="Name" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
         <kendo-grid-column field="type" title="Type" [width]="170" [minResizableWidth]="170"></kendo-grid-column>
         <kendo-grid-column field="product" title="Product" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
-        <kendo-grid-column field="amount" title="Amount" [width]="150" [minResizableWidth]="150" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="amount" title="Amount" [width]="150" [minResizableWidth]="150" format="#,#.00" class="gt-numeric-date" editor="numeric"></kendo-grid-column>
         <kendo-grid-column field="currency" title="Currency" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
         <kendo-grid-column field="attachments" title="Attachments" [width]="170" [minResizableWidth]="170">
           <ng-template kendoGridCellTemplate let-dataItem>
@@ -72,9 +73,9 @@
             <span *ngIf="dataItem.attachments <= 0">N/A</span>
           </ng-template>
         </kendo-grid-column>
-        <kendo-grid-column field="start" title="Start" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="start" title="Start" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date" editor="date"></kendo-grid-column>
         <kendo-grid-column field="term" title="Term" [width]="120" [minResizableWidth]="120"></kendo-grid-column>
-        <kendo-grid-column field="end" title="End" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="end" title="End" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date" editor="date"></kendo-grid-column>
         <kendo-grid-column field="rate" title="Rate" [width]="150" [minResizableWidth]="150" class="gt-numeric-date"></kendo-grid-column>
         <kendo-grid-column field="frequency" title="Frequency" [width]="150" [minResizableWidth]="150"></kendo-grid-column>
 

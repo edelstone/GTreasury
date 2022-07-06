@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { ExcelExportData } from '@progress/kendo-angular-excel-export';
 import { GridComponent } from '@progress/kendo-angular-grid';
 import { process } from "@progress/kendo-data-query";
@@ -12,6 +13,7 @@ import { Portfolio } from 'src/app/core/model/portfolio';
 export class PortfoliosGridComponent {
 
   @ViewChild('portfolioGrid') portfolioGrid: GridComponent;
+  public formGroup: FormGroup;
   viewOptions = [
     { value: 1, text: 'View 1' },
     { value: 2, text: 'View 2' },
@@ -1838,8 +1840,9 @@ export class PortfoliosGridComponent {
 
   // Bind 'this' explicitly to capture the execution context of the component.
   // https://www.telerik.com/kendo-angular-ui/components/grid/export/excel-export/#toc-exporting-specific-data
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
     this.allData = this.allData.bind(this);
+    this.createFormGroup = this.createFormGroup.bind(this);
   }
 
   // By default, the Grid exports its current data. To export data that is different
@@ -1853,4 +1856,16 @@ export class PortfoliosGridComponent {
     return result;
   }
 
+    // https://www.telerik.com/kendo-angular-ui/components/grid/editing/editing-directives/#toc-in-cell-editing
+    public createFormGroup = (args: any): FormGroup => {
+      const item = args.dataItem;
+
+      this.formGroup = this.formBuilder.group({
+        amount: item.amount,
+        start: item.start,
+        end: item.end
+      });
+
+      return this.formGroup;
+    };
 }

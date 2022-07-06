@@ -70,6 +70,7 @@
     </kendo-tilelayout-item-header>
     <kendo-tilelayout-item-body>
       <kendo-chart [style.height]="'100%'">
+        <kendo-chart-tooltip format="{0}"></kendo-chart-tooltip>
         <kendo-chart-series>
           <kendo-chart-series-item [autoFit]="true" type="donut" [data]="closingBalanceData" categoryField="kind"
             field="share">
@@ -99,10 +100,19 @@
     </kendo-tilelayout-item-header>
     <kendo-tilelayout-item-body>
       <kendo-chart [style.height]="'100%'">
+        <kendo-chart-tooltip format="{0}"></kendo-chart-tooltip>
         <kendo-chart-category-axis>
           <kendo-chart-category-axis-item [categories]="['Mon', 'Tue', 'Wed', 'Thu', 'Fri']">
+            <kendo-chart-category-axis-item-crosshair>
+              <kendo-chart-category-axis-item-crosshair-tooltip>
+              </kendo-chart-category-axis-item-crosshair-tooltip>
+            </kendo-chart-category-axis-item-crosshair>
           </kendo-chart-category-axis-item>
         </kendo-chart-category-axis>
+        <kendo-chart-value-axis>
+          <kendo-chart-value-axis-item [crosshair]="crosshair">
+          </kendo-chart-value-axis-item>
+        </kendo-chart-value-axis>
         <kendo-chart-series>
           <kendo-chart-series-item type="area" [data]="[5, 15, 10, 5, 15]" [line]="{ style: 'smooth' }">
           </kendo-chart-series-item>
@@ -146,10 +156,19 @@
           </div>
         </div>
         <kendo-chart [style.height]="'100%'">
+          <kendo-chart-tooltip format="{0}"></kendo-chart-tooltip>
           <kendo-chart-category-axis>
             <kendo-chart-category-axis-item [categories]="['Mon', 'Tue', 'Wed', 'Thu', 'Fri']">
+              <kendo-chart-category-axis-item-crosshair>
+                <kendo-chart-category-axis-item-crosshair-tooltip>
+                </kendo-chart-category-axis-item-crosshair-tooltip>
+              </kendo-chart-category-axis-item-crosshair>
             </kendo-chart-category-axis-item>
           </kendo-chart-category-axis>
+          <kendo-chart-value-axis>
+            <kendo-chart-value-axis-item [crosshair]="crosshair">
+            </kendo-chart-value-axis-item>
+          </kendo-chart-value-axis>
           <kendo-chart-series>
             <kendo-chart-series-item type="line" [data]="[20, 19, 29, 21, 23]">
             </kendo-chart-series-item>
@@ -181,6 +200,7 @@
           </kendo-dropdownlist>
         </div>
         <kendo-chart [style.height]="'100%'">
+          <kendo-chart-tooltip format="{0}"></kendo-chart-tooltip>
           <kendo-chart-series>
             <kendo-chart-series-item type="bar" [data]="[32]" type="column" name="Series A">
             </kendo-chart-series-item>

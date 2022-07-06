@@ -1,9 +1,7 @@
 <div class="gt-worksheets">
   <div class="gt-worksheets-controls">
     <gt-worksheets-toolbar></gt-worksheets-toolbar>
-    <gt-grid-action-bar
-      [targetGrid]="worksheetGrid"
-    ></gt-grid-action-bar>
+    <gt-grid-action-bar></gt-grid-action-bar>
   </div>
   <div class="gt-worksheet">
     <kendo-grid
@@ -99,87 +97,6 @@
           {{ value }}
         </ng-template>
       </kendo-grid-column>
-
-      <kendo-grid-pdf fileName="Worksheet.pdf" [scale]="0.5" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
-      </kendo-grid-pdf>
-
-      <kendo-grid-excel fileName="Worksheet.xlsx" [collapsible]="true">
-        <kendo-excelexport-column-group
-          title="Date"
-          [locked]="true"
-        >
-          <kendo-excelexport-column-group
-            title="Data type"
-          >
-            <kendo-excelexport-column
-              title="Opening ledger"
-              field="rowName"
-              [class]="{ 'gt-worksheet-groupheaders': true }"
-            >
-              <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
-                {{ dataItem.rowName }}
-              </ng-template>
-              <ng-template kendoGridFooterTemplate> Closing ledger </ng-template>
-            </kendo-excelexport-column>
-          </kendo-excelexport-column-group>
-        </kendo-excelexport-column-group>
-        <ng-container *ngFor="let statement of statementData; let i = index">
-          <kendo-excelexport-column-group
-            [locked]="false"
-          >
-            <ng-template kendoGridHeaderTemplate>
-              <span [ngClass]="{'gt-worksheet-summary': statement.dateText.length > 0}">{{statement.dateText}} {{ formatDate(statement.date) }}</span>
-            </ng-template>
-            <kendo-excelexport-column-group
-              title="Actual"
-            >
-              <kendo-excelexport-column
-                [class]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
-              >
-                <ng-template kendoGridHeaderTemplate>
-                  {{ statement.actual.openingLedger | number: "1.2-2" }}
-                </ng-template>
-                <ng-template
-                  kendoGridCellTemplate
-                  let-dataItem
-                  let-columnIndex="columnIndex"
-                >
-                  {{ dataItem.data[columnIndex-1] | number: "1.2-2" }}
-                </ng-template>
-                <ng-template kendoGridFooterTemplate>
-                  {{ statement.actual.closingLedger | number: "1.2-2" }}
-                </ng-template>
-              </kendo-excelexport-column>
-            </kendo-excelexport-column-group>
-            <kendo-excelexport-column-group
-              title="Estimate"
-            >
-              <kendo-excelexport-column
-                [class]="statement.isWeekend ? {'gt-worksheet-weekend': true} : { 'gt-worksheet-weekday': true }"
-              >
-                <ng-template kendoGridHeaderTemplate>
-                  {{ statement.estimate.openingLedger | number: "1.2-2" }}
-                </ng-template>
-                <ng-template
-                  kendoGridCellTemplate
-                  let-dataItem
-                  let-columnIndex="columnIndex"
-                >
-                  {{ dataItem.data[columnIndex-1] | number: "1.2-2" }}
-                </ng-template>
-                <ng-template kendoGridFooterTemplate>
-                  {{ statement.estimate.closingLedger | number: "1.2-2" }}
-                </ng-template>
-              </kendo-excelexport-column>
-            </kendo-excelexport-column-group>
-          </kendo-excelexport-column-group>
-        </ng-container>
-        <kendo-excelexport-column field="worksheetGroup.name" [hidden]="true">
-          <ng-template kendoGridGroupHeaderTemplate let-value="value">
-            {{ value }}
-          </ng-template>
-        </kendo-excelexport-column>
-      </kendo-grid-excel>
 
     </kendo-grid>
   </div>

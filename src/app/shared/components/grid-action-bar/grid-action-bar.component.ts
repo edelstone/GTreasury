@@ -43,15 +43,17 @@ export class GridActionBarComponent {
 
     // https://www.telerik.com/kendo-angular-ui/components/grid/export/pdf-export/#toc-triggering-export-externally
     // https://www.telerik.com/kendo-angular-ui/components/grid/export/excel-export/#toc-triggering-export-externally
-    switch (actionButton) {
-      case ActionButton.ExportToPdf:
-        this.targetGrid.saveAsPDF();
-        break;
-      case ActionButton.ExportToExcel:
-        this.targetGrid.saveAsExcel();
-        break;
-      default:
-        break;
+    if (this.targetGrid) {
+      switch (actionButton) {
+        case ActionButton.ExportToPdf:
+          this.targetGrid.saveAsPDF();
+          break;
+        case ActionButton.ExportToExcel:
+          this.targetGrid.saveAsExcel();
+          break;
+        default:
+          break;
+      }
     }
   }
 

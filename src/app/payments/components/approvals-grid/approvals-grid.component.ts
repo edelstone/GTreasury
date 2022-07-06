@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { ExcelExportData } from '@progress/kendo-angular-excel-export';
 import { GridComponent } from '@progress/kendo-angular-grid';
 import { process } from "@progress/kendo-data-query";
@@ -11,6 +12,7 @@ import { Approval } from 'src/app/core/model/approval';
 })
 export class ApprovalsGridComponent {
   @ViewChild('approvalsGrid') approvalsGrid: GridComponent;
+  public formGroup: FormGroup;
 
   approvalData: Approval[] = [
     {
@@ -542,8 +544,9 @@ export class ApprovalsGridComponent {
     }
   ]
   // Bind 'this' explicitly to capture the execution context of the component.
-  constructor() {
+  constructor(private formBuilder: FormBuilder) {
     this.allData = this.allData.bind(this);
+    this.createFormGroup = this.createFormGroup.bind(this);
   }
 
   // By default, the Grid exports its current data. To export data that is different
@@ -557,4 +560,17 @@ export class ApprovalsGridComponent {
     return result;
   }
 
+  // https://www.telerik.com/kendo-angular-ui/components/grid/editing/editing-directives/#toc-in-cell-editing
+  public createFormGroup = (args: any): FormGroup => {
+    const item = args.dataItem;
+
+    this.formGroup = this.formBuilder.group({
+      amount: item.amount,
+      transactionDate: item.transactionDate,
+      valueDate: item.valueDate,
+      processDate: item.processDate
+    });
+
+    return this.formGroup;
+  };
 }

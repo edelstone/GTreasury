@@ -18,6 +18,7 @@
       [reorderable]="true"
       [resizable]="true"
       [columnMenu]="{ filter: true }"
+      [kendoGridInCellEditing]="createFormGroup"
       >
         <kendo-grid-checkbox-column
           [width]="40"
@@ -58,12 +59,12 @@
         </kendo-grid-column>
         <kendo-grid-column field="sendingAccount" title="Sending account" [width]="180" [minResizableWidth]="180"></kendo-grid-column>
         <kendo-grid-column field="receivingAccount" title="Receiving account" [width]="190" [minResizableWidth]="190"></kendo-grid-column>
-        <kendo-grid-column field="amount" title="Amount" [width]="140" [minResizableWidth]="140" format="#,#.00" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="amount" title="Amount" [width]="140" [minResizableWidth]="140" format="#,#.00" class="gt-numeric-date" editor="numeric"></kendo-grid-column>
         <kendo-grid-column field="currency" title="Currency" [width]="140" [minResizableWidth]="140"></kendo-grid-column>
         <kendo-grid-column field="approvalsNeeded" title="Approvals needed" [width]="190" [minResizableWidth]="190" class="gt-numeric-date"></kendo-grid-column>
-        <kendo-grid-column field="transactionDate" title="Transaction date" [width]="190" [minResizableWidth]="190" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
-        <kendo-grid-column field="valueDate" title="Value date" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
-        <kendo-grid-column field="processDate" title="Process date" [width]="170" [minResizableWidth]="170" format="d MMM yyyy" class="gt-numeric-date"></kendo-grid-column>
+        <kendo-grid-column field="transactionDate" title="Transaction date" [width]="190" [minResizableWidth]="190" format="d MMM yyyy" class="gt-numeric-date" editor="date"></kendo-grid-column>
+        <kendo-grid-column field="valueDate" title="Value date" [width]="150" [minResizableWidth]="150" format="d MMM yyyy" class="gt-numeric-date" editor="date"></kendo-grid-column>
+        <kendo-grid-column field="processDate" title="Process date" [width]="170" [minResizableWidth]="170" format="d MMM yyyy" class="gt-numeric-date" editor="date"></kendo-grid-column>
 
         <kendo-grid-pdf fileName="Approvals.pdf" [scale]="0.5" [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
           <kendo-grid-column field="accountId" title="Account ID"></kendo-grid-column>
