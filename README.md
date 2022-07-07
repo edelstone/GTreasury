@@ -1,6 +1,6 @@
 # GTreasury Angular Demo
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13, and the [Kendo UI Default Theme](https://www.telerik.com/kendo-angular-ui/components/styling/theme-default/) version 5.
 
 ## Getting started
 
