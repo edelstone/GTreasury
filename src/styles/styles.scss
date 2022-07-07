@@ -88,7 +88,7 @@ gt-dashboard-container {
   border-radius: 4px;
   overflow: hidden;
   box-shadow: $elevation-general-02;
-  min-width: 5rem;
+  border: none;
 }
 
 // Icon replacements
@@ -450,7 +450,7 @@ gt-dashboard-container {
   }
 }
 
-.k-animation-container {
+.k-chart-tooltip-wrapper {
 
   .k-popup {
     min-width: auto;

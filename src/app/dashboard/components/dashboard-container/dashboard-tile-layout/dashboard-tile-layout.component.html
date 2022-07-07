@@ -4,7 +4,8 @@
       <div class="gt-dashboard-card-header-name">Closing balances by currency</div>
       <div class="gt-dashboard-card-header-right">
         <div>
-          <kendo-dropdownlist class="gt-dashboard-card-header-select" [data]="timePeriod2"
+          <kendo-dropdownlist class="gt-dashboard-card-header-select" [data]="timePeriod2" 
+            [popupSettings]="{ width:100 }"
             [(ngModel)]="selectedTimePeriod2">
           </kendo-dropdownlist>
         </div>
@@ -55,6 +56,7 @@
       <div class="gt-dashboard-card-header-right">
         <div>
           <kendo-dropdownlist class="gt-dashboard-card-header-select" [data]="numberOfDays1"
+            [popupSettings]="{ width: 100 }"
             [(ngModel)]="selectedNumberOfDays1">
           </kendo-dropdownlist>
         </div>
@@ -97,6 +99,7 @@
       <div class="gt-dashboard-card-header-right">
         <div>
           <kendo-dropdownlist class="gt-dashboard-card-header-select" [data]="numberOfDays2"
+            [popupSettings]="{ width: 100 }"
             [(ngModel)]="selectedNumberOfDays2">
           </kendo-dropdownlist>
         </div>
@@ -150,6 +153,7 @@
       <div class="gt-dashboard-card-header-right">
         <div>
           <kendo-dropdownlist class="gt-dashboard-card-header-select" [data]="numberOfDays3"
+            [popupSettings]="{ width: 100 }"
             [(ngModel)]="selectedNumberOfDays3">
           </kendo-dropdownlist>
         </div>
@@ -194,6 +198,7 @@
       <div class="gt-dashboard-card-header-right">
         <div>
           <kendo-dropdownlist class="gt-dashboard-card-header-select" [data]="timePeriod1"
+            [popupSettings]="{ width: 100 }"
             [(ngModel)]="selectedTimePeriod1">
           </kendo-dropdownlist>
         </div>
